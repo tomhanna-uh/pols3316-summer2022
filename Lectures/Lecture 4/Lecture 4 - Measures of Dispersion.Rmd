@@ -7,6 +7,27 @@ output:
     df_print: paged
 ---
 
+## Class notes
+
+
+* Posting Professionalism Grades weekly
+* Posting a list of formulas - will be allowed for tests and quizzes
+* Problem Set 2 
+        + Should take less time
+        + Will be posted this evening
+        + Due Wednesday
+        + Will include: a couple of R questions, 1 or 2 problems using the same data step by step from sum to standard deviation, a couple of fill in the blanks about concepts
+        + Not required to use R if a calculator works
+
+* Problem Set 3 
+        + Will be up by Monday; due next Friday
+        + More from this week plus
+        + Will include content through Wednesday
+        + Percentiles, quartiles
+        + basic probability/sets
+        + basic frequency distribution concepts
+
+
 ## Measures of Dispersion or Variation
 
 We'll be using sample data from the USArrests data in R, specifically the data on arrests for assault and percent urban population. This is state level data, with 50 observations. 

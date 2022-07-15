@@ -1,12 +1,24 @@
 ---
-title: "Lecture 4: Measures of Dispersion (POLS 3316: Statistics for Political Science, Summer 2022)"
+title: 'Lecture 4: Measures of Dispersion (POLS 3316: Statistics for Political Science,
+  Summer 2022)'
 author: "Tom Hanna"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ## Measures of Dispersion or Variation
 
 We'll be using sample data from the USArrests data in R, specifically the data on arrests for assault and percent urban population. This is state level data, with 50 observations. 
+
+
+
+#### Our two variables are arrests for assaulst and the percent of urban population. What makes sense as the *explanatory variable* or *independent variable* (x) and which makes sense as the *dependent variable* (y)?
+
+y = 
+
+x = 
+
 
 ```{r}
 
@@ -23,16 +35,23 @@ head(arrests_data)
 
 ```
 
+**Now, we'll look at the means.**
+
 ```{r}
 #get the mean for both variables and store the means in objects
 mean_assault_arrests <- mean(arrests_data$Assault)
+
 mean_urban_population <- mean(arrests_data$UrbanPop)
 
+# y <- 
+# x <-
+
 #print the means to the screen
+cat('mean_assault_arrests is: ')
 mean_assault_arrests
+cat('mean_urban_population is: ')
 mean_urban_population
 ```
-
 
 And the medians:
 
@@ -42,22 +61,30 @@ And the medians:
 median_assault_arrests <- median(arrests_data$Assault)
 median_urban_population <- median(arrests_data$UrbanPop)
 
+#print the medians
+
+median_assault_arrests
+median_urban_population
+
 ```
 
-Measures of dispersion typically look at how the data is scattered around the mean. Let's look at that visually. First the mean of *Assault*:
+Measures of dispersion typically look at how the data is scattered around the mean. Let's look at that visually. First the mean of *Urban Pop*:
+
+```{r}
+
+plot(arrests_data$UrbanPop,arrests_data$Assault, ylim = c(0,350))
+abline(v = mean_urban_population)
+
+
+```
+
+Now, let's look at just the *Assault Arrest* and see how it's dispersed.
 
 ```{r}
 
 plot(arrests_data$UrbanPop,arrests_data$Assault)
 abline(h = mean_assault_arrests)
 
-```
-Now, let's look at just the *UrbanPop* and see how it's dispersed.
-
-```{r}
-
-plot(arrests_data$UrbanPop,arrests_data$Assault, ylim = c(0,350))
-abline(h = mean_assault_arrests)
 
 ```
 

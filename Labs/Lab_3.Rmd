@@ -9,22 +9,13 @@ output:
 
 ## Part 1: Scalars, Vectors, Matrices and Arrays
 
-### What is a matrix?
+### All of this is actually about *matrixes*, but scalars and vectors are the components of *matrices*, so we will get there last.
 
-A *matrix* is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, used to represent some mathematical object or property. 
-
-Practical examples of *matrices*? Spreadsheets and tables
-
-#### Matrixes in R
-
-In R, every *dataframe* or *table* or similar *object* is a matrix.
-
-For an example of building a matrix in R, we need to look at scalars and vectors. 
-
+For now, a matrix is a collection of data in columns and rows.
 
 ### What is a scalar?
 
-A scalar is a single number. A scalar is matrix with dimension 1x1, 1 column by 1 row. A scalar is also a vector with only 1 element.
+A scalar is a single number. A scalar is a matrix with dimension 1x1, 1 column by 1 row. A scalar is also a vector with only 1 element.
 
 #### Scalars in R
 
@@ -83,32 +74,66 @@ F
 
 ```
 
+### What is a matrix?
+
+A *matrix* is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, used to represent some mathematical object or property. 
+
+Practical examples of *matrices*? Spreadsheets and tables
+
+#### Matrixes in R
+
+In R, every *dataframe* or *table* or similar *object* is a matrix.
+
+
+
+## Back to matrices in R
+
+We built a scalar object and a vector object. How do we build a matrix object?
+
+The most common way starting off is to build a dataframe. 
+
+Let's use two of the vectors we built, C and D:
+
+```{r}
+data_cd <- data.frame(C,D)
+View(data_cd)
+
+```
+
+Our dataframe doesn't have any row or column names. We can fix that:
+
+```{r}
+
+#First create a vector of the row names
+cd_rownames <- c("Houston","Humble","Pasadena","League City",
+                 "La Porte","Sugar Land","Pearland","Katy",
+                 "Galveston")
+#assign the vector using the rownames function        
+rownames(data_cd) <- cd_rownames
+
+#for the columns, we'll use the colnames function directly
+#We can use either method with either function
+
+colnames(data_cd) <- c("US dollars","Crypto assets")
+
+
+```
+
+
+
 ## Things to know
 
+**You don't need to know the details of multiplying matrixes, but at some point it will be useful to know that the sizes have to match.**
+
 - Multiplying anything times a scalar is simply multiplying every element by that scalar. It's almost always feasible. 
-- To do an operation on two vectors they must be the same length
-- Multiplying matrices is a complex version of multipying vectors. - If you see errors related to matrix/vector size, it usually means you are multiplying two matrixes who aren't a match in column and row size. If this happens, you have two options:
+- To do an operation on two vectors they must be the same length. (If they aren't, R may try to repeat the shorter matrix with results you may not expect.)
+- When you multiply two matrixes, a row in one matrix is multiplied by a corresponding column from the second matrix. So, you can multiply a 2 (row) x 3 (column) matrix by a 3 (row) x 2 (column) matrix but you can't multiply a 2 x 3 by a 3 x 3. 
 
 https://www.mathsisfun.com/algebra/matrix-multiplying.html
 
 or 
 
 **ask for help from someone with a good grasp of basic matrix algebra**
-
-## Back to matrices in R
-
-We built a scalar object and a vector object. How do we build a matrix object?
-
-Let's use two of the vectors we built, C and D:
-
-```{r}
-data_cd <- data.frame(C,D)
-head(data_cd)
-
-```
-
-
-
 
 ## Part 2: Measures of dispersion in R          
 

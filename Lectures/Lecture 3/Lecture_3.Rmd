@@ -1,7 +1,9 @@
 ---
-title: "Lecture 3 (POLS 3316: Statistics for Political Science, Summer 2022)"
+title: 'Lecture 3 (POLS 3316: Statistics for Political Science, Summer 2022)'
 author: "Tom Hanna"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r}

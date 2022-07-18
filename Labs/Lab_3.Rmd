@@ -9,27 +9,41 @@ output:
 
 ## Part 1: Scalars, Vectors, Matrices and Arrays
 
-### All of this is actually about *matrixes*, but scalars and vectors are the components of *matrices*, so we will get there last.
+### What is a matrix?
 
-For now, a matrix is a collection of data in columns and rows.
+A *matrix* is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, used to represent some mathematical object or property. 
+
+Practical examples of *matrices*? Spreadsheets and tables
+
+#### Matrixes in R
+
+In R, every *dataframe* or *table* or similar *object* is a matrix.
+
+For an example of building a matrix in R, we need to look at scalars and vectors. 
+
 
 ### What is a scalar?
 
-A scalar is a single number. A scalar is a matrix with dimension 1x1, 1 column by 1 row. A scalar is also a vector with only 1 element.
+A scalar is a single number. A scalar is matrix with dimension 1x1, 1 column by 1 row. A scalar is also a vector with only 1 element.
 
 #### Scalars in R
 
 To create a scalar in R, we can either assign a null value and add the value later, or we can assign a value when we creat it:
 
 ```{r}
+#create an ojbect called a and assign the null value
+#making it a null value scalar
 a <- c()
 cat('a is a null scalar ')
 a
 
+#create an object called b and assign the value 5, making 
+#b a scalar object
 b <- 5
 cat('b is a scalar with value 5')
 b
 
+#assign the value 1 to a, making it a scalar with value 1
 a <- 1
 cat('Now I have given a the value 1')
 a
@@ -47,10 +61,14 @@ To create a vector in R, we can assign a series of values either by just listing
 
 ```{r}
 
+#create object c and assign <- a series of numbers 
+#using c() creating a vector object
 C <- c(1,2,4,5,6,7,8,9,10)
 cat('C is a vector ')
 C
 
+#create a vector D and assign the value of multiplying 
+#vector C by scalar b
 D <- C*b
 cat('D is a vector created by multiplying b * C ')
 D
@@ -59,6 +77,10 @@ D
 
 ```{r}
 
+#Create a vector E and assign the value
+#for the seq function - in this case
+#sequence starting at -5 and going to 5
+#by steps of 0.5
 E <- seq(-5, 5, by = .5)
 cat('E is a sequence of numbers from -5 to 5, by 0.5s ')
 E
@@ -67,6 +89,9 @@ E
 
 ```{r}
 
+#create the vector object F and 
+#assign a function of E and the 
+#normal distribution (more on this later)
 F <- dnorm(E, mean = 2.5, sd = 0.5)
 cat('F is a function of E and the normal distribution ')
 F
@@ -74,66 +99,39 @@ F
 
 ```
 
-### What is a matrix?
-
-A *matrix* is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, used to represent some mathematical object or property. 
-
-Practical examples of *matrices*? Spreadsheets and tables
-
-#### Matrixes in R
-
-In R, every *dataframe* or *table* or similar *object* is a matrix.
-
-
-
-## Back to matrices in R
-
-We built a scalar object and a vector object. How do we build a matrix object?
-
-The most common way starting off is to build a dataframe. 
-
-Let's use two of the vectors we built, C and D:
-
-```{r}
-data_cd <- data.frame(C,D)
-View(data_cd)
-
-```
-
-Our dataframe doesn't have any row or column names. We can fix that:
-
-```{r}
-
-#First create a vector of the row names
-cd_rownames <- c("Houston","Humble","Pasadena","League City",
-                 "La Porte","Sugar Land","Pearland","Katy",
-                 "Galveston")
-#assign the vector using the rownames function        
-rownames(data_cd) <- cd_rownames
-
-#for the columns, we'll use the colnames function directly
-#We can use either method with either function
-
-colnames(data_cd) <- c("US dollars","Crypto assets")
-
-
-```
-
-
-
 ## Things to know
 
-**You don't need to know the details of multiplying matrixes, but at some point it will be useful to know that the sizes have to match.**
-
 - Multiplying anything times a scalar is simply multiplying every element by that scalar. It's almost always feasible. 
-- To do an operation on two vectors they must be the same length. (If they aren't, R may try to repeat the shorter matrix with results you may not expect.)
-- When you multiply two matrixes, a row in one matrix is multiplied by a corresponding column from the second matrix. So, you can multiply a 2 (row) x 3 (column) matrix by a 3 (row) x 2 (column) matrix but you can't multiply a 2 x 3 by a 3 x 3. 
+- To do an operation on two vectors they must be the same length
+- Multiplying matrices is a complex version of multipying vectors. - If you see errors related to matrix/vector size, it usually means you are multiplying two matrixes who aren't a match in column and row size. 
+
+If you need more help with matrix operations in the future (not this class), you have two options:
 
 https://www.mathsisfun.com/algebra/matrix-multiplying.html
 
 or 
 
 **ask for help from someone with a good grasp of basic matrix algebra**
+
+## Back to matrices in R
+
+We built a scalar object and a vector object. How do we build a matrix object?
+
+Let's use two of the vectors we built, C and D:
+
+```{r}
+#create an object called data_cd and assign <- 
+#vector C and D as a matrix in R's data frame format
+#using the data.frame() function
+data_cd <- data.frame(C,D)
+
+#Show the first six lines of data_cd
+head(data_cd)
+
+```
+
+
+
 
 ## Part 2: Measures of dispersion in R          
 
@@ -146,16 +144,34 @@ To get **sample variance** use the R function **var().**
 
 
 ```{r}
+
+#loading arrests_data built into R
+#create an object called arrests_data
+#assign the 2 and 3 columns [2:3] from the 
+#USArrests dataset 
 arrests_data <- USArrests[2:3]
 
+#create an object called urban_pop_variance
+#and assign the value created by applying the 
+#var() function to the UrbanPop variable from the 
+#arrests_data dataframe
 urban_pop_variance <- var(arrests_data$UrbanPop)
 cat('Urban Pop Percent Variance')
+#print urban_pop_variance to the screen
 urban_pop_variance
 
+#create an object called urban_pop_variance
+#and assign the value created by applying the 
+#var() function to the Assault variable from the 
+#arrests_data dataframe
 assaults_variance <- var(arrests_data$Assault)
 cat('Assaults Variance')
+
+#print assaults_variance to the screen
 assaults_variance
 
+#print the mean of Assault variable from
+#arrests_data to the screen
 mean(arrests_data$Assault)
 
 ```
@@ -165,11 +181,16 @@ mean(arrests_data$Assault)
 To get **sample standard deviation** either take the **square root of sample variance** or use the R function **sd()**.
 
 ```{r}
-
+#the cat('') command will print to the screen
 cat('Standard deviations')
+#create object urban_pop_sd1 and assign the 
+#value of sd(arrests_data$UrbanPop)
+#sd() is the R function for sample standard deviation
 urban_pop_sd1 <- sd(arrests_data$UrbanPop)
 urban_pop_sd1
 
+#Do the same thing by taking the square root of the variance
+#instead of using sd()
 urban_pop_sd2 <- sqrt(var(arrests_data$UrbanPop))
 urban_pop_sd2
 
@@ -180,10 +201,17 @@ To get **population variance** multiply the R function var() times (n-1)/n:  var
 
 ```{r}
 
+#Converting sample variance to population variance
+#Create object urban_pop_popvar and assign the 
+#math operation multiplying the sample variance times
+#(n - 1)/n where n = 50
 urban_pop_popvar <- var(arrests_data$UrbanPop) * (50-1)/50
 cat('Urban Pop population variance:')
+
+#print the result
 urban_pop_popvar
 
+#same for Assault variable
 assaults_popvar <- var(arrests_data$Assault) *(50-1)/50
 cat('Assaults population variance:')
 assaults_popvar
@@ -195,6 +223,8 @@ To get **population standard deviation**, the only option is to compute the popu
 
 ```{r}
 
+#take the square root of the population variance
+#to get the population standard deviation
 sqrt(urban_pop_popvar)
 sqrt(assaults_popvar)
 

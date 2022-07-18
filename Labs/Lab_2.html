@@ -1644,7 +1644,10 @@ Instructor: Tom Hanna</h4>
 <h2>Math functions in R</h2>
 <p>In lecture I used some math functions. The first one I used to add a
 sequence of numbers:</p>
-<pre class="r"><code>sum_7 = 5 + 6 + 7 + 8 + 9 + 10
+<pre class="r"><code>#create an object called sum_7 using the math operation
+sum_7 = 5 + 6 + 7 + 8 + 9 + 10
+
+#print sum_7 to the screen
 sum_7 </code></pre>
 <pre><code>## [1] 45</code></pre>
 <p>The “sum_7 &lt;-” was something I did to create an object I could use
@@ -1653,7 +1656,8 @@ and reuse. You can see that object now in the upper right corner. The
 echo) to the screen. We’ll come back to this in more detail. But you can
 also just type in the math function if you just need an answer that you
 don’t want to reuse:</p>
-<pre class="r"><code>5 + 6 + 7 + 8 + 9 + 10</code></pre>
+<pre class="r"><code>#just perform the operation without creating an object
+5 + 6 + 7 + 8 + 9 + 10</code></pre>
 <pre><code>## [1] 45</code></pre>
 <div id="basic-math-functions" class="section level3">
 <h3>Basic math functions</h3>
@@ -1676,6 +1680,7 @@ don’t want to reuse:</p>
 <h3>Basic plus math functions</h3>
 <ul>
 <li>Exponents ^</li>
+<li>Square root of x - sqrt(x)</li>
 <li>Modulus (the remainder from division) %%</li>
 <li>Integer division %/%</li>
 </ul>
@@ -1685,22 +1690,32 @@ don’t want to reuse:</p>
 <li>2 squared (or second power)</li>
 <li>Find the remainder of 5 divided by 2</li>
 <li>Divide 5 by 2, rounding down</li>
+<li>Square root of 16</li>
 </ul>
-<pre class="r"><code>4^3</code></pre>
+<pre class="r"><code>#4 to the power of 3
+4^3</code></pre>
 <pre><code>## [1] 64</code></pre>
-<pre class="r"><code>2^2</code></pre>
+<pre class="r"><code>#2 to the power of 2 (2 squared)
+2^2</code></pre>
 <pre><code>## [1] 4</code></pre>
-<pre class="r"><code>5%%2</code></pre>
+<pre class="r"><code>#5 modulus 2
+5%%2</code></pre>
 <pre><code>## [1] 1</code></pre>
-<pre class="r"><code>5 %/% 2</code></pre>
+<pre class="r"><code>#5 integral division 2
+5 %/% 2</code></pre>
 <pre><code>## [1] 2</code></pre>
+<pre class="r"><code>#square root of 16
+sqrt(16)</code></pre>
+<pre><code>## [1] 4</code></pre>
 <p>The modulus is probably not something you have seen before. It’s
 useful in programs for things like checking if a number is even or odd.
 If you divide by 2 and it’s even, the modulus will be zero. If it’s odd,
 the modulus will be one.:</p>
-<pre class="r"><code>5%%2</code></pre>
+<pre class="r"><code>#5 modulus 2
+5%%2</code></pre>
 <pre><code>## [1] 1</code></pre>
-<pre class="r"><code>4%%2</code></pre>
+<pre class="r"><code>#4 modulus 2
+4%%2</code></pre>
 <pre><code>## [1] 0</code></pre>
 <pre class="r"><code>10%%2</code></pre>
 <pre><code>## [1] 0</code></pre>
@@ -1709,7 +1724,8 @@ the modulus will be one.:</p>
 <pre class="r"><code>7456835%%2</code></pre>
 <pre><code>## [1] 1</code></pre>
 <p>R follows the standard order of operations including parentheses:</p>
-<pre class="r"><code>5 + 6/2</code></pre>
+<pre class="r"><code>#two math operations demonstrating use of parentheses in R
+5 + 6/2</code></pre>
 <pre><code>## [1] 8</code></pre>
 <pre class="r"><code>(5+6)/2</code></pre>
 <pre><code>## [1] 5.5</code></pre>
@@ -1738,7 +1754,10 @@ different)</li>
 <p>These are usually used in programs or functions, some of which may be
 very short. When you use them, R simply tells you if the statement,
 which is called a <em>condition</em> in R is TRUE or FALSE</p>
-<pre class="r"><code>5 &lt; 3</code></pre>
+<pre class="r"><code>#Testing relational operators
+#True statements will return &quot;True&quot;
+#False statements will return &quot;False&quot;
+5 &lt; 3</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>5 &gt; 3</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -1747,7 +1766,8 @@ which is called a <em>condition</em> in R is TRUE or FALSE</p>
 <pre class="r"><code>5 == 3</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>#5 = 3</code></pre>
-<pre class="r"><code>3 &gt; 3</code></pre>
+<pre class="r"><code>#More relational operators
+3 &gt; 3</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>3 &gt;= 3</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -1758,6 +1778,162 @@ which is called a <em>condition</em> in R is TRUE or FALSE</p>
 <p>You can find more information on these here:</p>
 <p><a href="https://www.datamentor.io/r-programming/operator/">R
 Operators: Arithmetic, Relational, Logical, Operational and more</a></p>
+<p>Some other useful math functions are:</p>
+<ul>
+<li>sum(x) - returns the sum of a vector of numbers</li>
+<li>log(x) - gives the natural log of x</li>
+<li>exp(x) - gives the exponential of x (inverse of the natural
+log)</li>
+<li>round(x, n) - rounds <em>x</em> to the nearest <em>n</em> decimal
+places</li>
+<li>signif(x, n) - gives <em>x</em> to the nearest <em>n</em>
+significant figures</li>
+</ul>
+<p>Try a few on your computer by typing in the console:</p>
+<ul>
+<li>Round 10.12345 to the nearest 2 decimal places</li>
+<li>Find the natural log of 12</li>
+<li>Find the exponential of 2.484907 -</li>
+<li>Is the natural log of 10 equal to 2.5</li>
+</ul>
+<p><strong>The answers</strong></p>
+<pre class="r"><code>#Round 10.12345 to the 2nd decimal place
+round(10.12345,2)</code></pre>
+<pre><code>## [1] 10.12</code></pre>
+<pre class="r"><code>#natural log of 12
+log(12)</code></pre>
+<pre><code>## [1] 2.484907</code></pre>
+<pre class="r"><code>#exponential function e of 2.484907
+exp(2.484907)</code></pre>
+<pre><code>## [1] 12</code></pre>
+<pre class="r"><code>#relational operator ==
+#R will return true or false for the question
+#Does the log(10) == 2.5 ?
+log(10) == 2.5</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+</div>
+<div id="descriptive-stats-using-math-functions" class="section level2">
+<h2>Descriptive Stats using Math functions</h2>
+<div id="assignment-operator" class="section level3">
+<h3>Assignment operator</h3>
+<ul>
+<li>The assignment operator in R is &lt;-</li>
+<li>It tells R that the <em>object</em> on the left side has the value
+on the right side</li>
+<li>This allows you to do things with that value later</li>
+</ul>
+<p>Example, create a new object and give it the value 7:</p>
+<pre class="r"><code>#The left side creates a new object called my_new_object
+# &lt;- is the assignment operator that tells R to make the
+# left side equal to the right side
+my_new_object &lt;- 7</code></pre>
+<p>That’s great, but what can I do with it?</p>
+<p>First, I can return (or print or echo) the value to the screen:</p>
+<pre class="r"><code>#this is all you need to do to have R print an object to the
+#screen - type the object name
+my_new_object</code></pre>
+<pre><code>## [1] 7</code></pre>
+<p>I can create an even newer object and assign a value to it based on
+the first object and some math operation. Then I can return the result
+to the screen:</p>
+<pre class="r"><code>#create even_newer_object and make it equal to
+#my_new_object plus 10
+even_newer_object &lt;- my_new_object + 10
+
+#print even_newer_object to the screen
+even_newer_object</code></pre>
+<pre><code>## [1] 17</code></pre>
+<p>Apply this to finding the mean of:</p>
+<p>5,6,7,12,13,14</p>
+<p>The mean is just the sum of the numbers divided by the number of
+observations. First, I’ll create an object called <em>my_sum</em> and
+assign the value of the math operation to get the sum. I’m also going to
+return that number to the screen, just as a check to make sure it looks
+right:</p>
+<pre class="r"><code>#create object my_sum with value equal to sum of the digits
+my_sum &lt;- 5 + 6 + 7 + 12 + 13 +14
+
+#return my_sum to screen
+my_sum</code></pre>
+<pre><code>## [1] 57</code></pre>
+<p>To get the mean, we divide that by the total observations. <strong>We
+can just count those - 6 </strong></p>
+<p>First, I’ll just do this as a simple math problem, using the answer
+from the previous part.</p>
+<pre class="r"><code>#just figuring the mean (average) by hand from 
+#the sum divided by the number of values in the series
+57 / 6</code></pre>
+<pre><code>## [1] 9.5</code></pre>
+<p>Now because I might want to use the mean and the number observations
+later, I’m going to do this as a very short “program.” First I’m going
+to create a new object called <em>my_observations</em> with the value of
+6. Then I’m going create an object called <em>my_mean</em> and compute
+the value of that using <em>my_sum</em> and <em>my_observations</em>.
+Then I’ll return the value of the object to the screen:</p>
+<pre class="r"><code>#create an object with the count of data points or observations
+my_observations &lt;- 6
+
+#create an object called my mean then assign using &lt;- 
+#the value of my_sum divided by my_observations to my_mean
+my_mean &lt;- my_sum / my_observations
+
+#print the value of my_mean to the screen
+my_mean </code></pre>
+<pre><code>## [1] 9.5</code></pre>
+<p>On your own, compute the mean of:</p>
+<p>10,16,19,21,25,27,28</p>
+<p><strong>Some of the comment lines are hints that you can either
+uncomment by removing the # or retype. For example, new_obs &lt;- is the
+first part of the first line of code. It’s not a complete line though!
+Something has to go after the &lt;- </strong></p>
+<pre class="r"><code>#option 1 - add them up and divide by the number of observations
+#If you use parentheses, you can do this in one line
+
+#count the number of observations and assign it object new_obs
+#new_obs &lt;- 
+  
+#use math operation to assign the cum of the values to object #new_sum      
+#new_sum &lt;- 
+
+#use math operation to create new object new_mean and assign it #the value of new_sum  divided by new_obs       
+#new_mean &lt;- 
+
+#Return new_mean to the screen       
+#new_mean</code></pre>
+<p>Jumping ahead just a bit, the reason for doing all that with creating
+objects becomes clear if we want to find the <em>sample</em> variance
+and standard deviation of the first problem:</p>
+<pre class="r"><code>#5,6,7,12,13,14
+
+#square the differences between the values and the mean, then
+#add them up
+my_diffs_squared &lt;- (5 - my_mean)^2 + (6 - my_mean)^2 +
+        (7 - my_mean)^2 + (12 - my_mean)^2 + (13 - my_mean)^2 +
+        (14 - my_mean)^2
+
+#divide the sum of squared differences by the number of #observations minus 1 (for sample variance)
+my_variance &lt;- my_diffs_squared / (my_observations - 1)
+
+#print my_variance to the screen
+my_variance</code></pre>
+<pre><code>## [1] 15.5</code></pre>
+<pre class="r"><code>#checking against the R function
+my_vec &lt;- c(5,6,7,12,13,14)
+my_check &lt;- var(my_vec)
+my_check</code></pre>
+<pre><code>## [1] 15.5</code></pre>
+<p>Now for the standard deviation:</p>
+<pre class="r"><code>#standard deviation is square root of variance
+my_sd &lt;- sqrt(my_variance)
+
+#print my_sd to the screen
+my_sd</code></pre>
+<pre><code>## [1] 3.937004</code></pre>
+<pre class="r"><code>#checking it against the R function
+my_sd_check &lt;- sd(my_vec)
+my_sd_check</code></pre>
+<pre><code>## [1] 3.937004</code></pre>
 </div>
 </div>
 

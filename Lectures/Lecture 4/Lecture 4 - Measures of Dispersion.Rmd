@@ -7,39 +7,9 @@ output:
     df_print: paged
 ---
 
-## Class notes
-
-
-* Posting Professionalism Grades weekly
-* Posting a list of formulas - will be allowed for tests and quizzes
-* Problem Set 2 
-        + Should take less time
-        + Will be posted this evening
-        + Due Wednesday
-        + Will include: a couple of R questions, 1 or 2 problems using the same data step by step from sum to standard deviation, a couple of fill in the blanks about concepts
-        + Not required to use R if a calculator works
-
-* Problem Set 3 
-        + Will be up by Monday; due next Friday
-        + More from this week plus
-        + Will include content through Wednesday
-        + Percentiles, quartiles
-        + basic probability/sets
-        + basic frequency distribution concepts
-
-
 ## Measures of Dispersion or Variation
 
 We'll be using sample data from the USArrests data in R, specifically the data on arrests for assault and percent urban population. This is state level data, with 50 observations. 
-
-
-
-#### Our two variables are arrests for assaulst and the percent of urban population. What makes sense as the *explanatory variable* or *independent variable* (x) and which makes sense as the *dependent variable* (y)?
-
-y = 
-
-x = 
-
 
 ```{r}
 
@@ -56,23 +26,16 @@ head(arrests_data)
 
 ```
 
-**Now, we'll look at the means.**
-
 ```{r}
 #get the mean for both variables and store the means in objects
 mean_assault_arrests <- mean(arrests_data$Assault)
-
 mean_urban_population <- mean(arrests_data$UrbanPop)
 
-# y <- 
-# x <-
-
 #print the means to the screen
-cat('mean_assault_arrests is: ')
 mean_assault_arrests
-cat('mean_urban_population is: ')
 mean_urban_population
 ```
+
 
 And the medians:
 
@@ -82,30 +45,22 @@ And the medians:
 median_assault_arrests <- median(arrests_data$Assault)
 median_urban_population <- median(arrests_data$UrbanPop)
 
-#print the medians
-
-median_assault_arrests
-median_urban_population
-
 ```
 
-Measures of dispersion typically look at how the data is scattered around the mean. Let's look at that visually. First the mean of *Urban Pop*:
-
-```{r}
-
-plot(arrests_data$UrbanPop,arrests_data$Assault, ylim = c(0,350))
-abline(v = mean_urban_population)
-
-
-```
-
-Now, let's look at just the *Assault Arrest* and see how it's dispersed.
+Measures of dispersion typically look at how the data is scattered around the mean. Let's look at that visually. First the mean of *Assault*:
 
 ```{r}
 
 plot(arrests_data$UrbanPop,arrests_data$Assault)
 abline(h = mean_assault_arrests)
 
+```
+Now, let's look at just the *UrbanPop* and see how it's dispersed.
+
+```{r}
+
+plot(arrests_data$UrbanPop,arrests_data$Assault, ylim = c(0,350))
+abline(h = mean_assault_arrests)
 
 ```
 

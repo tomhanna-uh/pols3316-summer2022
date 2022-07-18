@@ -17,6 +17,10 @@ output:
         *These won't be testable and aren't needed for the work we're doing. I'll give you references on them and put together notebooks like the labs that you can use on your own later.*
 + Quiz today
 + Work session in R Studio today
++ *Note on today's code: I'm using "echo=False" to make some of the knitted output a little easier to read. This means that to read the code behind the results, you have to go to the .Rmd file. We'll be switchin back and forth in class.*
+
+$$\\[4in]$$
+$$\\[1in]$$
 
 ### Measures of Dispersion Continued
 
@@ -38,7 +42,9 @@ Assumptions:
 *As a new college graduate with interviews at both companies on the same, which is more appealing?*
 
 
-```{r, figures-side, fig.show="hold", out.width="50%"}
+$$\\[3in]$$
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
 
 #Simulating data for company A and B from the mean and standard deviation
 set.seed(7385)
@@ -83,28 +89,36 @@ So, 99.7% of Company A employees make between \$69,850 and \$70,150 a year.
 
 99.7% of Company B employees make between \$68,500 and \$71,500 a year. 
 
+$$\\[3in]$$
+
 ## Other Measures
 
 
 Here are a few other measures you should be aware of both for **the midterm and final tests** and because they are commonly used:
 
-* Quartiles: divides data into four chunks
-* Deciles: divides into 10 chunks
-* Percentiles: divides into 100 chunks
-* Interquartile Range: Between the 1st and 3rd quartiles
-* Minimum
-* Maximum
-* Range: Between the minimum and the maximum
++ **Quartiles**: divides data into four chunks
++ **Deciles**: divides into 10 chunks
++ **Percentiles**: divides into 100 chunks
++ **Interquartile Range**: Between the 1st and 3rd quartiles
++ **Minimum**
++ **Maximum**
++ **Range**: Between the minimum and the maximum
 
-Let's look at our two companies A and B:
+$$\\[4in]$$
+
+#### Examples: Company A and B:
 
 
-```{r}
+```{r, echo=FALSE}
 # load stargazer to make the output neater
 library(stargazer)
 #This just prints "Company A"
 cat('Company A')
 
+
+```
+
+```{r, echo=FALSE}
 #stargazer just produces a nicer table
 #without stargazer, quantile(A) produce the same results
 stargazer(quantile(A), type = "text")
@@ -122,23 +136,28 @@ median(B)
 
 ```
 
+$$\\[4in]$$
+
 We can also look at the quartiles visually with a boxplot or whisker plot:
 
-```{r}
+```{r, figures-box, fig.show="hold", out.width="50%", echo=FALSE}
 
+cat('Company A')
 #create boxplot 
 boxplot(A)
 
-
+cat('Company B')
 #create boxplot 
 boxplot(B)
 ```
 
-**The bottom line of the box is the first quartile. The top line is the third quartile. The heavy center line is the median. The "whiskers" show the largest or smallest observation that falls within a distance of 1.5 times the box size from the nearest box edge or "hinge".**
+**The bottom line of the box is the first quartile. The top line is the third quartile. The heavy center line is the median. The "whiskers" show the largest or smallest observation that falls within a distance of 1.5 times the box size from the nearest box edge or "hinge".** In this case, this plot doesn't really tell us a whole lot, but it can be useful when the distributions are more varied.
+
+$$\\[4in]$$
 
 Let's look at the deciles:
 
-```{r}
+```{r, echo=FALSE}
 
 cat('Company A: Deciles')
 #The code probs = seq(.1, .9, by = .1) is just telling R that #instead of the default of quartiles we want to split the data by #a sequence running from .1 to .9 and separate by .1. Another way #of saying that is 0.1, 0.2, 0.3, 0.4 and so on up to 0.9, or ten #ranks - deciles. 
@@ -152,6 +171,8 @@ stargazer(quantile(B), type = "text",  probs = seq(.1, .9, by = .1))
 
 ```
 
+$$\\[4in]$$
+
 What if we want to know a specific percentile. What if we want to know the top and bottom 1%? That's the 1st and 99th percentiles:
 
 ```{r}
@@ -161,6 +182,8 @@ stargazer(quantile(A, probs = c(.01,.99)), type = "text")
 cat('Top and bottom 1% salaries at Company B')
 stargazer(quantile(B, probs = c(.01,.99)), type = "text")
 ```
+
+$$\\[4in]$$
 
 
 Don't forget we can also get several summary statistics that include the quartiles with summary():

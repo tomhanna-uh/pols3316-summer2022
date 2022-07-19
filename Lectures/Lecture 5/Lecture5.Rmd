@@ -42,6 +42,8 @@ Assumptions:
 *As a new college graduate with interviews at both companies on the same, which is more appealing?*
 
 
+Anything you want
+
 $$\\[3in]$$
 
 ```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
@@ -161,7 +163,12 @@ Let's look at the deciles:
 
 cat('Company A: Deciles')
 #The code probs = seq(.1, .9, by = .1) is just telling R that #instead of the default of quartiles we want to split the data by #a sequence running from .1 to .9 and separate by .1. Another way #of saying that is 0.1, 0.2, 0.3, 0.4 and so on up to 0.9, or ten #ranks - deciles. 
-stargazer(quantile(A), type = "text", probs = seq(.1, .9, by = .1))
+
+quantile((A), probs = seq(.1, .9, by = .1))
+
+quantile((A), probs = seq(.2, .8, by = .2))
+
+quantile((A), probs = seq(.05, .95, by = .05))
 
 cat('\n') #\n is the code for inserting a blank line
 cat('Company B: Deciles')
@@ -181,6 +188,9 @@ stargazer(quantile(A, probs = c(.01,.99)), type = "text")
 
 cat('Top and bottom 1% salaries at Company B')
 stargazer(quantile(B, probs = c(.01,.99)), type = "text")
+
+quantile(B, probs = c(.05,.95))
+
 ```
 
 $$\\[4in]$$
@@ -190,7 +200,10 @@ Don't forget we can also get several summary statistics that include the quartil
 
 ```{r}
 cat('Company A Summary')
+
 #stargazer(summary(A), type = "text")
+
+
 summary(A)
 
 cat('\n') #\n is the code for inserting a blank line

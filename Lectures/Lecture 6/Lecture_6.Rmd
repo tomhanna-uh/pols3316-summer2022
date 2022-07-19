@@ -1,8 +1,9 @@
 ---
-title: 'Lecture : Probabilities and Sets (POLS 3316 - Statistics
-  for Political Scientists)'
+title: 'Lecture : Probabilities and Sets (POLS 3316 - Statistics for Political Scientists)'
 author: "Tom Hanna"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ## Plan for Today - Thursday
@@ -97,11 +98,13 @@ $$\\[4in]$$
 + $s^c$ = {5,6,9,10}
 
 Example 2:
+
 + S = {5,6,7,8,9,10}
 + s = $\emptyset$ 
 + $s^c$ = {5,6,7,8,9,10}
 
 Try this:
+
 + S = {5,6,7,8,9,10}
 + s = {6,7,8,9,10}
 + $s^c$ = 
@@ -118,22 +121,23 @@ Example 1:
 
 + A = {1,2,3,4,5,6}
 + B = {5,6,7,8,9,10}
-+ A $cup$ B = {1,2,3,4,5,6,7,8,9,10}
++ A $\cup$ B = {1,2,3,4,5,6,7,8,9,10}
 + A $\cap% B = [5,6]
 
 Example 2:
+
 + A = {1,2,3,4,5,6,7,8,9}
 + B = {10}
-+ A $cup$ B = {1,2,3,4,5,6,7,8,9,10}
-+ A $cap$ B = ______
++ A $\cup$ B = {1,2,3,4,5,6,7,8,9,10}
++ A $\cap$ B = ______
 
 Example 3:
 
-A = {1,2,3,4,5,6}
-B = {7,8,9}
-C = {10}
-D = B $cup$ C 
-A $\cup$ D = 
++ A = {1,2,3,4,5,6}
++ B = {7,8,9}
++ C = {10}
++ D = B $\cup$ C 
++ A $\cup$ D = 
 
 $$\\[4in]$$
 ### Probability assumptions and rules
@@ -146,20 +150,21 @@ $$\\[4in]$$
 + For two mutually exclusive sets, the probability of the union of the sets is the sum of their probabilities
 $$\\[4in]$$
 ### Probabilities of opposites
-S = {1,2,3,4,5,6,7,8,9,10}
+
++ S = {1,2,3,4,5,6,7,8,9,10}
 + A = {1,2,3,4,5}
 + B = {6,7,8,9,10}
 
 A & B are opposites and complements. 
 
-P(A) = 5 / 10 
-P(B) = 1 - (5 / 10) = 5 / 10
++ P(A) = 5 / 10 
++ P(B) = 1 - (5 / 10) = 5 / 10
 
 ### Example 2
 
-S = {Heads, Tails}
-P(Heads) = 1 / 2
-P(Tails) = 1 - P(Heads) = 1 / 2
++ S = {Heads, Tails}
++ P(Heads) = 1 / 2
++ P(Tails) = 1 - P(Heads) = 1 / 2
 
 $$\\[4in]$$
 Example of mutually exclusive sets: 

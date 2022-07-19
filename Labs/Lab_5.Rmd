@@ -1,0 +1,78 @@
+---
+title: "Lab 5: July 19"
+author: "POLS 3316, Summer 2022, University of Houston, Instructor: Tom Hanna"
+output: html_notebook
+---
+
+## Probability and set examples
+**For some of these, you should just set up the problems, describe the sets, etc.**
+**The code to make the symbols is:**
+
++ Union - $\cup$ : ````{verbatim} $\cup$ ````
++ Intercept - $\cap$ : ````{verbatim} $\cap $ ````
++ s complement - $s^c$ : ````{verbatim} $s^c $ ````
++ fractions $\frac{possible_A}{all \; possible \; outcomes}$ : ````{verbatim} $\frac{possible_A}{all \; possible \; outcomes}$ ````
++ fractions - $\frac{1}{2}$ : ```` $\frac{1}{2}$ ````
++ element - $\in$ : ````{verbatim} $\in$ ````
++ empty set - $\emptyset$ : ````{verbatim} $\emptyset$ ````
+
+Examples:
+
+1. Given the following fill in the blanks:
+
++ S = {5,10,15,20,25}
++ s = {5}
++ $s^c$ = _____________________
+
+2. Given the following fill in the blanks:
+
++ S = {HH,HT,TH,TT}
++ A = {HH}
++ $A^c$ = _______
++ P{A} = _______
+
+3. Given the following fill in the blanks:
+
++ D = {A,B,C,D,E}
++ E = {D,E}
++ D $\cup$ E = ______
++ D $\cap$ E = ______
+
+4. Given the following fill in the blanks:
+
+S = {A,B,C,D,E,F,G,H}
++ A = {A}
++ B = {C,D,E}
++ P(A) = 1 / 8
++ P(B) = _____
++ P(A $\cup$ B) = _________
+
+5. What is the sample space for a coin toss? (Use H and T)
+
+6. What is the sample space for a roll of a six sided die? (use numbers)
+
+6a. Write a set B containing even rolls of a six sided die.
+
+6b. Write a set A that is the complement of set B.
+
+6c. Are sets A and B mutually exclusive?
+
+6d. What is the probability of an even roll (set B)?
+
+6e. Using the probability of set B, what is the probability of its opposite (set A)? (In other words, do the math with the formula for finding A from its opposite, not just computing it directly.)
+
+7. What is the sample space for 2 rolls of a six sided die? (Show pairs like this 1-1,1-2, etc...)
+
+7a. How many ways are there two get two sixes?
+
+7b. How many ways are there to get a total of 9?
+
+7c. How many ways are there to get a total of 4?
+
+7d. How many elements are in the sample space?
+
+7e. What is the probability of rolling a 4?
+
+
+
+

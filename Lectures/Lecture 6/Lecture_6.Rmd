@@ -13,6 +13,7 @@ output: html_notebook
 + Lab today - Probability practice - using math operations
 + Lab tomorrow - Probability using R frequency distribution functions
 + Expectations for today: Understand how probability applies to the study of political (or any) science. Understand basic assumptions/rules about probability. Be able to do relatively simple probability computations by hand and in R. 
++ Midterm will included everything through Thursday as regular questions. There may be bonus questions from Friday and Monday material. 
 
 $$\\[5in]$$
 

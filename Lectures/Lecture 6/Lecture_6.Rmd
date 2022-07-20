@@ -40,6 +40,8 @@ $$\\[4in]$$
 
 P(A) = $\frac{possible_A}{all \; possible \; outcomes}$
 
+This is often phrased as ratio of "favorable outcomes" to possible outcomes, where favorable means outcomes where A occurs.
+
 Example: Coin flip
 
 The ratio of heads in a coin flip (1) to the whole number of cases possible (heads (1) + tails (1) = 2).
@@ -191,18 +193,3 @@ What if:
 + P(B $\cap$ A) = 2 / 10
 
 $$\\[4in]$$
-### Independence
-
-+ For now, problems will assume independence unless explicitly specified
-+ Non-independent (conditional) events are covered by Bayes Rule
-+ You don't have to worry about Bayes Rule for now except to understand that it exists and applies to non-independent events
-+ Independent events are unrelated
-+ If learning the probability of one event (A) doesn't affect the probability of the other event (B), they are independent
-+ Example: If I draw a number from a hat, then flip a coin the outcome of the draw doesn't affect the outcome of the coin flip.
-+ P(A $\cap$ B) = P(A)P(B) for independent events
-
-###
-Question: What if on a short answer test question, I ask: "Event A and Event B are not independent. How would you determine the conditional probability of event A given event B?" What would you answer?
-
-$$\\[4in]$$
-Answer: I would apply Bayes Rule. **OR** I would construct a sample space and determine the probabilities with set theory. (This is what Bayes actually does.)  

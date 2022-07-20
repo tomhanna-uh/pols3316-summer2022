@@ -12,7 +12,7 @@ output:
 + Problem Set 3 - uses data you pick
 + Labs about your data: Loading it, Applying today's functions to it
 + First data I get will be the example if possible: 1 outside data set and 1 built-in R dataset
-+ I'll need to know where to get the data and what variables you are interested in
++ I'll need to know where to get the data and what variables you are interested in  
 
 ### Recap
 

@@ -1,0 +1,107 @@
+---
+title: 'Lecture : Probabilities and Frequency Distributions - conclusion (POLS 3316 -
+  Statistics for Political Scientists)'
+author: "Tom Hanna"
+output:
+  html_document:
+    df_print: paged
+---
+
+### Probabilities and Frequence Distributions Conclusion
+
+### Other probability topics
+
+Question 14: I flip a fair coin ten times, the probability that coin comes up heads exactly five times is:
+
+**Let's look at a simpler example**
+
+Exactly 2 tails out of 3 flips:
+
+S = {TTT,TTH,THT,THH,HTT,HTH,HHT,HHH} - 8 possibilities
+Possible ways it we can get exactly two tails
+A = {TTH,THT,HTT} - 3 favorable
+P(A) = 3/8
+
+If we wanted **at least two tails**:
+B = {TTT,TTH,THT,HTT}
+P(B) = 4/8 = 1/2
+
+**For bigger numbers this is too cumbersome to do by hand**
+
+$$\\[4in]$$
+
+There are 10 flips, each with two possible outcomes. which means there are $2^{10}$ possible outcomes. The number of favorable possibilities is the *combinations* that can result in 5 heads, found with the combinations formula for $\binom{n}{r}$ or $\binom{10}{5}$
+
+
++ Permutations: Order matters
++ With repetition - number possible: $n^r$
++ Without repetition - Number possible: $\frac{n!}{(n − r)!}$
++ Combinations: Order doesn't matter
++ Number possible: $\binom{n}{r}$  = \frac{n!}{r!(n − r)!}$ 
+
+
+$$\\[4in]$$
+
+**That yields this cumbersome formula:**
+
+$\frac{10!}{(5!)^2 * 2^{10}}$
+
+This can be rewritten as this:
+
+$\frac{10*9*8*7*6*5*4*3*2*1}{(5*4*3*2*1)*(5*4*3*2*1)*2^{10}}$
+
+which simplifies to 
+
+$\frac{10*9*8*7*6}{(5*4*3*2*1)*2^{10}}$
+
+```{r}
+(10*9*8*7*6*5*4*3*2*1)/((5*4*3*2*1)^2 * 2^10)
+
+(10*9*8*7*6)/((5*4*3*2*1)*2^10)
+```
+$$\\[4in]$$
+
+ **If you see a test question on this, I would expect you to be able to:**
+ 
+ + Identify if there is a combination vs permutation
+ + Identify if it is with or without repetition
+ + Complete a very simple example using sets, i.e. exactly 2 tails out of 3 flips.
+ + Set up the problem without completing it. For example you might answer: 
+ 
+        + Narrative: The answer to this problem would be figured by dividing the combination 10 choose 5 by the number of possible outcomes, which is 2 to the tenth power
+        + Formula: $\frac{\binom{n}{r}}{2^{10}}$ 
+        + Narrative: The favorable outcomes are a combination choosing 5 from 10 and the possible outcomes are $2^10$
+        + Narrative: I would use a combination to find the favorable outcomes and use 2^10 as the total possible outcomes
+ + Solving a *permutation* question may be bonus material
+
+
+
+If you would like to have more fun with this or if you intend to take the GRE, here are some sources.
+
+[https://www.mathsisfun.com/combinatorics/combinations-permutations.html](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
+
+[https://statisticsbyjim.com/probability/permutations-probabilities/](https://statisticsbyjim.com/probability/permutations-probabilities/)
+
+[https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb)
+
+$$\\[4in]$$
+
+### Types of variables
+
++ Continuous - numbers with decimal places
++ Discrete - whole numbers or integers
++ Categorical - numbers just represent categories
+
+        + Ordinal - ordered highest to lowest
+        + Nominal - no particular order
+        
+
+$$\\[4in]$$
+
+### Probability Distributions
+
++ Probability mass function - discrete variables
+
++ Probability density function - continuous variables
+
++ Cumulative distribution function

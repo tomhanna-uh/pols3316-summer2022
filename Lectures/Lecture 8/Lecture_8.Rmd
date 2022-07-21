@@ -7,6 +7,24 @@ output:
     df_print: paged
 ---
 
+### Announcements
+
++ Grading - quiz and problem sets
++ Lab changes
+
+        + More hands on
+        + More real data including yours
+        + Actually trying things *you* ask about             + This will require using the help files or searching for answers
+        + There will be more technical issues
+        + Some things may require overnight research
+        
++ 
+
+        
++ 
+
+
+
 ### Probabilities and Frequence Distributions Conclusion
 
 ### Other probability topics
@@ -98,10 +116,68 @@ $$\\[4in]$$
 
 $$\\[4in]$$
 
-### Probability Distributions
+### Probability Distribution Functions
 
-+ Probability mass function - discrete variables
++ Two meanings of function - both apply
 
-+ Probability density function - continuous variables
+        + Mathematical "function" - a mathematical operation or equation - *f(x)* or *g(x)*
+        + R "function" - sets of instructions - mean(x) + pnorm(x)
+        
++ Probability mass function (PMF) - discrete variables
++ Probability density function (PDF) - continuous variables
 
-+ Cumulative distribution function
+        + Both have the same objective
+        + Probability a random variable is exactly equal to some specific value
+        + PDF can not give a specific value 
+        + PDF - integral over a range (calculus)
+        + R does the PDF for us - *dnorm()* for normal, *dbinom()* for binomial, *dpois()* for Poisson and 17 or so others...
+
+
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
+#This code is to generate the data for the two plots
+rand.norma<- rnorm(100000)
+
+# calculate CDF 
+CDF <- ecdf(rand.norma)
+
+#This code draws the two plots, first the Red Histogram then the #Cumulative Distribution plot
+#the xaxp=c(-4,4,16)  argument sets the x-axis tick marks to run from -4 to 4 and to have a total of 16 tick marks 
+
+hist(rand.norma, breaks = 200, freq = TRUE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+hist(rand.norma, breaks = 200, freq = FALSE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+```
+$$\\[4in]$$
++ Cumulative distribution function (CDF)
+
+        + Gives the probability of finding the random variable at a value less than or equal to a a specific point. 
+        + R does the CDF for us *pnorm()* for normal, *pbinom()* for binomial, *punif()* for uniform and 17 or so others.
+        
+```{r, figures-sideb, fig.show="hold", out.width="50%", echo=FALSE}
+
+#This code draws the two plots, first the Red Histogram then the #Cumulative Distribution plot
+#the xaxp=c(-4,4,16)  argument sets the x-axis tick marks to run from -4 to 4 and to have a total of 16 tick marks 
+
+hist(rand.norma, breaks = 200, freq = FALSE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+plot(CDF, main = "Cumulative Distribution Function \n normal dist, sd = 1, 100,000 random draws")
+
+```
+
+** Related R functions
+
++ Similar commands for other distributions than normal
++ Quantiles (percentiles, deciles, etc.) - qnorm()
+
+        + Works the opposite of pnorm() 
+        + pnorm() tells us the probability for a value
+        + qnorm() tells us the value for a probability
+        
++ Random number generation - rnorm()
+
+        + Generates *n* random numbers from a normal distribution
+        + The more we create the more that it will look like that bell curve 
+        + **The Law of Large Numbers**
+        

@@ -115,6 +115,21 @@ $$\\[4in]$$
         
 
 $$\\[4in]$$
+### Correlations
+
++ What is it?
++ 1 is perfect positive correlation
+
+        + It doesn't mean you just multiply times 1 and get the other
+        + The relationship can be complex
+        + It just means there is no variation at all in the relationship
+        
++ 0 is perfectly uncorrelated
++ -1 is a perfect negative correlation
++ Many ways to figure it. Probably the most common is Pearson's Correlation Coefficient:
+
+![Pearson's Correlation Formula](pearson.jpg)
++ This is the default method when using the *cor()* function in R
 
 ### Probability Distribution Functions
 

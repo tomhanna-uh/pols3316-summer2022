@@ -95,7 +95,7 @@ twothou_flips <- rbinom(2000,1,.5)
 tenthous_flips <- rbinom(10000,1,.5)
 twfithou_flips <- rbinom(25000,1,.5)
 threethou_flips <- rbinom(3000,1,.5)
-mil_flips <- rbinom(1000000,1,.5)
+
 
 a <- mean(single_flip)
 g <- mean(two_flips)
@@ -119,7 +119,7 @@ plot(df$number_flipped,df$means, ylim = c(0,1))
 abline(h = 0.5)
 
 mean(twfithou_flips)
-mean(mil_flips)
+
 ```
 
     

@@ -1771,6 +1771,32 @@ Instructor: Tom Hanna</h4>
 
 
 <!-- rnb-text-begin -->
+<p>Quiz and Problem Set Notes:</p>
+<p>First: getting updated copies of Labs and Lectures in R Studio Cloud,
+then some general notes, then the quiz part of yesterday’s lab.</p>
+<p>object - something that is created and named that R can perform
+operations on. Once we create it, we can ask R to perform operations on
+it just by using the name. Examples are vectors, dataframes, and
+functions. Exception: If the Environment is cleared or you start a new
+session. In this case, you may need to rerun the code stored in the
+script, notebook, or markdown file.</p>
+<p>Environment (sometimes Global Environment) - this is the place where
+objects you create are stored. You can see a list of the Environment
+contents in the right quarter of the screen in R Studio.</p>
+<p>Types of objects: vectors, scalars, matrices including dataframes,
+functions, models, and others</p>
+<p>Loading data: the command to load a CSV file is read.csv() . I’ve
+been using it with a function called “here” in order to load data from a
+separate data directory. If the data is in your main project directory,
+you don’t need here(). All you’ll need is something like this:</p>
+<p>my_data &lt;- read.csv(“the_actual_data_file_name.csv”)</p>
+<p>Once you run that, my_data is now an object that you can call by
+name.</p>
+<p>Now, if you want to pull a particular variable out of that dataframe,
+you have to know its name, too.</p>
+<p>For example, if I want to call the variable my_variable from my_data
+I use the $ like this</p>
+<p>my_data$my_variable</p>
 <div id="part-i-loops" class="section level2">
 <h2>Part I: Loops</h2>
 <p>Loops are funtions, or sets of instructions, which tell the computer
@@ -1789,30 +1815,46 @@ be very powerful. Today we are going to cover basic simple, unnested
 move to the next in the range:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2kgaXMgYW4gaW5kZXggdGhhdCBSIHVzZXMgdG8gdHJhY2sgd2hlcmUgaXQgaXMgaW4gdGhlIGxvb3BcbiNpIGluY3JlYXNlcyBieSAxIG9uIGVhY2ggcGFzcyB1bnRpbCBpdCByZWFjaGVzIHRoZSBlbmQgb2YgdGhlIHJhbmdlXG4jMTo1IGlzIHRoZSByYW5nZS4gVGhlIGxvb3Agc3RhcnRzIGF0IGkgPSAxIGFuZCBydW5zIHVudGlsIGkgPSA1XG4jQWxsIHRoaXMgbG9vcCBkb2VzIGlzIHByaW50IHRoZSB2YWx1ZSBvZiBpXG5mb3IgKGkgaW4gMTo1KSB7XG4gIHByaW50KGkpXG59XG5gYGAifQ== -->
-<pre class="r"><code>#i is an index that R uses to track where it is in the loop
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI2kgaXMgYW4gaW5kZXggdGhhdCBSIHVzZXMgdG8gdHJhY2sgd2hlcmUgaXQgaXMgaW4gdGhlIGxvb3BcbiNpIGluY3JlYXNlcyBieSAxIG9uIGVhY2ggcGFzcyB1bnRpbCBpdCByZWFjaGVzIHRoZSBlbmQgb2YgdGhlIHJhbmdlXG4jMTo1IGlzIHRoZSByYW5nZS4gVGhlIGxvb3Agc3RhcnRzIGF0IGkgPSAxIGFuZCBydW5zIHVudGlsIGkgPSA1XG4jQWxsIHRoaXMgbG9vcCBkb2VzIGlzIHByaW50IHRoZSB2YWx1ZSBvZiBpXG5mb3IgKGkgaW4gMTo1KSB7XG4gIHByaW50KGkpXG59XG5gYGBcbmBgYCJ9 -->
+<pre class="r"><code>```r
+#i is an index that R uses to track where it is in the loop
 #i increases by 1 on each pass until it reaches the end of the range
 #1:5 is the range. The loop starts at i = 1 and runs until i = 5
 #All this loop does is print the value of i
 for (i in 1:5) {
   print(i)
 }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSAyXG5bMV0gM1xuWzFdIDRcblsxXSA1XG4ifQ== -->
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>You can also use a loop to perform vector operations. For
-example:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2ZpcnN0LCB3ZSBuZWVkIGEgdmVjdG9yIHRvIG9wZXJhdGUgb25cblxubXlfdmVjdG9yIDwtIGMoMSwyLDMsNCw1KVxuXG4jYW5kIGEgc2Vjb25kIHZlY3RvciB0byBnZXQgdGhlIG91dHB1dFxubXlfdmVjdG9yMiA8LSBjKClcblxuZm9yIChpIGluIDE6NSkge1xuICBteV92ZWN0b3IyIDwtIGMobXlfdmVjdG9yMixteV92ZWN0b3IgKiBpKVxufVxucHJpbnQobXlfdmVjdG9yMilcbmBgYCJ9 -->
-<pre class="r"><code>#first, we need a vector to operate on
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSAyXG5bMV0gM1xuWzFdIDRcblsxXSA1XG4ifQ== --&gt;
+</code></pre>
+<p>[1] 1 [1] 2 [1] 3 [1] 4 [1] 5</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+You can also use a loop to perform vector operations. For example:
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI2ZpcnN0LCB3ZSBuZWVkIGEgdmVjdG9yIHRvIG9wZXJhdGUgb25cblxubXlfdmVjdG9yIDwtIGMoMSwyLDMsNCw1KVxuXG4jYW5kIGEgc2Vjb25kIHZlY3RvciB0byBnZXQgdGhlIG91dHB1dFxubXlfdmVjdG9yMiA8LSBjKClcblxuZm9yIChpIGluIDE6NSkge1xuICBteV92ZWN0b3IyIDwtIGMobXlfdmVjdG9yMixteV92ZWN0b3IgKiBpKVxufVxucHJpbnQobXlfdmVjdG9yMilcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+#first, we need a vector to operate on
 
 my_vector &lt;- c(1,2,3,4,5)
 
@@ -1823,235 +1865,276 @@ for (i in 1:5) {
   my_vector2 &lt;- c(my_vector2,my_vector * i)
 }
 print(my_vector2)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgMiAgNCAgNiAgOCAxMCAgMyAgNiAgOSAxMiAxNSAgNCAgOCAxMiAxNlxuWzIwXSAyMCAgNSAxMCAxNSAyMCAyNVxuIn0= -->
-<pre><code> [1]  1  2  3  4  5  2  4  6  8 10  3  6  9 12 15  4  8 12 16
-[20] 20  5 10 15 20 25</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>And we can loop through elements in a dataframe:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2ZpcnN0IHdlIG5lZWQgc29tZSBkYXRhXG5saWJyYXJ5KGhlcmUpICMgbG9hZCB0aGUgaGVyZSBsaWJyYXJ5XG4jY3JlYXRlIG9qYmVjdCBnb3RkYXRhIGFuZCBoYXZlIHJlYWQuY3N2IGxvYWQgdGhlIFxuIyNmaWxlIEdPVF9zY3JlZW50aW1lcy5jc3YgaW4gZGF0YSBzdWJkaXJlY3RvcnlcbmdvdGRhdGEgPC0gcmVhZC5jc3YoaGVyZShcImRhdGFcIixcIkdPVF9zY3JlZW50aW1lcy5jc3ZcIikpIFxuXG5mb3IgKG5hbWUgaW4gZ290ZGF0YSkge1xuICAgICAgICBDaGFyYWN0ZXIgPC0gKGdvdGRhdGEkbmFtZSlcbiAgICAgICAgQWN0b3IgPC0gKGdvdGRhdGEkcG9ydHJheWVkX2J5X25hbWUpXG59XG5uZXdfZGYgPC0gZGF0YS5mcmFtZShBY3RvcixDaGFyYWN0ZXIpXG5wbGF5ZWRfYnkgPC0gXCIgd2FzIHBsYXllZF9ieSBcIlxuXG5mb3IgKGkgaW4gMToxOTEpIHtcbiAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksbmV3X2RmJEFjdG9yW2ldKSBcbiAgICAgIHByaW50KG50aClcbn1cbmBgYCJ9 -->
-<pre class="r"><code>#first we need some data
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgMiAgNCAgNiAgOCAxMCAgMyAgNiAgOSAxMiAxNSAgNCAgOCAxMiAxNlxuWzIwXSAyMCAgNSAxMCAxNSAyMCAyNVxuIn0= --&gt;
+</code></pre>
+<p>[1] 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 [20] 20 5 10 15 20
+25</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+And we can loop through elements in a dataframe:
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI2ZpcnN0IHdlIG5lZWQgc29tZSBkYXRhXG5saWJyYXJ5KGhlcmUpICMgbG9hZCB0aGUgaGVyZSBsaWJyYXJ5XG4jY3JlYXRlIG9qYmVjdCBnb3RkYXRhIGFuZCBoYXZlIHJlYWQuY3N2IGxvYWQgdGhlIFxuIyNmaWxlIEdPVF9zY3JlZW50aW1lcy5jc3YgaW4gZGF0YSBzdWJkaXJlY3RvcnlcbmdvdGRhdGEgPC0gcmVhZC5jc3YoaGVyZShcXGRhdGFcXCxcXEdPVF9zY3JlZW50aW1lcy5jc3ZcXCkpIFxuXG5mb3IgKG5hbWUgaW4gZ290ZGF0YSkge1xuICAgICAgICBDaGFyYWN0ZXIgPC0gKGdvdGRhdGEkbmFtZSlcbiAgICAgICAgQWN0b3IgPC0gKGdvdGRhdGEkcG9ydHJheWVkX2J5X25hbWUpXG59XG5uZXdfZGYgPC0gZGF0YS5mcmFtZShBY3RvcixDaGFyYWN0ZXIpXG5wbGF5ZWRfYnkgPC0gXFwgd2FzIHBsYXllZF9ieSBcXFxuXG5mb3IgKGkgaW4gMToxOTEpIHtcbiAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksbmV3X2RmJEFjdG9yW2ldKSBcbiAgICAgIHByaW50KG50aClcbn1cbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+#first we need some data
 library(here) # load the here library
 #create ojbect gotdata and have read.csv load the 
 ##file GOT_screentimes.csv in data subdirectory
-gotdata &lt;- read.csv(here(&quot;data&quot;,&quot;GOT_screentimes.csv&quot;)) 
+gotdata &lt;- read.csv(here(\data\,\GOT_screentimes.csv\)) 
 
 for (name in gotdata) {
         Character &lt;- (gotdata$name)
         Actor &lt;- (gotdata$portrayed_by_name)
 }
 new_df &lt;- data.frame(Actor,Character)
-played_by &lt;- &quot; was played_by &quot;
+played_by &lt;- \ was played_by \
 
 for (i in 1:191) {
       nth &lt;- paste0(new_df$Character[i],played_by,new_df$Actor[i]) 
       print(nth)
 }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVHlyaW9uIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IFBldGVyIERpbmtsYWdlXCJcblsxXSBcIkpvbiBTbm93IHdhcyBwbGF5ZWRfYnkgS2l0IEhhcmluZ3RvblwiXG5bMV0gXCJEYWVuZXJ5cyBUYXJnYXJ5ZW4gd2FzIHBsYXllZF9ieSBFbWlsaWEgQ2xhcmtlXCJcblsxXSBcIkNlcnNlaSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBMZW5hIEhlYWRleVwiXG5bMV0gXCJTYW5zYSBTdGFyayB3YXMgcGxheWVkX2J5IFNvcGhpZSBUdXJuZXJcIlxuWzFdIFwiQXJ5YSBTdGFyayB3YXMgcGxheWVkX2J5IE1haXNpZSBXaWxsaWFtc1wiXG5bMV0gXCJKYWltZSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBOaWtvbGFqIENvc3Rlci1XYWxkYXVcIlxuWzFdIFwiVGhlb24gR3JleWpveSB3YXMgcGxheWVkX2J5IEFsZmllIEFsbGVuXCJcblsxXSBcIlNhbXdlbGwgVGFybHkgd2FzIHBsYXllZF9ieSBKb2huIEJyYWRsZXlcIlxuWzFdIFwiSm9yYWggTW9ybW9udCB3YXMgcGxheWVkX2J5IElhaW4gR2xlblwiXG5bMV0gXCJQZXR5ciAnTGl0dGxlZmluZ2VyJyBCYWVsaXNoIHdhcyBwbGF5ZWRfYnkgQWlkYW4gR2lsbGVuXCJcblsxXSBcIkVkZGFyZCAnTmVkJyBTdGFyayB3YXMgcGxheWVkX2J5IFNlYW4gQmVhblwiXG5bMV0gXCJCcmllbm5lIG9mIFRhcnRoIHdhcyBwbGF5ZWRfYnkgR3dlbmRvbGluZSBDaHJpc3RpZVwiXG5bMV0gXCJEYXZvcyBTZWF3b3J0aCB3YXMgcGxheWVkX2J5IExpYW0gQ3VubmluZ2hhbVwiXG5bMV0gXCJCcmFuIFN0YXJrIHdhcyBwbGF5ZWRfYnkgSXNhYWMgSGVtcHN0ZWFkIFdyaWdodFwiXG5bMV0gXCJDYXRlbHluIFN0YXJrIHdhcyBwbGF5ZWRfYnkgTWljaGVsbGUgRmFpcmxleVwiXG5bMV0gXCJMb3JkIFZhcnlzIHdhcyBwbGF5ZWRfYnkgQ29ubGV0aCBIaWxsXCJcblsxXSBcIlR5d2luIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IENoYXJsZXMgRGFuY2VcIlxuWzFdIFwiTWFyZ2FlcnkgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgTmF0YWxpZSBEb3JtZXJcIlxuWzFdIFwiUm9iYiBTdGFyayB3YXMgcGxheWVkX2J5IFJpY2hhcmQgTWFkZGVuXCJcblsxXSBcIlN0YW5uaXMgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU3RlcGhlbiBEaWxsYW5lXCJcblsxXSBcIlNhbmRvciAnVGhlIEhvdW5kJyBDbGVnYW5lIHdhcyBwbGF5ZWRfYnkgUm9yeSBNY0Nhbm5cIlxuWzFdIFwiSm9mZnJleSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBKYWNrIEdsZWVzb25cIlxuWzFdIFwiUmFtc2F5IEJvbHRvbiB3YXMgcGxheWVkX2J5IEl3YW4gUmhlb25cIlxuWzFdIFwiTWVsaXNhbmRyZSB3YXMgcGxheWVkX2J5IENhcmljZSB2YW4gSG91dGVuXCJcblsxXSBcIkJyb25uIHdhcyBwbGF5ZWRfYnkgSmVyb21lIEZseW5uXCJcblsxXSBcIkdpbGx5IHdhcyBwbGF5ZWRfYnkgSGFubmFoIE11cnJheVwiXG5bMV0gXCJZZ3JpdHRlIHdhcyBwbGF5ZWRfYnkgUm9zZSBMZXNsaWVcIlxuWzFdIFwiU2hhZSB3YXMgcGxheWVkX2J5IFNpYmVsIEtla2lsbGlcIlxuWzFdIFwiRGFhcmlvIE5haGFyaXMgd2FzIHBsYXllZF9ieSBFZCBTa3JlaW5cIlxuWzFdIFwiTWlzc2FuZGVpIHdhcyBwbGF5ZWRfYnkgTmF0aGFsaWUgRW1tYW51ZWxcIlxuWzFdIFwiVG9tbWVuIEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IENhbGx1bSBXaGFycnlcIlxuWzFdIFwiVG9ybXVuZCBHaWFudHNiYW5lIHdhcyBwbGF5ZWRfYnkgS3Jpc3RvZmVyIEhpdmp1XCJcblsxXSBcIlBvZHJpY2sgUGF5bmUgd2FzIHBsYXllZF9ieSBEYW5pZWwgUG9ydG1hblwiXG5bMV0gXCJPbGVubmEgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgRGlhbmEgUmlnZ1wiXG5bMV0gXCJIaWdoIFNwYXJyb3cgd2FzIHBsYXllZF9ieSBKb25hdGhhbiBQcnljZVwiXG5bMV0gXCJCYXJyaXN0YW4gU2VsbXkgd2FzIHBsYXllZF9ieSBJYW4gTWNFbGhpbm5leVwiXG5bMV0gXCJHcmFuZCBNYWVzdGVyIFB5Y2VsbGUgd2FzIHBsYXllZF9ieSBKdWxpYW4gR2xvdmVyXCJcblsxXSBcIkxvcmFzIFR5cmVsbCB3YXMgcGxheWVkX2J5IEZpbm4gSm9uZXNcIlxuWzFdIFwiR3JleSBXb3JtIHdhcyBwbGF5ZWRfYnkgSmFjb2IgQW5kZXJzb25cIlxuWzFdIFwiVGFsaXNhIE1hZWd5ciB3YXMgcGxheWVkX2J5IE9vbmEgQ2hhcGxpblwiXG5bMV0gXCJSb2JlcnQgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgTWFyayBBZGR5XCJcblsxXSBcIlJvb3NlIEJvbHRvbiB3YXMgcGxheWVkX2J5IE1pY2hhZWwgTWNFbGhhdHRvblwiXG5bMV0gXCJPc2hhIHdhcyBwbGF5ZWRfYnkgTmF0YWxpYSBUZW5hXCJcblsxXSBcIkVkZGlzb24gVG9sbGV0dCB3YXMgcGxheWVkX2J5IEJlbiBDcm9tcHRvblwiXG5bMV0gXCJIb2RvciB3YXMgcGxheWVkX2J5IEtyaXN0aWFuIE5haXJuXCJcblsxXSBcIkdlbmRyeSB3YXMgcGxheWVkX2J5IEpvZSBEZW1wc2llXCJcblsxXSBcIk9iZXJ5biBNYXJ0ZWxsIHdhcyBwbGF5ZWRfYnkgUGVkcm8gUGFzY2FsXCJcblsxXSBcIllhcmEgR3JleWpveSB3YXMgcGxheWVkX2J5IEdlbW1hIFdoZWxhblwiXG5bMV0gXCJNZWVyYSBSZWVkIHdhcyBwbGF5ZWRfYnkgRWxsaWUgS2VuZHJpY2tcIlxuWzFdIFwiSmFxZW4gSCdnaGFyIHdhcyBwbGF5ZWRfYnkgVG9tIFdsYXNjaGloYVwiXG5bMV0gXCJBbGxpc2VyIFRob3JuZSB3YXMgcGxheWVkX2J5IE93ZW4gVGVhbGVcIlxuWzFdIFwiS2hhbCBEcm9nbyB3YXMgcGxheWVkX2J5IEphc29uIE1vbW9hXCJcblsxXSBcIlJlbmx5IEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IEdldGhpbiBBbnRob255XCJcblsxXSBcIk1hZXN0ZXIgTHV3aW4gd2FzIHBsYXllZF9ieSBEb25hbGQgU3VtcHRlclwiXG5bMV0gXCJSb3Mgd2FzIHBsYXllZF9ieSBFc23DqSBCaWFuY29cIlxuWzFdIFwiR3Jlbm4gd2FzIHBsYXllZF9ieSBNYXJrIFN0YW5sZXlcIlxuWzFdIFwiTWFuY2UgUmF5ZGVyIHdhcyBwbGF5ZWRfYnkgQ2lhcsOhbiBIaW5kc1wiXG5bMV0gXCJKZW9yIE1vcm1vbnQgd2FzIHBsYXllZF9ieSBKYW1lcyBDb3Ntb1wiXG5bMV0gXCJWaXNlcnlzIFRhcmdhcnllbiB3YXMgcGxheWVkX2J5IEhhcnJ5IExsb3lkXCJcblsxXSBcIlF5YnVybiB3YXMgcGxheWVkX2J5IEFudG9uIExlc3NlclwiXG5bMV0gXCJKb2plbiBSZWVkIHdhcyBwbGF5ZWRfYnkgVGhvbWFzIEJyb2RpZS1TYW5nc3RlclwiXG5bMV0gXCJNYWVzdGVyIEFlbW9uIHdhcyBwbGF5ZWRfYnkgUGV0ZXIgVmF1Z2hhblwiXG5bMV0gXCJFbGxhcmlhIFNhbmQgd2FzIHBsYXllZF9ieSBJbmRpcmEgVmFybWFcIlxuWzFdIFwiTGFuY2VsIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IEV1Z2VuZSBTaW1vblwiXG5bMV0gXCJTaGlyZWVuIEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IEtlcnJ5IEluZ3JhbVwiXG5bMV0gXCJFZG11cmUgVHVsbHkgd2FzIHBsYXllZF9ieSBUb2JpYXMgTWVuemllc1wiXG5bMV0gXCJHcmVnb3IgQ2xlZ2FuZSB3YXMgcGxheWVkX2J5IENvbmFuIFN0ZXZlbnNcIlxuWzFdIFwiTHlzYSBBcnJ5biB3YXMgcGxheWVkX2J5IEthdGUgRGlja2llXCJcblsxXSBcIk1lcnluIFRyYW50IHdhcyBwbGF5ZWRfYnkgSWFuIEJlYXR0aWVcIlxuWzFdIFwiQnJ5bmRlbiAnQmxhY2tmaXNoJyBUdWxseSB3YXMgcGxheWVkX2J5IENsaXZlIFJ1c3NlbGxcIlxuWzFdIFwiV2FsZGVyIEZyZXkgd2FzIHBsYXllZF9ieSBEYXZpZCBCcmFkbGV5XCJcblsxXSBcIlRob3JvcyBvZiBNeXIgd2FzIHBsYXllZF9ieSBQYXVsIEtheWVcIlxuWzFdIFwiSmFub3MgU2x5bnQgd2FzIHBsYXllZF9ieSBEb21pbmljIENhcnRlclwiXG5bMV0gXCJMb2NrZSB3YXMgcGxheWVkX2J5IE5vYWggVGF5bG9yXCJcblsxXSBcIk15cmFuZGEgd2FzIHBsYXllZF9ieSBDaGFybG90dGUgSG9wZVwiXG5bMV0gXCJSaWNrb24gU3Rhcmsgd2FzIHBsYXllZF9ieSBBcnQgUGFya2luc29uXCJcblsxXSBcIlJvZHJpayBDYXNzZWwgd2FzIHBsYXllZF9ieSBSb24gRG9uYWNoaWVcIlxuWzFdIFwiV2FpZiB3YXMgcGxheWVkX2J5IEZheWUgTWFyc2F5XCJcblsxXSBcIkhvdCBQaWUgd2FzIHBsYXllZF9ieSBCZW4gSGF3a2V5XCJcblsxXSBcIlJhc3Qgd2FzIHBsYXllZF9ieSBMdWtlIEJhcm5lc1wiXG5bMV0gXCJTZXB0YSBVbmVsbGEgd2FzIHBsYXllZF9ieSBIYW5uYWggV2FkZGluZ2hhbVwiXG5bMV0gXCJPbGx5IHdhcyBwbGF5ZWRfYnkgQnJlbm9jayBPJ0Nvbm5vclwiXG5bMV0gXCJEb3JlYWggd2FzIHBsYXllZF9ieSBSb3hhbm5lIE1jS2VlXCJcblsxXSBcIkJhbG9uIEdyZXlqb3kgd2FzIHBsYXllZF9ieSBQYXRyaWNrIE1hbGFoaWRlXCJcblsxXSBcIkJlbmplbiBTdGFyayB3YXMgcGxheWVkX2J5IEpvc2VwaCBNYXdsZVwiXG5bMV0gXCJQeXBhciB3YXMgcGxheWVkX2J5IEpvc2VmIEFsdGluXCJcblsxXSBcIllvcmVuIHdhcyBwbGF5ZWRfYnkgRnJhbmNpcyBNYWdlZVwiXG5bMV0gXCJNeXJjZWxsYSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBBaW1lZSBSaWNoYXJkc29uXCJcblsxXSBcIkhpemRhaHIgem8gTG9yYXEgd2FzIHBsYXllZF9ieSBKb2VsIEZyeVwiXG5bMV0gXCJNYWNlIFR5cmVsbCB3YXMgcGxheWVkX2J5IFJvZ2VyIEFzaHRvbi1HcmlmZml0aHNcIlxuWzFdIFwiUm9iaW4gQXJyeW4gd2FzIHBsYXllZF9ieSBMaW5vIEZhY2lvbGlcIlxuWzFdIFwiQmVyaWMgRG9uZGFycmlvbiB3YXMgcGxheWVkX2J5IERhdmlkIE1pY2hhZWwgU2NvdHRcIlxuWzFdIFwiS2FybCBUYW5uZXIgd2FzIHBsYXllZF9ieSBCdXJuIEdvcm1hblwiXG5bMV0gXCJTZWx5c2UgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU2FyYWggTWFjS2VldmVyXCJcblsxXSBcIlhhcm8gWGhvYW4gRGF4b3Mgd2FzIHBsYXllZF9ieSBOb25zbyBBbm96aWVcIlxuWzFdIFwiSXJyaSB3YXMgcGxheWVkX2J5IEFtcml0YSBBY2hhcmlhXCJcblsxXSBcIkxhZHkgQ3JhbmUgd2FzIHBsYXllZF9ieSBFc3NpZSBEYXZpc1wiXG5bMV0gXCJRaG9yaW4gSGFsZmhhbmQgd2FzIHBsYXllZF9ieSBTaW1vbiBBcm1zdHJvbmdcIlxuWzFdIFwiT3JlbGwgd2FzIHBsYXllZF9ieSBNYWNrZW56aWUgQ3Jvb2tcIlxuWzFdIFwiUmFraGFybyB3YXMgcGxheWVkX2J5IEVseWVzIEdhYmVsXCJcblsxXSBcIktldmFuIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IElhbiBHZWxkZXJcIlxuWzFdIFwiVHllbmUgU2FuZCB3YXMgcGxheWVkX2J5IFJvc2FiZWxsIExhdXJlbnRpIFNlbGxlcnNcIlxuWzFdIFwiT2x5dmFyIHdhcyBwbGF5ZWRfYnkgV2lsbCBUdWRvclwiXG5bMV0gXCJUaHJlZS1FeWVkIFJhdmVuIHdhcyBwbGF5ZWRfYnkgU3RydWFuIFJvZGdlclwiXG5bMV0gXCJBbHRvbiBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBLYXJsIERhdmllc1wiXG5bMV0gXCJZZXp6YW4gem8gUWFnZ2F6IHdhcyBwbGF5ZWRfYnkgRW56byBDaWxlbnRpXCJcblsxXSBcIkRvcmFuIE1hcnRlbGwgd2FzIHBsYXllZF9ieSBBbGV4YW5kZXIgU2lkZGlnXCJcblsxXSBcIk1pcnJpIE1heiBEdXVyIHdhcyBwbGF5ZWRfYnkgTWlhIFNvdGVyaW91XCJcblsxXSBcIld1biBXdW4gd2FzIHBsYXllZF9ieSBJYW4gV2h5dGVcIlxuWzFdIFwiU3lyaW8gRm9yZWwgd2FzIHBsYXllZF9ieSBNaWx0b3MgWWVyb2xlbW91XCJcblsxXSBcIk55bWVyaWEgU2FuZCB3YXMgcGxheWVkX2J5IEplc3NpY2EgSGVud2lja1wiXG5bMV0gXCJPYmFyYSBTYW5kIHdhcyBwbGF5ZWRfYnkgS2Vpc2hhIENhc3RsZS1IdWdoZXNcIlxuWzFdIFwiUmF6ZGFsIG1vIEVyYXogd2FzIHBsYXllZF9ieSBHZW9yZ2UgR2Vvcmdpb3VcIlxuWzFdIFwiRXVyb24gR3JleWpveSB3YXMgcGxheWVkX2J5IFBpbG91IEFzYsOma1wiXG5bMV0gXCJDcmFzdGVyIHdhcyBwbGF5ZWRfYnkgUm9iZXJ0IFB1Z2hcIlxuWzFdIFwiQnJvdGhlciBSYXkgd2FzIHBsYXllZF9ieSBJYW4gTWNTaGFuZVwiXG5bMV0gXCJNYXR0aG9zIFNlYXdvcnRoIHdhcyBwbGF5ZWRfYnkgS2VyciBMb2dhblwiXG5bMV0gXCJTYWxsYWRob3IgU2FhbiB3YXMgcGxheWVkX2J5IEx1Y2lhbiBNc2FtYXRpXCJcblsxXSBcIkpvcnkgQ2Fzc2VsIHdhcyBwbGF5ZWRfYnkgSmFtaWUgU2l2ZXNcIlxuWzFdIFwiT3RoZWxsIFlhcnd5Y2sgd2FzIHBsYXllZF9ieSBCcmlhbiBGb3J0dW5lXCJcblsxXSBcIldpbGwgd2FzIHBsYXllZF9ieSBCcm9uc29uIFdlYmJcIlxuWzFdIFwiU2VwdGEgTW9yZGFuZSB3YXMgcGxheWVkX2J5IFN1c2FuIEJyb3duXCJcblsxXSBcIlBvbGxpdmVyIHdhcyBwbGF5ZWRfYnkgQW5keSBLZWxsZWdoZXJcIlxuWzFdIFwiWW9obiBSb3ljZSB3YXMgcGxheWVkX2J5IFJ1cGVydCBWYW5zaXR0YXJ0XCJcblsxXSBcIktyYXpueXMgbW8gTmFrbG96IHdhcyBwbGF5ZWRfYnkgRGFuIEhpbGRlYnJhbmRcIlxuWzFdIFwiVGhlIE5pZ2h0J3MgS2luZyB3YXMgcGxheWVkX2J5IFJpY2hhcmQgQnJha2VcIlxuWzFdIFwiU3BpY2UgS2luZyB3YXMgcGxheWVkX2J5IE5pY2hvbGFzIEJsYW5lXCJcblsxXSBcIlN0eXIgd2FzIHBsYXllZF9ieSBZdXJpIEtvbG9rb2xuaWtvdlwiXG5bMV0gXCJEYWdtZXIgQ2xlZnRqYXcgd2FzIHBsYXllZF9ieSBSYWxwaCBJbmVzb25cIlxuWzFdIFwiS2hhbCBNb3JvIHdhcyBwbGF5ZWRfYnkgSm9zZXBoIE5hdWZhaHVcIlxuWzFdIFwiUmlja2FyZCBLYXJzdGFyayB3YXMgcGxheWVkX2J5IFN0ZXZlIEJsb3VudFwiXG5bMV0gXCJSYXR0bGVzaGlydCB3YXMgcGxheWVkX2J5IEVkd2FyZCBEb2dsaWFuaVwiXG5bMV0gXCJLYXJzaSB3YXMgcGxheWVkX2J5IEJpcmdpdHRlIEhqb3J0IFPDuHJlbnNlblwiXG5bMV0gXCJRb3RobyB3YXMgcGxheWVkX2J5IERhciBTYWxpbVwiXG5bMV0gXCJBcm1lY2Egd2FzIHBsYXllZF9ieSBTYWhhcmEgS25pdGVcIlxuWzFdIFwiQW5ndXkgd2FzIHBsYXllZF9ieSBQaGlsaXAgTWNHaW5sZXlcIlxuWzFdIFwiR3JlYXRqb24gVW1iZXIgd2FzIHBsYXllZF9ieSBDbGl2ZSBNYW50bGVcIlxuWzFdIFwiTG90aGFyIEZyZXkgd2FzIHBsYXllZF9ieSBUb20gQnJvb2tlXCJcblsxXSBcIlZhbGEgd2FzIHBsYXllZF9ieSBNZWVuYSBSYXlhbm5cIlxuWzFdIFwiU2hhZ2dhIHdhcyBwbGF5ZWRfYnkgTWFyayBMZXdpcyBKb25lc1wiXG5bMV0gXCJTZXIgRG9udG9zIEhvbGxhcmQgd2FzIHBsYXllZF9ieSBUb255IFdheVwiXG5bMV0gXCJCbGFjayBXYWxkZXIgUml2ZXJzIHdhcyBwbGF5ZWRfYnkgQnJ5YW4gTWNDYXVnaGVydHlcIlxuWzFdIFwiTHlhbm5hIE1vcm1vbnQgd2FzIHBsYXllZF9ieSBCZWxsYSBSYW1zZXlcIlxuWzFdIFwiTW9zc2Fkb3Igd2FzIHBsYXllZF9ieSBSZWVjZSBOb2lcIlxuWzFdIFwiUHlhdCBQcmVlIHdhcyBwbGF5ZWRfYnkgSWFuIEhhbm1vcmVcIlxuWzFdIFwiTGVhZiB3YXMgcGxheWVkX2J5IE9jdGF2aWEgU2VsZW5hIEFsZXhhbmRydVwiXG5bMV0gXCJXYWxkYSBCb2x0b24gd2FzIHBsYXllZF9ieSBFbGl6YWJldGggV2Vic3RlclwiXG5bMV0gXCJSYW5keWxsIFRhcmx5IHdhcyBwbGF5ZWRfYnkgSmFtZXMgRmF1bGtuZXJcIlxuWzFdIFwiTWFsa28gd2FzIHBsYXllZF9ieSBBZGV3YWxlIEFraW5udW95ZS1BZ2JhamVcIlxuWzFdIFwiVHJ5c3RhbmUgTWFydGVsbCB3YXMgcGxheWVkX2J5IFRvYnkgU2ViYXN0aWFuXCJcblsxXSBcIkFyZW8gSG90YWggd2FzIHBsYXllZF9ieSBEZW9iaWEgT3BhcmVpXCJcblsxXSBcIkFlcm9uIEdyZXlqb3kgd2FzIHBsYXllZF9ieSBNaWNoYWVsIEZlYXN0XCJcblsxXSBcIkxvYm9kYSB3YXMgcGxheWVkX2J5IFphY2hhcnkgQmFoYXJvdlwiXG5bMV0gXCJNZWxlc3NhIFRhcmx5IHdhcyBwbGF5ZWRfYnkgU2FtYW50aGEgU3Bpcm9cIlxuWzFdIFwiQW1vcnkgTG9yY2ggd2FzIHBsYXllZF9ieSBGaW50YW4gTWNLZW93blwiXG5bMV0gXCJJbGx5cmlvIE1vcGF0aXMgd2FzIHBsYXllZF9ieSBSb2dlciBBbGxhbVwiXG5bMV0gXCJTbWFsbGpvbiBVbWJlciB3YXMgcGxheWVkX2J5IERlYW4gUy4gSmFnZ2VyXCJcblsxXSBcIkJvd2VuIE1hcnNoIHdhcyBwbGF5ZWRfYnkgQnJpYW4gRm9ydHVuZVwiXG5bMV0gXCJUeWNobyBOZXN0b3JpcyB3YXMgcGxheWVkX2J5IE1hcmsgR2F0aXNzXCJcblsxXSBcIktvdmFycm8gd2FzIHBsYXllZF9ieSBTdGV2ZW4gQ29sZVwiXG5bMV0gXCJNYWVzdGVyIENyZXNzZW4gd2FzIHBsYXllZF9ieSBPbGl2ZXIgRm9yZCBEYXZpZXNcIlxuWzFdIFwiUm9iZXR0IEdsb3ZlciB3YXMgcGxheWVkX2J5IFRpbSBNY0lubmVybnlcIlxuWzFdIFwiSGFsbHluZSB3YXMgcGxheWVkX2J5IFJveSBEb3RyaWNlXCJcblsxXSBcIkhpZ2ggUHJpZXN0ZXNzIHdhcyBwbGF5ZWRfYnkgU291YWQgRmFyZXNzXCJcblsxXSBcIlZhcmRpcyBFZ2VuIHdhcyBwbGF5ZWRfYnkgQnJlbmRhbiBNY0Nvcm1hY2tcIlxuWzFdIFwiTWFyaWxsaW9uIHdhcyBwbGF5ZWRfYnkgRW11biBFbGxpb3R0XCJcblsxXSBcIk1lcm8gd2FzIHBsYXllZF9ieSBNYXJrIEtpbGxlZW5cIlxuWzFdIFwiTWFyZWkgd2FzIHBsYXllZF9ieSBKb3NlcGhpbmUgR2lsbGFuXCJcblsxXSBcIkl6ZW1iYXJvIHdhcyBwbGF5ZWRfYnkgUmljaGFyZCBFLiBHcmFudFwiXG5bMV0gXCJMb21teSBHcmVlbmhhbmRzIHdhcyBwbGF5ZWRfYnkgRXJvcyBWbGFob3NcIlxuWzFdIFwiT2xkIE5hbiB3YXMgcGxheWVkX2J5IE1hcmdhcmV0IEpvaG5cIlxuWzFdIFwiSm95ZXVzZSBFcmVuZm9yZCB3YXMgcGxheWVkX2J5IEtlbGx5IExvbmdcIlxuWzFdIFwiTW9yZCB3YXMgcGxheWVkX2J5IENpYXJhbiBCZXJtaW5naGFtXCJcblsxXSBcIldheW1hciBSb3ljZSB3YXMgcGxheWVkX2J5IFJvYiBPc3RsZXJlXCJcblsxXSBcIktpbnZhcmEgd2FzIHBsYXllZF9ieSBBbmlhIEJ1a3N0ZWluXCJcblsxXSBcIlRhbGxhIFRhcmx5IHdhcyBwbGF5ZWRfYnkgUmViZWNjYSBCZW5zb25cIlxuWzFdIFwiRGFpc3kgd2FzIHBsYXllZF9ieSBNYWlzaWUgRGVlXCJcblsxXSBcIkdhcmVkIHdhcyBwbGF5ZWRfYnkgRGVybW90IEtlYW5leVwiXG5bMV0gXCJJbHluIFBheW5lIHdhcyBwbGF5ZWRfYnkgV2lsa28gSm9obnNvblwiXG5bMV0gXCJSb3NsaW4gRnJleSB3YXMgcGxheWVkX2J5IEFsZXhhbmRyYSBEb3dsaW5nXCJcblsxXSBcIlRlcm5lc2lvIFRlcnlzIHdhcyBwbGF5ZWRfYnkgR2FyeSBPbGl2ZXJcIlxuWzFdIFwiUXVhaXRoZSB3YXMgcGxheWVkX2J5IExhdXJhIFByYWRlbHNrYVwiXG5bMV0gXCJIdWdoIG9mIHRoZSBWYWxlIHdhcyBwbGF5ZWRfYnkgSmVmZmVyc29uIEhhbGxcIlxuWzFdIFwiUm9yZ2Ugd2FzIHBsYXllZF9ieSBBbmR5IEJlY2t3aXRoXCJcblsxXSBcIlRpY2tsZXIgd2FzIHBsYXllZF9ieSBBbnRob255IE1vcnJpc1wiXG5bMV0gXCJMb2xseXMgU3Rva2V3b3J0aCB3YXMgcGxheWVkX2J5IEVsaXphYmV0aCBDYWR3YWxsYWRlclwiXG5bMV0gXCJNaGFlZ2VuIHdhcyBwbGF5ZWRfYnkgQW50b25pYSBDaHJpc3RvcGhlcnNcIlxuWzFdIFwiQml0ZXIgd2FzIHBsYXllZF9ieSBHZXJhcmQgSm9yZGFuXCJcblsxXSBcIkxoYXJhIHdhcyBwbGF5ZWRfYnkgU2FyaW5lIFNvZmFpclwiXG5bMV0gXCJUb2JobyBNb3R0IHdhcyBwbGF5ZWRfYnkgQW5kcmV3IFdpbGRlXCJcbiJ9 -->
-<pre><code>[1] &quot;Tyrion Lannister was played_by Peter Dinklage&quot;
-[1] &quot;Jon Snow was played_by Kit Harington&quot;
-[1] &quot;Daenerys Targaryen was played_by Emilia Clarke&quot;
-[1] &quot;Cersei Lannister was played_by Lena Headey&quot;
-[1] &quot;Sansa Stark was played_by Sophie Turner&quot;
-[1] &quot;Arya Stark was played_by Maisie Williams&quot;
-[1] &quot;Jaime Lannister was played_by Nikolaj Coster-Waldau&quot;
-[1] &quot;Theon Greyjoy was played_by Alfie Allen&quot;
-[1] &quot;Samwell Tarly was played_by John Bradley&quot;
-[1] &quot;Jorah Mormont was played_by Iain Glen&quot;
-[1] &quot;Petyr &#39;Littlefinger&#39; Baelish was played_by Aidan Gillen&quot;
-[1] &quot;Eddard &#39;Ned&#39; Stark was played_by Sean Bean&quot;
-[1] &quot;Brienne of Tarth was played_by Gwendoline Christie&quot;
-[1] &quot;Davos Seaworth was played_by Liam Cunningham&quot;
-[1] &quot;Bran Stark was played_by Isaac Hempstead Wright&quot;
-[1] &quot;Catelyn Stark was played_by Michelle Fairley&quot;
-[1] &quot;Lord Varys was played_by Conleth Hill&quot;
-[1] &quot;Tywin Lannister was played_by Charles Dance&quot;
-[1] &quot;Margaery Tyrell was played_by Natalie Dormer&quot;
-[1] &quot;Robb Stark was played_by Richard Madden&quot;
-[1] &quot;Stannis Baratheon was played_by Stephen Dillane&quot;
-[1] &quot;Sandor &#39;The Hound&#39; Clegane was played_by Rory McCann&quot;
-[1] &quot;Joffrey Baratheon was played_by Jack Gleeson&quot;
-[1] &quot;Ramsay Bolton was played_by Iwan Rheon&quot;
-[1] &quot;Melisandre was played_by Carice van Houten&quot;
-[1] &quot;Bronn was played_by Jerome Flynn&quot;
-[1] &quot;Gilly was played_by Hannah Murray&quot;
-[1] &quot;Ygritte was played_by Rose Leslie&quot;
-[1] &quot;Shae was played_by Sibel Kekilli&quot;
-[1] &quot;Daario Naharis was played_by Ed Skrein&quot;
-[1] &quot;Missandei was played_by Nathalie Emmanuel&quot;
-[1] &quot;Tommen Baratheon was played_by Callum Wharry&quot;
-[1] &quot;Tormund Giantsbane was played_by Kristofer Hivju&quot;
-[1] &quot;Podrick Payne was played_by Daniel Portman&quot;
-[1] &quot;Olenna Tyrell was played_by Diana Rigg&quot;
-[1] &quot;High Sparrow was played_by Jonathan Pryce&quot;
-[1] &quot;Barristan Selmy was played_by Ian McElhinney&quot;
-[1] &quot;Grand Maester Pycelle was played_by Julian Glover&quot;
-[1] &quot;Loras Tyrell was played_by Finn Jones&quot;
-[1] &quot;Grey Worm was played_by Jacob Anderson&quot;
-[1] &quot;Talisa Maegyr was played_by Oona Chaplin&quot;
-[1] &quot;Robert Baratheon was played_by Mark Addy&quot;
-[1] &quot;Roose Bolton was played_by Michael McElhatton&quot;
-[1] &quot;Osha was played_by Natalia Tena&quot;
-[1] &quot;Eddison Tollett was played_by Ben Crompton&quot;
-[1] &quot;Hodor was played_by Kristian Nairn&quot;
-[1] &quot;Gendry was played_by Joe Dempsie&quot;
-[1] &quot;Oberyn Martell was played_by Pedro Pascal&quot;
-[1] &quot;Yara Greyjoy was played_by Gemma Whelan&quot;
-[1] &quot;Meera Reed was played_by Ellie Kendrick&quot;
-[1] &quot;Jaqen H&#39;ghar was played_by Tom Wlaschiha&quot;
-[1] &quot;Alliser Thorne was played_by Owen Teale&quot;
-[1] &quot;Khal Drogo was played_by Jason Momoa&quot;
-[1] &quot;Renly Baratheon was played_by Gethin Anthony&quot;
-[1] &quot;Maester Luwin was played_by Donald Sumpter&quot;
-[1] &quot;Ros was played_by Esmé Bianco&quot;
-[1] &quot;Grenn was played_by Mark Stanley&quot;
-[1] &quot;Mance Rayder was played_by Ciarán Hinds&quot;
-[1] &quot;Jeor Mormont was played_by James Cosmo&quot;
-[1] &quot;Viserys Targaryen was played_by Harry Lloyd&quot;
-[1] &quot;Qyburn was played_by Anton Lesser&quot;
-[1] &quot;Jojen Reed was played_by Thomas Brodie-Sangster&quot;
-[1] &quot;Maester Aemon was played_by Peter Vaughan&quot;
-[1] &quot;Ellaria Sand was played_by Indira Varma&quot;
-[1] &quot;Lancel Lannister was played_by Eugene Simon&quot;
-[1] &quot;Shireen Baratheon was played_by Kerry Ingram&quot;
-[1] &quot;Edmure Tully was played_by Tobias Menzies&quot;
-[1] &quot;Gregor Clegane was played_by Conan Stevens&quot;
-[1] &quot;Lysa Arryn was played_by Kate Dickie&quot;
-[1] &quot;Meryn Trant was played_by Ian Beattie&quot;
-[1] &quot;Brynden &#39;Blackfish&#39; Tully was played_by Clive Russell&quot;
-[1] &quot;Walder Frey was played_by David Bradley&quot;
-[1] &quot;Thoros of Myr was played_by Paul Kaye&quot;
-[1] &quot;Janos Slynt was played_by Dominic Carter&quot;
-[1] &quot;Locke was played_by Noah Taylor&quot;
-[1] &quot;Myranda was played_by Charlotte Hope&quot;
-[1] &quot;Rickon Stark was played_by Art Parkinson&quot;
-[1] &quot;Rodrik Cassel was played_by Ron Donachie&quot;
-[1] &quot;Waif was played_by Faye Marsay&quot;
-[1] &quot;Hot Pie was played_by Ben Hawkey&quot;
-[1] &quot;Rast was played_by Luke Barnes&quot;
-[1] &quot;Septa Unella was played_by Hannah Waddingham&quot;
-[1] &quot;Olly was played_by Brenock O&#39;Connor&quot;
-[1] &quot;Doreah was played_by Roxanne McKee&quot;
-[1] &quot;Balon Greyjoy was played_by Patrick Malahide&quot;
-[1] &quot;Benjen Stark was played_by Joseph Mawle&quot;
-[1] &quot;Pypar was played_by Josef Altin&quot;
-[1] &quot;Yoren was played_by Francis Magee&quot;
-[1] &quot;Myrcella Baratheon was played_by Aimee Richardson&quot;
-[1] &quot;Hizdahr zo Loraq was played_by Joel Fry&quot;
-[1] &quot;Mace Tyrell was played_by Roger Ashton-Griffiths&quot;
-[1] &quot;Robin Arryn was played_by Lino Facioli&quot;
-[1] &quot;Beric Dondarrion was played_by David Michael Scott&quot;
-[1] &quot;Karl Tanner was played_by Burn Gorman&quot;
-[1] &quot;Selyse Baratheon was played_by Sarah MacKeever&quot;
-[1] &quot;Xaro Xhoan Daxos was played_by Nonso Anozie&quot;
-[1] &quot;Irri was played_by Amrita Acharia&quot;
-[1] &quot;Lady Crane was played_by Essie Davis&quot;
-[1] &quot;Qhorin Halfhand was played_by Simon Armstrong&quot;
-[1] &quot;Orell was played_by Mackenzie Crook&quot;
-[1] &quot;Rakharo was played_by Elyes Gabel&quot;
-[1] &quot;Kevan Lannister was played_by Ian Gelder&quot;
-[1] &quot;Tyene Sand was played_by Rosabell Laurenti Sellers&quot;
-[1] &quot;Olyvar was played_by Will Tudor&quot;
-[1] &quot;Three-Eyed Raven was played_by Struan Rodger&quot;
-[1] &quot;Alton Lannister was played_by Karl Davies&quot;
-[1] &quot;Yezzan zo Qaggaz was played_by Enzo Cilenti&quot;
-[1] &quot;Doran Martell was played_by Alexander Siddig&quot;
-[1] &quot;Mirri Maz Duur was played_by Mia Soteriou&quot;
-[1] &quot;Wun Wun was played_by Ian Whyte&quot;
-[1] &quot;Syrio Forel was played_by Miltos Yerolemou&quot;
-[1] &quot;Nymeria Sand was played_by Jessica Henwick&quot;
-[1] &quot;Obara Sand was played_by Keisha Castle-Hughes&quot;
-[1] &quot;Razdal mo Eraz was played_by George Georgiou&quot;
-[1] &quot;Euron Greyjoy was played_by Pilou Asbæk&quot;
-[1] &quot;Craster was played_by Robert Pugh&quot;
-[1] &quot;Brother Ray was played_by Ian McShane&quot;
-[1] &quot;Matthos Seaworth was played_by Kerr Logan&quot;
-[1] &quot;Salladhor Saan was played_by Lucian Msamati&quot;
-[1] &quot;Jory Cassel was played_by Jamie Sives&quot;
-[1] &quot;Othell Yarwyck was played_by Brian Fortune&quot;
-[1] &quot;Will was played_by Bronson Webb&quot;
-[1] &quot;Septa Mordane was played_by Susan Brown&quot;
-[1] &quot;Polliver was played_by Andy Kellegher&quot;
-[1] &quot;Yohn Royce was played_by Rupert Vansittart&quot;
-[1] &quot;Kraznys mo Nakloz was played_by Dan Hildebrand&quot;
-[1] &quot;The Night&#39;s King was played_by Richard Brake&quot;
-[1] &quot;Spice King was played_by Nicholas Blane&quot;
-[1] &quot;Styr was played_by Yuri Kolokolnikov&quot;
-[1] &quot;Dagmer Cleftjaw was played_by Ralph Ineson&quot;
-[1] &quot;Khal Moro was played_by Joseph Naufahu&quot;
-[1] &quot;Rickard Karstark was played_by Steve Blount&quot;
-[1] &quot;Rattleshirt was played_by Edward Dogliani&quot;
-[1] &quot;Karsi was played_by Birgitte Hjort Sørensen&quot;
-[1] &quot;Qotho was played_by Dar Salim&quot;
-[1] &quot;Armeca was played_by Sahara Knite&quot;
-[1] &quot;Anguy was played_by Philip McGinley&quot;
-[1] &quot;Greatjon Umber was played_by Clive Mantle&quot;
-[1] &quot;Lothar Frey was played_by Tom Brooke&quot;
-[1] &quot;Vala was played_by Meena Rayann&quot;
-[1] &quot;Shagga was played_by Mark Lewis Jones&quot;
-[1] &quot;Ser Dontos Hollard was played_by Tony Way&quot;
-[1] &quot;Black Walder Rivers was played_by Bryan McCaugherty&quot;
-[1] &quot;Lyanna Mormont was played_by Bella Ramsey&quot;
-[1] &quot;Mossador was played_by Reece Noi&quot;
-[1] &quot;Pyat Pree was played_by Ian Hanmore&quot;
-[1] &quot;Leaf was played_by Octavia Selena Alexandru&quot;
-[1] &quot;Walda Bolton was played_by Elizabeth Webster&quot;
-[1] &quot;Randyll Tarly was played_by James Faulkner&quot;
-[1] &quot;Malko was played_by Adewale Akinnuoye-Agbaje&quot;
-[1] &quot;Trystane Martell was played_by Toby Sebastian&quot;
-[1] &quot;Areo Hotah was played_by Deobia Oparei&quot;
-[1] &quot;Aeron Greyjoy was played_by Michael Feast&quot;
-[1] &quot;Loboda was played_by Zachary Baharov&quot;
-[1] &quot;Melessa Tarly was played_by Samantha Spiro&quot;
-[1] &quot;Amory Lorch was played_by Fintan McKeown&quot;
-[1] &quot;Illyrio Mopatis was played_by Roger Allam&quot;
-[1] &quot;Smalljon Umber was played_by Dean S. Jagger&quot;
-[1] &quot;Bowen Marsh was played_by Brian Fortune&quot;
-[1] &quot;Tycho Nestoris was played_by Mark Gatiss&quot;
-[1] &quot;Kovarro was played_by Steven Cole&quot;
-[1] &quot;Maester Cressen was played_by Oliver Ford Davies&quot;
-[1] &quot;Robett Glover was played_by Tim McInnerny&quot;
-[1] &quot;Hallyne was played_by Roy Dotrice&quot;
-[1] &quot;High Priestess was played_by Souad Faress&quot;
-[1] &quot;Vardis Egen was played_by Brendan McCormack&quot;
-[1] &quot;Marillion was played_by Emun Elliott&quot;
-[1] &quot;Mero was played_by Mark Killeen&quot;
-[1] &quot;Marei was played_by Josephine Gillan&quot;
-[1] &quot;Izembaro was played_by Richard E. Grant&quot;
-[1] &quot;Lommy Greenhands was played_by Eros Vlahos&quot;
-[1] &quot;Old Nan was played_by Margaret John&quot;
-[1] &quot;Joyeuse Erenford was played_by Kelly Long&quot;
-[1] &quot;Mord was played_by Ciaran Bermingham&quot;
-[1] &quot;Waymar Royce was played_by Rob Ostlere&quot;
-[1] &quot;Kinvara was played_by Ania Bukstein&quot;
-[1] &quot;Talla Tarly was played_by Rebecca Benson&quot;
-[1] &quot;Daisy was played_by Maisie Dee&quot;
-[1] &quot;Gared was played_by Dermot Keaney&quot;
-[1] &quot;Ilyn Payne was played_by Wilko Johnson&quot;
-[1] &quot;Roslin Frey was played_by Alexandra Dowling&quot;
-[1] &quot;Ternesio Terys was played_by Gary Oliver&quot;
-[1] &quot;Quaithe was played_by Laura Pradelska&quot;
-[1] &quot;Hugh of the Vale was played_by Jefferson Hall&quot;
-[1] &quot;Rorge was played_by Andy Beckwith&quot;
-[1] &quot;Tickler was played_by Anthony Morris&quot;
-[1] &quot;Lollys Stokeworth was played_by Elizabeth Cadwallader&quot;
-[1] &quot;Mhaegen was played_by Antonia Christophers&quot;
-[1] &quot;Biter was played_by Gerard Jordan&quot;
-[1] &quot;Lhara was played_by Sarine Sofair&quot;
-[1] &quot;Tobho Mott was played_by Andrew Wilde&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>###While loops</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3NldCB0aGUgc3RhcnQgcG9pbnRcbmkgPC0gMVxuXG4jdGVsbCBSIHRvIHJ1biB0aGUgbG9vcCBhcyBsb25nIGFzIGlzIGxlc3MgdGhhbiAyOVxud2hpbGUgKGkgPCAyOSkge1xuICAgICAgICAjdGVsbCBpdCB3aGF0IHRvIGRvXG4gICAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksXG4gICAgICAgICAgICAgICAgICAgICAgbmV3X2RmJEFjdG9yW2ldKSBcbiAgICAgIHByaW50KG50aClcbiAgICAgICN0ZWxsIGl0IHRvIGFkZCAxIHRvIGkgKG90aGVyd2lzZSwgaSBuZXZlciBnZXRzIGJpZ2dlciBhbmQgdGhlIGxvb3AgcnVucyBmb3JldmVyKVxuICAgICAgaSA9IGkgKyAxXG59XG5gYGAifQ== -->
-<pre class="r"><code>#set the start point
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcVHlyaW9uIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IFBldGVyIERpbmtsYWdlXFxcblsxXSBcXEpvbiBTbm93IHdhcyBwbGF5ZWRfYnkgS2l0IEhhcmluZ3RvblxcXG5bMV0gXFxEYWVuZXJ5cyBUYXJnYXJ5ZW4gd2FzIHBsYXllZF9ieSBFbWlsaWEgQ2xhcmtlXFxcblsxXSBcXENlcnNlaSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBMZW5hIEhlYWRleVxcXG5bMV0gXFxTYW5zYSBTdGFyayB3YXMgcGxheWVkX2J5IFNvcGhpZSBUdXJuZXJcXFxuWzFdIFxcQXJ5YSBTdGFyayB3YXMgcGxheWVkX2J5IE1haXNpZSBXaWxsaWFtc1xcXG5bMV0gXFxKYWltZSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBOaWtvbGFqIENvc3Rlci1XYWxkYXVcXFxuWzFdIFxcVGhlb24gR3JleWpveSB3YXMgcGxheWVkX2J5IEFsZmllIEFsbGVuXFxcblsxXSBcXFNhbXdlbGwgVGFybHkgd2FzIHBsYXllZF9ieSBKb2huIEJyYWRsZXlcXFxuWzFdIFxcSm9yYWggTW9ybW9udCB3YXMgcGxheWVkX2J5IElhaW4gR2xlblxcXG5bMV0gXFxQZXR5ciAnTGl0dGxlZmluZ2VyJyBCYWVsaXNoIHdhcyBwbGF5ZWRfYnkgQWlkYW4gR2lsbGVuXFxcblsxXSBcXEVkZGFyZCAnTmVkJyBTdGFyayB3YXMgcGxheWVkX2J5IFNlYW4gQmVhblxcXG5bMV0gXFxCcmllbm5lIG9mIFRhcnRoIHdhcyBwbGF5ZWRfYnkgR3dlbmRvbGluZSBDaHJpc3RpZVxcXG5bMV0gXFxEYXZvcyBTZWF3b3J0aCB3YXMgcGxheWVkX2J5IExpYW0gQ3VubmluZ2hhbVxcXG5bMV0gXFxCcmFuIFN0YXJrIHdhcyBwbGF5ZWRfYnkgSXNhYWMgSGVtcHN0ZWFkIFdyaWdodFxcXG5bMV0gXFxDYXRlbHluIFN0YXJrIHdhcyBwbGF5ZWRfYnkgTWljaGVsbGUgRmFpcmxleVxcXG5bMV0gXFxMb3JkIFZhcnlzIHdhcyBwbGF5ZWRfYnkgQ29ubGV0aCBIaWxsXFxcblsxXSBcXFR5d2luIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IENoYXJsZXMgRGFuY2VcXFxuWzFdIFxcTWFyZ2FlcnkgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgTmF0YWxpZSBEb3JtZXJcXFxuWzFdIFxcUm9iYiBTdGFyayB3YXMgcGxheWVkX2J5IFJpY2hhcmQgTWFkZGVuXFxcblsxXSBcXFN0YW5uaXMgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU3RlcGhlbiBEaWxsYW5lXFxcblsxXSBcXFNhbmRvciAnVGhlIEhvdW5kJyBDbGVnYW5lIHdhcyBwbGF5ZWRfYnkgUm9yeSBNY0Nhbm5cXFxuWzFdIFxcSm9mZnJleSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBKYWNrIEdsZWVzb25cXFxuWzFdIFxcUmFtc2F5IEJvbHRvbiB3YXMgcGxheWVkX2J5IEl3YW4gUmhlb25cXFxuWzFdIFxcTWVsaXNhbmRyZSB3YXMgcGxheWVkX2J5IENhcmljZSB2YW4gSG91dGVuXFxcblsxXSBcXEJyb25uIHdhcyBwbGF5ZWRfYnkgSmVyb21lIEZseW5uXFxcblsxXSBcXEdpbGx5IHdhcyBwbGF5ZWRfYnkgSGFubmFoIE11cnJheVxcXG5bMV0gXFxZZ3JpdHRlIHdhcyBwbGF5ZWRfYnkgUm9zZSBMZXNsaWVcXFxuWzFdIFxcU2hhZSB3YXMgcGxheWVkX2J5IFNpYmVsIEtla2lsbGlcXFxuWzFdIFxcRGFhcmlvIE5haGFyaXMgd2FzIHBsYXllZF9ieSBFZCBTa3JlaW5cXFxuWzFdIFxcTWlzc2FuZGVpIHdhcyBwbGF5ZWRfYnkgTmF0aGFsaWUgRW1tYW51ZWxcXFxuWzFdIFxcVG9tbWVuIEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IENhbGx1bSBXaGFycnlcXFxuWzFdIFxcVG9ybXVuZCBHaWFudHNiYW5lIHdhcyBwbGF5ZWRfYnkgS3Jpc3RvZmVyIEhpdmp1XFxcblsxXSBcXFBvZHJpY2sgUGF5bmUgd2FzIHBsYXllZF9ieSBEYW5pZWwgUG9ydG1hblxcXG5bMV0gXFxPbGVubmEgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgRGlhbmEgUmlnZ1xcXG5bMV0gXFxIaWdoIFNwYXJyb3cgd2FzIHBsYXllZF9ieSBKb25hdGhhbiBQcnljZVxcXG5bMV0gXFxCYXJyaXN0YW4gU2VsbXkgd2FzIHBsYXllZF9ieSBJYW4gTWNFbGhpbm5leVxcXG5bMV0gXFxHcmFuZCBNYWVzdGVyIFB5Y2VsbGUgd2FzIHBsYXllZF9ieSBKdWxpYW4gR2xvdmVyXFxcblsxXSBcXExvcmFzIFR5cmVsbCB3YXMgcGxheWVkX2J5IEZpbm4gSm9uZXNcXFxuWzFdIFxcR3JleSBXb3JtIHdhcyBwbGF5ZWRfYnkgSmFjb2IgQW5kZXJzb25cXFxuWzFdIFxcVGFsaXNhIE1hZWd5ciB3YXMgcGxheWVkX2J5IE9vbmEgQ2hhcGxpblxcXG5bMV0gXFxSb2JlcnQgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgTWFyayBBZGR5XFxcblsxXSBcXFJvb3NlIEJvbHRvbiB3YXMgcGxheWVkX2J5IE1pY2hhZWwgTWNFbGhhdHRvblxcXG5bMV0gXFxPc2hhIHdhcyBwbGF5ZWRfYnkgTmF0YWxpYSBUZW5hXFxcblsxXSBcXEVkZGlzb24gVG9sbGV0dCB3YXMgcGxheWVkX2J5IEJlbiBDcm9tcHRvblxcXG5bMV0gXFxIb2RvciB3YXMgcGxheWVkX2J5IEtyaXN0aWFuIE5haXJuXFxcblsxXSBcXEdlbmRyeSB3YXMgcGxheWVkX2J5IEpvZSBEZW1wc2llXFxcblsxXSBcXE9iZXJ5biBNYXJ0ZWxsIHdhcyBwbGF5ZWRfYnkgUGVkcm8gUGFzY2FsXFxcblsxXSBcXFlhcmEgR3JleWpveSB3YXMgcGxheWVkX2J5IEdlbW1hIFdoZWxhblxcXG5bMV0gXFxNZWVyYSBSZWVkIHdhcyBwbGF5ZWRfYnkgRWxsaWUgS2VuZHJpY2tcXFxuWzFdIFxcSmFxZW4gSCdnaGFyIHdhcyBwbGF5ZWRfYnkgVG9tIFdsYXNjaGloYVxcXG5bMV0gXFxBbGxpc2VyIFRob3JuZSB3YXMgcGxheWVkX2J5IE93ZW4gVGVhbGVcXFxuWzFdIFxcS2hhbCBEcm9nbyB3YXMgcGxheWVkX2J5IEphc29uIE1vbW9hXFxcblsxXSBcXFJlbmx5IEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IEdldGhpbiBBbnRob255XFxcblsxXSBcXE1hZXN0ZXIgTHV3aW4gd2FzIHBsYXllZF9ieSBEb25hbGQgU3VtcHRlclxcXG5bMV0gXFxSb3Mgd2FzIHBsYXllZF9ieSBFc23DqSBCaWFuY29cXFxuWzFdIFxcR3Jlbm4gd2FzIHBsYXllZF9ieSBNYXJrIFN0YW5sZXlcXFxuWzFdIFxcTWFuY2UgUmF5ZGVyIHdhcyBwbGF5ZWRfYnkgQ2lhcsOhbiBIaW5kc1xcXG5bMV0gXFxKZW9yIE1vcm1vbnQgd2FzIHBsYXllZF9ieSBKYW1lcyBDb3Ntb1xcXG5bMV0gXFxWaXNlcnlzIFRhcmdhcnllbiB3YXMgcGxheWVkX2J5IEhhcnJ5IExsb3lkXFxcblsxXSBcXFF5YnVybiB3YXMgcGxheWVkX2J5IEFudG9uIExlc3NlclxcXG5bMV0gXFxKb2plbiBSZWVkIHdhcyBwbGF5ZWRfYnkgVGhvbWFzIEJyb2RpZS1TYW5nc3RlclxcXG5bMV0gXFxNYWVzdGVyIEFlbW9uIHdhcyBwbGF5ZWRfYnkgUGV0ZXIgVmF1Z2hhblxcXG5bMV0gXFxFbGxhcmlhIFNhbmQgd2FzIHBsYXllZF9ieSBJbmRpcmEgVmFybWFcXFxuWzFdIFxcTGFuY2VsIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IEV1Z2VuZSBTaW1vblxcXG5bMV0gXFxTaGlyZWVuIEJhcmF0aGVvbiB3YXMgcGxheWVkX2J5IEtlcnJ5IEluZ3JhbVxcXG5bMV0gXFxFZG11cmUgVHVsbHkgd2FzIHBsYXllZF9ieSBUb2JpYXMgTWVuemllc1xcXG5bMV0gXFxHcmVnb3IgQ2xlZ2FuZSB3YXMgcGxheWVkX2J5IENvbmFuIFN0ZXZlbnNcXFxuWzFdIFxcTHlzYSBBcnJ5biB3YXMgcGxheWVkX2J5IEthdGUgRGlja2llXFxcblsxXSBcXE1lcnluIFRyYW50IHdhcyBwbGF5ZWRfYnkgSWFuIEJlYXR0aWVcXFxuWzFdIFxcQnJ5bmRlbiAnQmxhY2tmaXNoJyBUdWxseSB3YXMgcGxheWVkX2J5IENsaXZlIFJ1c3NlbGxcXFxuWzFdIFxcV2FsZGVyIEZyZXkgd2FzIHBsYXllZF9ieSBEYXZpZCBCcmFkbGV5XFxcblsxXSBcXFRob3JvcyBvZiBNeXIgd2FzIHBsYXllZF9ieSBQYXVsIEtheWVcXFxuWzFdIFxcSmFub3MgU2x5bnQgd2FzIHBsYXllZF9ieSBEb21pbmljIENhcnRlclxcXG5bMV0gXFxMb2NrZSB3YXMgcGxheWVkX2J5IE5vYWggVGF5bG9yXFxcblsxXSBcXE15cmFuZGEgd2FzIHBsYXllZF9ieSBDaGFybG90dGUgSG9wZVxcXG5bMV0gXFxSaWNrb24gU3Rhcmsgd2FzIHBsYXllZF9ieSBBcnQgUGFya2luc29uXFxcblsxXSBcXFJvZHJpayBDYXNzZWwgd2FzIHBsYXllZF9ieSBSb24gRG9uYWNoaWVcXFxuWzFdIFxcV2FpZiB3YXMgcGxheWVkX2J5IEZheWUgTWFyc2F5XFxcblsxXSBcXEhvdCBQaWUgd2FzIHBsYXllZF9ieSBCZW4gSGF3a2V5XFxcblsxXSBcXFJhc3Qgd2FzIHBsYXllZF9ieSBMdWtlIEJhcm5lc1xcXG5bMV0gXFxTZXB0YSBVbmVsbGEgd2FzIHBsYXllZF9ieSBIYW5uYWggV2FkZGluZ2hhbVxcXG5bMV0gXFxPbGx5IHdhcyBwbGF5ZWRfYnkgQnJlbm9jayBPJ0Nvbm5vclxcXG5bMV0gXFxEb3JlYWggd2FzIHBsYXllZF9ieSBSb3hhbm5lIE1jS2VlXFxcblsxXSBcXEJhbG9uIEdyZXlqb3kgd2FzIHBsYXllZF9ieSBQYXRyaWNrIE1hbGFoaWRlXFxcblsxXSBcXEJlbmplbiBTdGFyayB3YXMgcGxheWVkX2J5IEpvc2VwaCBNYXdsZVxcXG5bMV0gXFxQeXBhciB3YXMgcGxheWVkX2J5IEpvc2VmIEFsdGluXFxcblsxXSBcXFlvcmVuIHdhcyBwbGF5ZWRfYnkgRnJhbmNpcyBNYWdlZVxcXG5bMV0gXFxNeXJjZWxsYSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBBaW1lZSBSaWNoYXJkc29uXFxcblsxXSBcXEhpemRhaHIgem8gTG9yYXEgd2FzIHBsYXllZF9ieSBKb2VsIEZyeVxcXG5bMV0gXFxNYWNlIFR5cmVsbCB3YXMgcGxheWVkX2J5IFJvZ2VyIEFzaHRvbi1HcmlmZml0aHNcXFxuWzFdIFxcUm9iaW4gQXJyeW4gd2FzIHBsYXllZF9ieSBMaW5vIEZhY2lvbGlcXFxuWzFdIFxcQmVyaWMgRG9uZGFycmlvbiB3YXMgcGxheWVkX2J5IERhdmlkIE1pY2hhZWwgU2NvdHRcXFxuWzFdIFxcS2FybCBUYW5uZXIgd2FzIHBsYXllZF9ieSBCdXJuIEdvcm1hblxcXG5bMV0gXFxTZWx5c2UgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU2FyYWggTWFjS2VldmVyXFxcblsxXSBcXFhhcm8gWGhvYW4gRGF4b3Mgd2FzIHBsYXllZF9ieSBOb25zbyBBbm96aWVcXFxuWzFdIFxcSXJyaSB3YXMgcGxheWVkX2J5IEFtcml0YSBBY2hhcmlhXFxcblsxXSBcXExhZHkgQ3JhbmUgd2FzIHBsYXllZF9ieSBFc3NpZSBEYXZpc1xcXG5bMV0gXFxRaG9yaW4gSGFsZmhhbmQgd2FzIHBsYXllZF9ieSBTaW1vbiBBcm1zdHJvbmdcXFxuWzFdIFxcT3JlbGwgd2FzIHBsYXllZF9ieSBNYWNrZW56aWUgQ3Jvb2tcXFxuWzFdIFxcUmFraGFybyB3YXMgcGxheWVkX2J5IEVseWVzIEdhYmVsXFxcblsxXSBcXEtldmFuIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IElhbiBHZWxkZXJcXFxuWzFdIFxcVHllbmUgU2FuZCB3YXMgcGxheWVkX2J5IFJvc2FiZWxsIExhdXJlbnRpIFNlbGxlcnNcXFxuWzFdIFxcT2x5dmFyIHdhcyBwbGF5ZWRfYnkgV2lsbCBUdWRvclxcXG5bMV0gXFxUaHJlZS1FeWVkIFJhdmVuIHdhcyBwbGF5ZWRfYnkgU3RydWFuIFJvZGdlclxcXG5bMV0gXFxBbHRvbiBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBLYXJsIERhdmllc1xcXG5bMV0gXFxZZXp6YW4gem8gUWFnZ2F6IHdhcyBwbGF5ZWRfYnkgRW56byBDaWxlbnRpXFxcblsxXSBcXERvcmFuIE1hcnRlbGwgd2FzIHBsYXllZF9ieSBBbGV4YW5kZXIgU2lkZGlnXFxcblsxXSBcXE1pcnJpIE1heiBEdXVyIHdhcyBwbGF5ZWRfYnkgTWlhIFNvdGVyaW91XFxcblsxXSBcXFd1biBXdW4gd2FzIHBsYXllZF9ieSBJYW4gV2h5dGVcXFxuWzFdIFxcU3lyaW8gRm9yZWwgd2FzIHBsYXllZF9ieSBNaWx0b3MgWWVyb2xlbW91XFxcblsxXSBcXE55bWVyaWEgU2FuZCB3YXMgcGxheWVkX2J5IEplc3NpY2EgSGVud2lja1xcXG5bMV0gXFxPYmFyYSBTYW5kIHdhcyBwbGF5ZWRfYnkgS2Vpc2hhIENhc3RsZS1IdWdoZXNcXFxuWzFdIFxcUmF6ZGFsIG1vIEVyYXogd2FzIHBsYXllZF9ieSBHZW9yZ2UgR2Vvcmdpb3VcXFxuWzFdIFxcRXVyb24gR3JleWpveSB3YXMgcGxheWVkX2J5IFBpbG91IEFzYsOma1xcXG5bMV0gXFxDcmFzdGVyIHdhcyBwbGF5ZWRfYnkgUm9iZXJ0IFB1Z2hcXFxuWzFdIFxcQnJvdGhlciBSYXkgd2FzIHBsYXllZF9ieSBJYW4gTWNTaGFuZVxcXG5bMV0gXFxNYXR0aG9zIFNlYXdvcnRoIHdhcyBwbGF5ZWRfYnkgS2VyciBMb2dhblxcXG5bMV0gXFxTYWxsYWRob3IgU2FhbiB3YXMgcGxheWVkX2J5IEx1Y2lhbiBNc2FtYXRpXFxcblsxXSBcXEpvcnkgQ2Fzc2VsIHdhcyBwbGF5ZWRfYnkgSmFtaWUgU2l2ZXNcXFxuWzFdIFxcT3RoZWxsIFlhcnd5Y2sgd2FzIHBsYXllZF9ieSBCcmlhbiBGb3J0dW5lXFxcblsxXSBcXFdpbGwgd2FzIHBsYXllZF9ieSBCcm9uc29uIFdlYmJcXFxuWzFdIFxcU2VwdGEgTW9yZGFuZSB3YXMgcGxheWVkX2J5IFN1c2FuIEJyb3duXFxcblsxXSBcXFBvbGxpdmVyIHdhcyBwbGF5ZWRfYnkgQW5keSBLZWxsZWdoZXJcXFxuWzFdIFxcWW9obiBSb3ljZSB3YXMgcGxheWVkX2J5IFJ1cGVydCBWYW5zaXR0YXJ0XFxcblsxXSBcXEtyYXpueXMgbW8gTmFrbG96IHdhcyBwbGF5ZWRfYnkgRGFuIEhpbGRlYnJhbmRcXFxuWzFdIFxcVGhlIE5pZ2h0J3MgS2luZyB3YXMgcGxheWVkX2J5IFJpY2hhcmQgQnJha2VcXFxuWzFdIFxcU3BpY2UgS2luZyB3YXMgcGxheWVkX2J5IE5pY2hvbGFzIEJsYW5lXFxcblsxXSBcXFN0eXIgd2FzIHBsYXllZF9ieSBZdXJpIEtvbG9rb2xuaWtvdlxcXG5bMV0gXFxEYWdtZXIgQ2xlZnRqYXcgd2FzIHBsYXllZF9ieSBSYWxwaCBJbmVzb25cXFxuWzFdIFxcS2hhbCBNb3JvIHdhcyBwbGF5ZWRfYnkgSm9zZXBoIE5hdWZhaHVcXFxuWzFdIFxcUmlja2FyZCBLYXJzdGFyayB3YXMgcGxheWVkX2J5IFN0ZXZlIEJsb3VudFxcXG5bMV0gXFxSYXR0bGVzaGlydCB3YXMgcGxheWVkX2J5IEVkd2FyZCBEb2dsaWFuaVxcXG5bMV0gXFxLYXJzaSB3YXMgcGxheWVkX2J5IEJpcmdpdHRlIEhqb3J0IFPDuHJlbnNlblxcXG5bMV0gXFxRb3RobyB3YXMgcGxheWVkX2J5IERhciBTYWxpbVxcXG5bMV0gXFxBcm1lY2Egd2FzIHBsYXllZF9ieSBTYWhhcmEgS25pdGVcXFxuWzFdIFxcQW5ndXkgd2FzIHBsYXllZF9ieSBQaGlsaXAgTWNHaW5sZXlcXFxuWzFdIFxcR3JlYXRqb24gVW1iZXIgd2FzIHBsYXllZF9ieSBDbGl2ZSBNYW50bGVcXFxuWzFdIFxcTG90aGFyIEZyZXkgd2FzIHBsYXllZF9ieSBUb20gQnJvb2tlXFxcblsxXSBcXFZhbGEgd2FzIHBsYXllZF9ieSBNZWVuYSBSYXlhbm5cXFxuWzFdIFxcU2hhZ2dhIHdhcyBwbGF5ZWRfYnkgTWFyayBMZXdpcyBKb25lc1xcXG5bMV0gXFxTZXIgRG9udG9zIEhvbGxhcmQgd2FzIHBsYXllZF9ieSBUb255IFdheVxcXG5bMV0gXFxCbGFjayBXYWxkZXIgUml2ZXJzIHdhcyBwbGF5ZWRfYnkgQnJ5YW4gTWNDYXVnaGVydHlcXFxuWzFdIFxcTHlhbm5hIE1vcm1vbnQgd2FzIHBsYXllZF9ieSBCZWxsYSBSYW1zZXlcXFxuWzFdIFxcTW9zc2Fkb3Igd2FzIHBsYXllZF9ieSBSZWVjZSBOb2lcXFxuWzFdIFxcUHlhdCBQcmVlIHdhcyBwbGF5ZWRfYnkgSWFuIEhhbm1vcmVcXFxuWzFdIFxcTGVhZiB3YXMgcGxheWVkX2J5IE9jdGF2aWEgU2VsZW5hIEFsZXhhbmRydVxcXG5bMV0gXFxXYWxkYSBCb2x0b24gd2FzIHBsYXllZF9ieSBFbGl6YWJldGggV2Vic3RlclxcXG5bMV0gXFxSYW5keWxsIFRhcmx5IHdhcyBwbGF5ZWRfYnkgSmFtZXMgRmF1bGtuZXJcXFxuWzFdIFxcTWFsa28gd2FzIHBsYXllZF9ieSBBZGV3YWxlIEFraW5udW95ZS1BZ2JhamVcXFxuWzFdIFxcVHJ5c3RhbmUgTWFydGVsbCB3YXMgcGxheWVkX2J5IFRvYnkgU2ViYXN0aWFuXFxcblsxXSBcXEFyZW8gSG90YWggd2FzIHBsYXllZF9ieSBEZW9iaWEgT3BhcmVpXFxcblsxXSBcXEFlcm9uIEdyZXlqb3kgd2FzIHBsYXllZF9ieSBNaWNoYWVsIEZlYXN0XFxcblsxXSBcXExvYm9kYSB3YXMgcGxheWVkX2J5IFphY2hhcnkgQmFoYXJvdlxcXG5bMV0gXFxNZWxlc3NhIFRhcmx5IHdhcyBwbGF5ZWRfYnkgU2FtYW50aGEgU3Bpcm9cXFxuWzFdIFxcQW1vcnkgTG9yY2ggd2FzIHBsYXllZF9ieSBGaW50YW4gTWNLZW93blxcXG5bMV0gXFxJbGx5cmlvIE1vcGF0aXMgd2FzIHBsYXllZF9ieSBSb2dlciBBbGxhbVxcXG5bMV0gXFxTbWFsbGpvbiBVbWJlciB3YXMgcGxheWVkX2J5IERlYW4gUy4gSmFnZ2VyXFxcblsxXSBcXEJvd2VuIE1hcnNoIHdhcyBwbGF5ZWRfYnkgQnJpYW4gRm9ydHVuZVxcXG5bMV0gXFxUeWNobyBOZXN0b3JpcyB3YXMgcGxheWVkX2J5IE1hcmsgR2F0aXNzXFxcblsxXSBcXEtvdmFycm8gd2FzIHBsYXllZF9ieSBTdGV2ZW4gQ29sZVxcXG5bMV0gXFxNYWVzdGVyIENyZXNzZW4gd2FzIHBsYXllZF9ieSBPbGl2ZXIgRm9yZCBEYXZpZXNcXFxuWzFdIFxcUm9iZXR0IEdsb3ZlciB3YXMgcGxheWVkX2J5IFRpbSBNY0lubmVybnlcXFxuWzFdIFxcSGFsbHluZSB3YXMgcGxheWVkX2J5IFJveSBEb3RyaWNlXFxcblsxXSBcXEhpZ2ggUHJpZXN0ZXNzIHdhcyBwbGF5ZWRfYnkgU291YWQgRmFyZXNzXFxcblsxXSBcXFZhcmRpcyBFZ2VuIHdhcyBwbGF5ZWRfYnkgQnJlbmRhbiBNY0Nvcm1hY2tcXFxuWzFdIFxcTWFyaWxsaW9uIHdhcyBwbGF5ZWRfYnkgRW11biBFbGxpb3R0XFxcblsxXSBcXE1lcm8gd2FzIHBsYXllZF9ieSBNYXJrIEtpbGxlZW5cXFxuWzFdIFxcTWFyZWkgd2FzIHBsYXllZF9ieSBKb3NlcGhpbmUgR2lsbGFuXFxcblsxXSBcXEl6ZW1iYXJvIHdhcyBwbGF5ZWRfYnkgUmljaGFyZCBFLiBHcmFudFxcXG5bMV0gXFxMb21teSBHcmVlbmhhbmRzIHdhcyBwbGF5ZWRfYnkgRXJvcyBWbGFob3NcXFxuWzFdIFxcT2xkIE5hbiB3YXMgcGxheWVkX2J5IE1hcmdhcmV0IEpvaG5cXFxuWzFdIFxcSm95ZXVzZSBFcmVuZm9yZCB3YXMgcGxheWVkX2J5IEtlbGx5IExvbmdcXFxuWzFdIFxcTW9yZCB3YXMgcGxheWVkX2J5IENpYXJhbiBCZXJtaW5naGFtXFxcblsxXSBcXFdheW1hciBSb3ljZSB3YXMgcGxheWVkX2J5IFJvYiBPc3RsZXJlXFxcblsxXSBcXEtpbnZhcmEgd2FzIHBsYXllZF9ieSBBbmlhIEJ1a3N0ZWluXFxcblsxXSBcXFRhbGxhIFRhcmx5IHdhcyBwbGF5ZWRfYnkgUmViZWNjYSBCZW5zb25cXFxuWzFdIFxcRGFpc3kgd2FzIHBsYXllZF9ieSBNYWlzaWUgRGVlXFxcblsxXSBcXEdhcmVkIHdhcyBwbGF5ZWRfYnkgRGVybW90IEtlYW5leVxcXG5bMV0gXFxJbHluIFBheW5lIHdhcyBwbGF5ZWRfYnkgV2lsa28gSm9obnNvblxcXG5bMV0gXFxSb3NsaW4gRnJleSB3YXMgcGxheWVkX2J5IEFsZXhhbmRyYSBEb3dsaW5nXFxcblsxXSBcXFRlcm5lc2lvIFRlcnlzIHdhcyBwbGF5ZWRfYnkgR2FyeSBPbGl2ZXJcXFxuWzFdIFxcUXVhaXRoZSB3YXMgcGxheWVkX2J5IExhdXJhIFByYWRlbHNrYVxcXG5bMV0gXFxIdWdoIG9mIHRoZSBWYWxlIHdhcyBwbGF5ZWRfYnkgSmVmZmVyc29uIEhhbGxcXFxuWzFdIFxcUm9yZ2Ugd2FzIHBsYXllZF9ieSBBbmR5IEJlY2t3aXRoXFxcblsxXSBcXFRpY2tsZXIgd2FzIHBsYXllZF9ieSBBbnRob255IE1vcnJpc1xcXG5bMV0gXFxMb2xseXMgU3Rva2V3b3J0aCB3YXMgcGxheWVkX2J5IEVsaXphYmV0aCBDYWR3YWxsYWRlclxcXG5bMV0gXFxNaGFlZ2VuIHdhcyBwbGF5ZWRfYnkgQW50b25pYSBDaHJpc3RvcGhlcnNcXFxuWzFdIFxcQml0ZXIgd2FzIHBsYXllZF9ieSBHZXJhcmQgSm9yZGFuXFxcblsxXSBcXExoYXJhIHdhcyBwbGF5ZWRfYnkgU2FyaW5lIFNvZmFpclxcXG5bMV0gXFxUb2JobyBNb3R0IHdhcyBwbGF5ZWRfYnkgQW5kcmV3IFdpbGRlXFxcbiJ9 --&gt;
+</code></pre>
+<p>[1] Lannister was played_by Peter Dinklage<br />
+[1] Snow was played_by Kit Harington<br />
+[1] Targaryen was played_by Emilia Clarke<br />
+[1] Lannister was played_by Lena Headey<br />
+[1] Stark was played_by Sophie Turner<br />
+[1] Stark was played_by Maisie Williams<br />
+[1] Lannister was played_by Nikolaj Coster-Waldau<br />
+[1] Greyjoy was played_by Alfie Allen<br />
+[1] Tarly was played_by John Bradley<br />
+[1] Mormont was played_by Iain Glen<br />
+[1] ‘Littlefinger’ Baelish was played_by Aidan Gillen<br />
+[1] ‘Ned’ Stark was played_by Sean Bean<br />
+[1] of Tarth was played_by Gwendoline Christie<br />
+[1] Seaworth was played_by Liam Cunningham<br />
+[1] Stark was played_by Isaac Hempstead Wright<br />
+[1] Stark was played_by Michelle Fairley<br />
+[1] Varys was played_by Conleth Hill<br />
+[1] Lannister was played_by Charles Dance<br />
+[1] Tyrell was played_by Natalie Dormer<br />
+[1] Stark was played_by Richard Madden<br />
+[1] Baratheon was played_by Stephen Dillane<br />
+[1] ‘The Hound’ Clegane was played_by Rory McCann<br />
+[1] Baratheon was played_by Jack Gleeson<br />
+[1] Bolton was played_by Iwan Rheon<br />
+[1] was played_by Carice van Houten<br />
+[1] was played_by Jerome Flynn<br />
+[1] was played_by Hannah Murray<br />
+[1] was played_by Rose Leslie<br />
+[1] was played_by Sibel Kekilli<br />
+[1] Naharis was played_by Ed Skrein<br />
+[1] was played_by Nathalie Emmanuel<br />
+[1] Baratheon was played_by Callum Wharry<br />
+[1] Giantsbane was played_by Kristofer Hivju<br />
+[1] Payne was played_by Daniel Portman<br />
+[1] Tyrell was played_by Diana Rigg<br />
+[1] Sparrow was played_by Jonathan Pryce<br />
+[1] Selmy was played_by Ian McElhinney<br />
+[1] Maester Pycelle was played_by Julian Glover<br />
+[1] Tyrell was played_by Finn Jones<br />
+[1] Worm was played_by Jacob Anderson<br />
+[1] Maegyr was played_by Oona Chaplin<br />
+[1] Baratheon was played_by Mark Addy<br />
+[1] Bolton was played_by Michael McElhatton<br />
+[1] was played_by Natalia Tena<br />
+[1] Tollett was played_by Ben Crompton<br />
+[1] was played_by Kristian Nairn<br />
+[1] was played_by Joe Dempsie<br />
+[1] Martell was played_by Pedro Pascal<br />
+[1] Greyjoy was played_by Gemma Whelan<br />
+[1] Reed was played_by Ellie Kendrick<br />
+[1] H’ghar was played_by Tom Wlaschiha<br />
+[1] Thorne was played_by Owen Teale<br />
+[1] Drogo was played_by Jason Momoa<br />
+[1] Baratheon was played_by Gethin Anthony<br />
+[1] Luwin was played_by Donald Sumpter<br />
+[1] was played_by Esmé Bianco<br />
+[1] was played_by Mark Stanley<br />
+[1] Rayder was played_by Ciarán Hinds<br />
+[1] Mormont was played_by James Cosmo<br />
+[1] Targaryen was played_by Harry Lloyd<br />
+[1] was played_by Anton Lesser<br />
+[1] Reed was played_by Thomas Brodie-Sangster<br />
+[1] Aemon was played_by Peter Vaughan<br />
+[1] Sand was played_by Indira Varma<br />
+[1] Lannister was played_by Eugene Simon<br />
+[1] Baratheon was played_by Kerry Ingram<br />
+[1] Tully was played_by Tobias Menzies<br />
+[1] Clegane was played_by Conan Stevens<br />
+[1] Arryn was played_by Kate Dickie<br />
+[1] Trant was played_by Ian Beattie<br />
+[1] ‘Blackfish’ Tully was played_by Clive Russell<br />
+[1] Frey was played_by David Bradley<br />
+[1] of Myr was played_by Paul Kaye<br />
+[1] Slynt was played_by Dominic Carter<br />
+[1] was played_by Noah Taylor<br />
+[1] was played_by Charlotte Hope<br />
+[1] Stark was played_by Art Parkinson<br />
+[1] Cassel was played_by Ron Donachie<br />
+[1] was played_by Faye Marsay<br />
+[1] Pie was played_by Ben Hawkey<br />
+[1] was played_by Luke Barnes<br />
+[1] Unella was played_by Hannah Waddingham<br />
+[1] was played_by Brenock O’Connor<br />
+[1] was played_by Roxanne McKee<br />
+[1] Greyjoy was played_by Patrick Malahide<br />
+[1] Stark was played_by Joseph Mawle<br />
+[1] was played_by Josef Altin<br />
+[1] was played_by Francis Magee<br />
+[1] Baratheon was played_by Aimee Richardson<br />
+[1] zo Loraq was played_by Joel Fry<br />
+[1] Tyrell was played_by Roger Ashton-Griffiths<br />
+[1] Arryn was played_by Lino Facioli<br />
+[1] Dondarrion was played_by David Michael Scott<br />
+[1] Tanner was played_by Burn Gorman<br />
+[1] Baratheon was played_by Sarah MacKeever<br />
+[1] Xhoan Daxos was played_by Nonso Anozie<br />
+[1] was played_by Amrita Acharia<br />
+[1] Crane was played_by Essie Davis<br />
+[1] Halfhand was played_by Simon Armstrong<br />
+[1] was played_by Mackenzie Crook<br />
+[1] was played_by Elyes Gabel<br />
+[1] Lannister was played_by Ian Gelder<br />
+[1] Sand was played_by Rosabell Laurenti Sellers<br />
+[1] was played_by Will Tudor<br />
+[1] -Eyed Raven was played_by Struan Rodger<br />
+[1] Lannister was played_by Karl Davies<br />
+[1] zo Qaggaz was played_by Enzo Cilenti<br />
+[1] Martell was played_by Alexander Siddig<br />
+[1] Maz Duur was played_by Mia Soteriou<br />
+[1] Wun was played_by Ian Whyte<br />
+[1] Forel was played_by Miltos Yerolemou<br />
+[1] Sand was played_by Jessica Henwick<br />
+[1] Sand was played_by Keisha Castle-Hughes<br />
+[1] mo Eraz was played_by George Georgiou<br />
+[1] Greyjoy was played_by Pilou Asbæk<br />
+[1] was played_by Robert Pugh<br />
+[1] Ray was played_by Ian McShane<br />
+[1] Seaworth was played_by Kerr Logan<br />
+[1] Saan was played_by Lucian Msamati<br />
+[1] Cassel was played_by Jamie Sives<br />
+[1] Yarwyck was played_by Brian Fortune<br />
+[1] was played_by Bronson Webb<br />
+[1] Mordane was played_by Susan Brown<br />
+[1] was played_by Andy Kellegher<br />
+[1] Royce was played_by Rupert Vansittart<br />
+[1] mo Nakloz was played_by Dan Hildebrand<br />
+[1] Night’s King was played_by Richard Brake<br />
+[1] King was played_by Nicholas Blane<br />
+[1] was played_by Yuri Kolokolnikov<br />
+[1] Cleftjaw was played_by Ralph Ineson<br />
+[1] Moro was played_by Joseph Naufahu<br />
+[1] Karstark was played_by Steve Blount<br />
+[1] was played_by Edward Dogliani<br />
+[1] was played_by Birgitte Hjort Sørensen<br />
+[1] was played_by Dar Salim<br />
+[1] was played_by Sahara Knite<br />
+[1] was played_by Philip McGinley<br />
+[1] Umber was played_by Clive Mantle<br />
+[1] Frey was played_by Tom Brooke<br />
+[1] was played_by Meena Rayann<br />
+[1] was played_by Mark Lewis Jones<br />
+[1] Dontos Hollard was played_by Tony Way<br />
+[1] Walder Rivers was played_by Bryan McCaugherty<br />
+[1] Mormont was played_by Bella Ramsey<br />
+[1] was played_by Reece Noi<br />
+[1] Pree was played_by Ian Hanmore<br />
+[1] was played_by Octavia Selena Alexandru<br />
+[1] Bolton was played_by Elizabeth Webster<br />
+[1] Tarly was played_by James Faulkner<br />
+[1] was played_by Adewale Akinnuoye-Agbaje<br />
+[1] Martell was played_by Toby Sebastian<br />
+[1] Hotah was played_by Deobia Oparei<br />
+[1] Greyjoy was played_by Michael Feast<br />
+[1] was played_by Zachary Baharov<br />
+[1] Tarly was played_by Samantha Spiro<br />
+[1] Lorch was played_by Fintan McKeown<br />
+[1] Mopatis was played_by Roger Allam<br />
+[1] Umber was played_by Dean S. Jagger<br />
+[1] Marsh was played_by Brian Fortune<br />
+[1] Nestoris was played_by Mark Gatiss<br />
+[1] was played_by Steven Cole<br />
+[1] Cressen was played_by Oliver Ford Davies<br />
+[1] Glover was played_by Tim McInnerny<br />
+[1] was played_by Roy Dotrice<br />
+[1] Priestess was played_by Souad Faress<br />
+[1] Egen was played_by Brendan McCormack<br />
+[1] was played_by Emun Elliott<br />
+[1] was played_by Mark Killeen<br />
+[1] was played_by Josephine Gillan<br />
+[1] was played_by Richard E. Grant<br />
+[1] Greenhands was played_by Eros Vlahos<br />
+[1] Nan was played_by Margaret John<br />
+[1] Erenford was played_by Kelly Long<br />
+[1] was played_by Ciaran Bermingham<br />
+[1] Royce was played_by Rob Ostlere<br />
+[1] was played_by Ania Bukstein<br />
+[1] Tarly was played_by Rebecca Benson<br />
+[1] was played_by Maisie Dee<br />
+[1] was played_by Dermot Keaney<br />
+[1] Payne was played_by Wilko Johnson<br />
+[1] Frey was played_by Alexandra Dowling<br />
+[1] Terys was played_by Gary Oliver<br />
+[1] was played_by Laura Pradelska<br />
+[1] of the Vale was played_by Jefferson Hall<br />
+[1] was played_by Andy Beckwith<br />
+[1] was played_by Anthony Morris<br />
+[1] Stokeworth was played_by Elizabeth Cadwallader<br />
+[1] was played_by Antonia Christophers<br />
+[1] was played_by Gerard Jordan<br />
+[1] was played_by Sarine Sofair<br />
+[1] Mott was played_by Andrew Wilde<br />
+</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+###While loops
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI3NldCB0aGUgc3RhcnQgcG9pbnRcbmkgPC0gMVxuXG4jdGVsbCBSIHRvIHJ1biB0aGUgbG9vcCBhcyBsb25nIGFzIGlzIGxlc3MgdGhhbiAyOVxud2hpbGUgKGkgPCAyOSkge1xuICAgICAgICAjdGVsbCBpdCB3aGF0IHRvIGRvXG4gICAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksXG4gICAgICAgICAgICAgICAgICAgICAgbmV3X2RmJEFjdG9yW2ldKSBcbiAgICAgIHByaW50KG50aClcbiAgICAgICN0ZWxsIGl0IHRvIGFkZCAxIHRvIGkgKG90aGVyd2lzZSwgaSBuZXZlciBnZXRzIGJpZ2dlciBhbmQgdGhlIGxvb3AgcnVucyBmb3JldmVyKVxuICAgICAgaSA9IGkgKyAxXG59XG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+#set the start point
 i &lt;- 1
 
 #tell R to run the loop as long as is less than 29
@@ -2063,36 +2146,40 @@ while (i &lt; 29) {
       #tell it to add 1 to i (otherwise, i never gets bigger and the loop runs forever)
       i = i + 1
 }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVHlyaW9uIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IFBldGVyIERpbmtsYWdlXCJcblsxXSBcIkpvbiBTbm93IHdhcyBwbGF5ZWRfYnkgS2l0IEhhcmluZ3RvblwiXG5bMV0gXCJEYWVuZXJ5cyBUYXJnYXJ5ZW4gd2FzIHBsYXllZF9ieSBFbWlsaWEgQ2xhcmtlXCJcblsxXSBcIkNlcnNlaSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBMZW5hIEhlYWRleVwiXG5bMV0gXCJTYW5zYSBTdGFyayB3YXMgcGxheWVkX2J5IFNvcGhpZSBUdXJuZXJcIlxuWzFdIFwiQXJ5YSBTdGFyayB3YXMgcGxheWVkX2J5IE1haXNpZSBXaWxsaWFtc1wiXG5bMV0gXCJKYWltZSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBOaWtvbGFqIENvc3Rlci1XYWxkYXVcIlxuWzFdIFwiVGhlb24gR3JleWpveSB3YXMgcGxheWVkX2J5IEFsZmllIEFsbGVuXCJcblsxXSBcIlNhbXdlbGwgVGFybHkgd2FzIHBsYXllZF9ieSBKb2huIEJyYWRsZXlcIlxuWzFdIFwiSm9yYWggTW9ybW9udCB3YXMgcGxheWVkX2J5IElhaW4gR2xlblwiXG5bMV0gXCJQZXR5ciAnTGl0dGxlZmluZ2VyJyBCYWVsaXNoIHdhcyBwbGF5ZWRfYnkgQWlkYW4gR2lsbGVuXCJcblsxXSBcIkVkZGFyZCAnTmVkJyBTdGFyayB3YXMgcGxheWVkX2J5IFNlYW4gQmVhblwiXG5bMV0gXCJCcmllbm5lIG9mIFRhcnRoIHdhcyBwbGF5ZWRfYnkgR3dlbmRvbGluZSBDaHJpc3RpZVwiXG5bMV0gXCJEYXZvcyBTZWF3b3J0aCB3YXMgcGxheWVkX2J5IExpYW0gQ3VubmluZ2hhbVwiXG5bMV0gXCJCcmFuIFN0YXJrIHdhcyBwbGF5ZWRfYnkgSXNhYWMgSGVtcHN0ZWFkIFdyaWdodFwiXG5bMV0gXCJDYXRlbHluIFN0YXJrIHdhcyBwbGF5ZWRfYnkgTWljaGVsbGUgRmFpcmxleVwiXG5bMV0gXCJMb3JkIFZhcnlzIHdhcyBwbGF5ZWRfYnkgQ29ubGV0aCBIaWxsXCJcblsxXSBcIlR5d2luIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IENoYXJsZXMgRGFuY2VcIlxuWzFdIFwiTWFyZ2FlcnkgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgTmF0YWxpZSBEb3JtZXJcIlxuWzFdIFwiUm9iYiBTdGFyayB3YXMgcGxheWVkX2J5IFJpY2hhcmQgTWFkZGVuXCJcblsxXSBcIlN0YW5uaXMgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU3RlcGhlbiBEaWxsYW5lXCJcblsxXSBcIlNhbmRvciAnVGhlIEhvdW5kJyBDbGVnYW5lIHdhcyBwbGF5ZWRfYnkgUm9yeSBNY0Nhbm5cIlxuWzFdIFwiSm9mZnJleSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBKYWNrIEdsZWVzb25cIlxuWzFdIFwiUmFtc2F5IEJvbHRvbiB3YXMgcGxheWVkX2J5IEl3YW4gUmhlb25cIlxuWzFdIFwiTWVsaXNhbmRyZSB3YXMgcGxheWVkX2J5IENhcmljZSB2YW4gSG91dGVuXCJcblsxXSBcIkJyb25uIHdhcyBwbGF5ZWRfYnkgSmVyb21lIEZseW5uXCJcblsxXSBcIkdpbGx5IHdhcyBwbGF5ZWRfYnkgSGFubmFoIE11cnJheVwiXG5bMV0gXCJZZ3JpdHRlIHdhcyBwbGF5ZWRfYnkgUm9zZSBMZXNsaWVcIlxuIn0= -->
-<pre><code>[1] &quot;Tyrion Lannister was played_by Peter Dinklage&quot;
-[1] &quot;Jon Snow was played_by Kit Harington&quot;
-[1] &quot;Daenerys Targaryen was played_by Emilia Clarke&quot;
-[1] &quot;Cersei Lannister was played_by Lena Headey&quot;
-[1] &quot;Sansa Stark was played_by Sophie Turner&quot;
-[1] &quot;Arya Stark was played_by Maisie Williams&quot;
-[1] &quot;Jaime Lannister was played_by Nikolaj Coster-Waldau&quot;
-[1] &quot;Theon Greyjoy was played_by Alfie Allen&quot;
-[1] &quot;Samwell Tarly was played_by John Bradley&quot;
-[1] &quot;Jorah Mormont was played_by Iain Glen&quot;
-[1] &quot;Petyr &#39;Littlefinger&#39; Baelish was played_by Aidan Gillen&quot;
-[1] &quot;Eddard &#39;Ned&#39; Stark was played_by Sean Bean&quot;
-[1] &quot;Brienne of Tarth was played_by Gwendoline Christie&quot;
-[1] &quot;Davos Seaworth was played_by Liam Cunningham&quot;
-[1] &quot;Bran Stark was played_by Isaac Hempstead Wright&quot;
-[1] &quot;Catelyn Stark was played_by Michelle Fairley&quot;
-[1] &quot;Lord Varys was played_by Conleth Hill&quot;
-[1] &quot;Tywin Lannister was played_by Charles Dance&quot;
-[1] &quot;Margaery Tyrell was played_by Natalie Dormer&quot;
-[1] &quot;Robb Stark was played_by Richard Madden&quot;
-[1] &quot;Stannis Baratheon was played_by Stephen Dillane&quot;
-[1] &quot;Sandor &#39;The Hound&#39; Clegane was played_by Rory McCann&quot;
-[1] &quot;Joffrey Baratheon was played_by Jack Gleeson&quot;
-[1] &quot;Ramsay Bolton was played_by Iwan Rheon&quot;
-[1] &quot;Melisandre was played_by Carice van Houten&quot;
-[1] &quot;Bronn was played_by Jerome Flynn&quot;
-[1] &quot;Gilly was played_by Hannah Murray&quot;
-[1] &quot;Ygritte was played_by Rose Leslie&quot;</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIFxcVHlyaW9uIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IFBldGVyIERpbmtsYWdlXFxcblsxXSBcXEpvbiBTbm93IHdhcyBwbGF5ZWRfYnkgS2l0IEhhcmluZ3RvblxcXG5bMV0gXFxEYWVuZXJ5cyBUYXJnYXJ5ZW4gd2FzIHBsYXllZF9ieSBFbWlsaWEgQ2xhcmtlXFxcblsxXSBcXENlcnNlaSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBMZW5hIEhlYWRleVxcXG5bMV0gXFxTYW5zYSBTdGFyayB3YXMgcGxheWVkX2J5IFNvcGhpZSBUdXJuZXJcXFxuWzFdIFxcQXJ5YSBTdGFyayB3YXMgcGxheWVkX2J5IE1haXNpZSBXaWxsaWFtc1xcXG5bMV0gXFxKYWltZSBMYW5uaXN0ZXIgd2FzIHBsYXllZF9ieSBOaWtvbGFqIENvc3Rlci1XYWxkYXVcXFxuWzFdIFxcVGhlb24gR3JleWpveSB3YXMgcGxheWVkX2J5IEFsZmllIEFsbGVuXFxcblsxXSBcXFNhbXdlbGwgVGFybHkgd2FzIHBsYXllZF9ieSBKb2huIEJyYWRsZXlcXFxuWzFdIFxcSm9yYWggTW9ybW9udCB3YXMgcGxheWVkX2J5IElhaW4gR2xlblxcXG5bMV0gXFxQZXR5ciAnTGl0dGxlZmluZ2VyJyBCYWVsaXNoIHdhcyBwbGF5ZWRfYnkgQWlkYW4gR2lsbGVuXFxcblsxXSBcXEVkZGFyZCAnTmVkJyBTdGFyayB3YXMgcGxheWVkX2J5IFNlYW4gQmVhblxcXG5bMV0gXFxCcmllbm5lIG9mIFRhcnRoIHdhcyBwbGF5ZWRfYnkgR3dlbmRvbGluZSBDaHJpc3RpZVxcXG5bMV0gXFxEYXZvcyBTZWF3b3J0aCB3YXMgcGxheWVkX2J5IExpYW0gQ3VubmluZ2hhbVxcXG5bMV0gXFxCcmFuIFN0YXJrIHdhcyBwbGF5ZWRfYnkgSXNhYWMgSGVtcHN0ZWFkIFdyaWdodFxcXG5bMV0gXFxDYXRlbHluIFN0YXJrIHdhcyBwbGF5ZWRfYnkgTWljaGVsbGUgRmFpcmxleVxcXG5bMV0gXFxMb3JkIFZhcnlzIHdhcyBwbGF5ZWRfYnkgQ29ubGV0aCBIaWxsXFxcblsxXSBcXFR5d2luIExhbm5pc3RlciB3YXMgcGxheWVkX2J5IENoYXJsZXMgRGFuY2VcXFxuWzFdIFxcTWFyZ2FlcnkgVHlyZWxsIHdhcyBwbGF5ZWRfYnkgTmF0YWxpZSBEb3JtZXJcXFxuWzFdIFxcUm9iYiBTdGFyayB3YXMgcGxheWVkX2J5IFJpY2hhcmQgTWFkZGVuXFxcblsxXSBcXFN0YW5uaXMgQmFyYXRoZW9uIHdhcyBwbGF5ZWRfYnkgU3RlcGhlbiBEaWxsYW5lXFxcblsxXSBcXFNhbmRvciAnVGhlIEhvdW5kJyBDbGVnYW5lIHdhcyBwbGF5ZWRfYnkgUm9yeSBNY0Nhbm5cXFxuWzFdIFxcSm9mZnJleSBCYXJhdGhlb24gd2FzIHBsYXllZF9ieSBKYWNrIEdsZWVzb25cXFxuWzFdIFxcUmFtc2F5IEJvbHRvbiB3YXMgcGxheWVkX2J5IEl3YW4gUmhlb25cXFxuWzFdIFxcTWVsaXNhbmRyZSB3YXMgcGxheWVkX2J5IENhcmljZSB2YW4gSG91dGVuXFxcblsxXSBcXEJyb25uIHdhcyBwbGF5ZWRfYnkgSmVyb21lIEZseW5uXFxcblsxXSBcXEdpbGx5IHdhcyBwbGF5ZWRfYnkgSGFubmFoIE11cnJheVxcXG5bMV0gXFxZZ3JpdHRlIHdhcyBwbGF5ZWRfYnkgUm9zZSBMZXNsaWVcXFxuIn0= --&gt;
+</code></pre>
+<p>[1] Lannister was played_by Peter Dinklage<br />
+[1] Snow was played_by Kit Harington<br />
+[1] Targaryen was played_by Emilia Clarke<br />
+[1] Lannister was played_by Lena Headey<br />
+[1] Stark was played_by Sophie Turner<br />
+[1] Stark was played_by Maisie Williams<br />
+[1] Lannister was played_by Nikolaj Coster-Waldau<br />
+[1] Greyjoy was played_by Alfie Allen<br />
+[1] Tarly was played_by John Bradley<br />
+[1] Mormont was played_by Iain Glen<br />
+[1] ‘Littlefinger’ Baelish was played_by Aidan Gillen<br />
+[1] ‘Ned’ Stark was played_by Sean Bean<br />
+[1] of Tarth was played_by Gwendoline Christie<br />
+[1] Seaworth was played_by Liam Cunningham<br />
+[1] Stark was played_by Isaac Hempstead Wright<br />
+[1] Stark was played_by Michelle Fairley<br />
+[1] Varys was played_by Conleth Hill<br />
+[1] Lannister was played_by Charles Dance<br />
+[1] Tyrell was played_by Natalie Dormer<br />
+[1] Stark was played_by Richard Madden<br />
+[1] Baratheon was played_by Stephen Dillane<br />
+[1] ‘The Hound’ Clegane was played_by Rory McCann<br />
+[1] Baratheon was played_by Jack Gleeson<br />
+[1] Bolton was played_by Iwan Rheon<br />
+[1] was played_by Carice van Houten<br />
+[1] was played_by Jerome Flynn<br />
+[1] was played_by Hannah Murray<br />
+[1] was played_by Rose Leslie<br />
+```</p>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -2103,7 +2190,7 @@ while (i &lt; 29) {
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogJ0xhYiA4OiBKdWx5IDIyJw0KYXV0aG9yOiAnUE9MUyAzMzE2LCBTdW1tZXIgMjAyMiwgVW5pdmVyc2l0eSBvZiBIb3VzdG9uLCBJbnN0cnVjdG9yOiBUb20gSGFubmEnDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyBQYXJ0IEk6IExvb3BzDQoNCkxvb3BzIGFyZSBmdW50aW9ucywgb3Igc2V0cyBvZiBpbnN0cnVjdGlvbnMsIHdoaWNoIHRlbGwgdGhlIGNvbXB1dGVyIHRvIHJlcGVhdCBhbiBvcGVyYXRpb24gb3Igc2V0IG9mIG9wZXJhdGlvbnMgc2V2ZXJhbCB0aW1lcy4gDQpUaGVyZSBhcmUgdHdvIGtpbmRzIG9mIGxvb3BzIGluIFIsICpmb3IgbG9vcHMqIGFuZCAqd2hpbGUgbG9vcHMqLiBUaGVyZSBpcyBhbHNvIGEgZmFtaWx5IG9mIGZ1bmN0aW9ucywgdGhlIGFwcGx5IGZ1bmN0aW9ucyB0aGF0IGFjdCBzaW1pbGFyeSB0byBsb29wcyB3aXRoIGFkZGVkIGFkdmFudGFnZXMgLSAqYXBwbHkoKSwgbGFwcGx5KCksIHRhcHBseSgpLCBzYXBwbHkoKSwgdmFwcGx5KCksKiBhbmQgKm1hcHBseSgpKi4gU3RhcnRpbmcgd2l0aCB1bmRlcnN0YW5kaW5nIGJhc2ljIGxvb3BzIGhlbHBzIHdpdGggdW5kZXJzdGFuZGluZyBob3cgdGhlIGNvbXB1dGVyIHByb2Nlc3NlcyByZXBlYXRlZCBpbnN0cnVjdGlvbnMuIEl0IGlzIGFsc28gcG9zc2libGUgdG8gbmVzdCBsb29wcyB3aXRoaW4gbG9vcHMsIHdoaWNoIGNhbiBiZSB2ZXJ5IHBvd2VyZnVsLiBUb2RheSB3ZSBhcmUgZ29pbmcgdG8gY292ZXIgYmFzaWMgc2ltcGxlLCB1bm5lc3RlZCAqZm9yIGxvb3BzKiBhbmQgKndoaWxlIGxvb3BzKg0KDQojIyMjIEZvciBsb29wcw0KDQpBIHZlcnkgc2ltcGxlIGxvb3AgdGVsbHMgUiB0byBzdGFydCBhdCBzb21lIG51bWJlciwgcHJpbnQgaXQsIHRoZW4gbW92ZSB0byB0aGUgbmV4dCBpbiB0aGUgcmFuZ2U6DQoNCmBgYHtyfQ0KI2kgaXMgYW4gaW5kZXggdGhhdCBSIHVzZXMgdG8gdHJhY2sgd2hlcmUgaXQgaXMgaW4gdGhlIGxvb3ANCiNpIGluY3JlYXNlcyBieSAxIG9uIGVhY2ggcGFzcyB1bnRpbCBpdCByZWFjaGVzIHRoZSBlbmQgb2YgdGhlIHJhbmdlDQojMTo1IGlzIHRoZSByYW5nZS4gVGhlIGxvb3Agc3RhcnRzIGF0IGkgPSAxIGFuZCBydW5zIHVudGlsIGkgPSA1DQojQWxsIHRoaXMgbG9vcCBkb2VzIGlzIHByaW50IHRoZSB2YWx1ZSBvZiBpDQpmb3IgKGkgaW4gMTo1KSB7DQogIHByaW50KGkpDQp9DQoNCmBgYA0KDQpZb3UgY2FuIGFsc28gdXNlIGEgbG9vcCB0byBwZXJmb3JtIHZlY3RvciBvcGVyYXRpb25zLiBGb3IgZXhhbXBsZToNCg0KYGBge3J9DQojZmlyc3QsIHdlIG5lZWQgYSB2ZWN0b3IgdG8gb3BlcmF0ZSBvbg0KDQpteV92ZWN0b3IgPC0gYygxLDIsMyw0LDUpDQoNCiNhbmQgYSBzZWNvbmQgdmVjdG9yIHRvIGdldCB0aGUgb3V0cHV0DQpteV92ZWN0b3IyIDwtIGMoKQ0KDQpmb3IgKGkgaW4gMTo1KSB7DQogIG15X3ZlY3RvcjIgPC0gYyhteV92ZWN0b3IyLG15X3ZlY3RvciAqIGkpDQp9DQpwcmludChteV92ZWN0b3IyKQ0KDQpgYGANCg0KQW5kIHdlIGNhbiBsb29wIHRocm91Z2ggZWxlbWVudHMgaW4gYSBkYXRhZnJhbWU6DQoNCmBgYHtyfQ0KI2ZpcnN0IHdlIG5lZWQgc29tZSBkYXRhDQpsaWJyYXJ5KGhlcmUpICMgbG9hZCB0aGUgaGVyZSBsaWJyYXJ5DQojY3JlYXRlIG9qYmVjdCBnb3RkYXRhIGFuZCBoYXZlIHJlYWQuY3N2IGxvYWQgdGhlIA0KIyNmaWxlIEdPVF9zY3JlZW50aW1lcy5jc3YgaW4gZGF0YSBzdWJkaXJlY3RvcnkNCmdvdGRhdGEgPC0gcmVhZC5jc3YoaGVyZSgiZGF0YSIsIkdPVF9zY3JlZW50aW1lcy5jc3YiKSkgDQoNCmZvciAobmFtZSBpbiBnb3RkYXRhKSB7DQogICAgICAgIENoYXJhY3RlciA8LSAoZ290ZGF0YSRuYW1lKQ0KICAgICAgICBBY3RvciA8LSAoZ290ZGF0YSRwb3J0cmF5ZWRfYnlfbmFtZSkNCn0NCm5ld19kZiA8LSBkYXRhLmZyYW1lKEFjdG9yLENoYXJhY3RlcikNCnBsYXllZF9ieSA8LSAiIHdhcyBwbGF5ZWRfYnkgIg0KDQpmb3IgKGkgaW4gMToxOTEpIHsNCiAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksbmV3X2RmJEFjdG9yW2ldKSANCiAgICAgIHByaW50KG50aCkNCn0NCg0KYGBgDQoNCiMjI1doaWxlIGxvb3BzDQoNCmBgYHtyfQ0KI3NldCB0aGUgc3RhcnQgcG9pbnQNCmkgPC0gMQ0KDQojdGVsbCBSIHRvIHJ1biB0aGUgbG9vcCBhcyBsb25nIGFzIGlzIGxlc3MgdGhhbiAyOQ0Kd2hpbGUgKGkgPCAyOSkgew0KICAgICAgICAjdGVsbCBpdCB3aGF0IHRvIGRvDQogICAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksDQogICAgICAgICAgICAgICAgICAgICAgbmV3X2RmJEFjdG9yW2ldKSANCiAgICAgIHByaW50KG50aCkNCiAgICAgICN0ZWxsIGl0IHRvIGFkZCAxIHRvIGkgKG90aGVyd2lzZSwgaSBuZXZlciBnZXRzIGJpZ2dlciBhbmQgdGhlIGxvb3AgcnVucyBmb3JldmVyKQ0KICAgICAgaSA9IGkgKyAxDQp9DQpgYGANCg0KDQojIyBQYXJ0IElJOiBGcmVxdWVuY3kgRGlzdHJpYnV0aW9ucyAoQ29udCkgYW5kIENvcnJlbGF0aW9ucw0KDQo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAnTGFiIDg6IEp1bHkgMjInCmF1dGhvcjogJ1BPTFMgMzMxNiwgU3VtbWVyIDIwMjIsIFVuaXZlcnNpdHkgb2YgSG91c3RvbiwgSW5zdHJ1Y3RvcjogVG9tIEhhbm5hJwpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpRdWl6IGFuZCBQcm9ibGVtIFNldCBOb3RlczoKCkZpcnN0OiBnZXR0aW5nIHVwZGF0ZWQgY29waWVzIG9mIExhYnMgYW5kIExlY3R1cmVzIGluIFIgU3R1ZGlvIENsb3VkLCB0aGVuIHNvbWUgZ2VuZXJhbCBub3RlcywgdGhlbiB0aGUgcXVpeiBwYXJ0IG9mIHllc3RlcmRheSdzIGxhYi4gCgpvYmplY3QgLSBzb21ldGhpbmcgdGhhdCBpcyBjcmVhdGVkIGFuZCBuYW1lZCB0aGF0IFIgY2FuIHBlcmZvcm0gb3BlcmF0aW9ucyBvbi4gT25jZSB3ZSBjcmVhdGUgaXQsIHdlIGNhbiBhc2sgUiB0byBwZXJmb3JtIG9wZXJhdGlvbnMgb24gaXQganVzdCBieSB1c2luZyB0aGUgbmFtZS4gRXhhbXBsZXMgYXJlIHZlY3RvcnMsIGRhdGFmcmFtZXMsIGFuZCBmdW5jdGlvbnMuIEV4Y2VwdGlvbjogSWYgdGhlIEVudmlyb25tZW50IGlzIGNsZWFyZWQgb3IgeW91IHN0YXJ0IGEgbmV3IHNlc3Npb24uIEluIHRoaXMgY2FzZSwgeW91IG1heSBuZWVkIHRvIHJlcnVuIHRoZSBjb2RlIHN0b3JlZCBpbiB0aGUgc2NyaXB0LCBub3RlYm9vaywgb3IgbWFya2Rvd24gZmlsZS4gCiAKIEVudmlyb25tZW50IChzb21ldGltZXMgR2xvYmFsIEVudmlyb25tZW50KSAtIHRoaXMgaXMgdGhlIHBsYWNlIHdoZXJlIG9iamVjdHMgeW91IGNyZWF0ZSBhcmUgc3RvcmVkLiBZb3UgY2FuIHNlZSBhIGxpc3Qgb2YgdGhlIEVudmlyb25tZW50IGNvbnRlbnRzIGluIHRoZSByaWdodCBxdWFydGVyIG9mIHRoZSBzY3JlZW4gaW4gUiBTdHVkaW8uIAogCiBUeXBlcyBvZiBvYmplY3RzOiB2ZWN0b3JzLCBzY2FsYXJzLCBtYXRyaWNlcyBpbmNsdWRpbmcgZGF0YWZyYW1lcywgZnVuY3Rpb25zLCBtb2RlbHMsIGFuZCBvdGhlcnMKIAogTG9hZGluZyBkYXRhOiB0aGUgY29tbWFuZCB0byBsb2FkIGEgQ1NWIGZpbGUgaXMgcmVhZC5jc3YoKSAuIEkndmUgYmVlbiB1c2luZyBpdCB3aXRoIGEgZnVuY3Rpb24gY2FsbGVkICJoZXJlIiBpbiBvcmRlciB0byBsb2FkIGRhdGEgZnJvbSBhIHNlcGFyYXRlIGRhdGEgZGlyZWN0b3J5LiBJZiB0aGUgZGF0YSBpcyBpbiB5b3VyIG1haW4gcHJvamVjdCBkaXJlY3RvcnksIHlvdSBkb24ndCBuZWVkIGhlcmUoKS4gQWxsIHlvdSdsbCBuZWVkIGlzIHNvbWV0aGluZyBsaWtlIHRoaXM6CiAKIG15X2RhdGEgPC0gcmVhZC5jc3YoInRoZV9hY3R1YWxfZGF0YV9maWxlX25hbWUuY3N2IikgCiAKIE9uY2UgeW91IHJ1biB0aGF0LCBteV9kYXRhIGlzIG5vdyBhbiBvYmplY3QgdGhhdCB5b3UgY2FuIGNhbGwgYnkgbmFtZS4KCiAKIE5vdywgaWYgeW91IHdhbnQgdG8gcHVsbCBhIHBhcnRpY3VsYXIgdmFyaWFibGUgb3V0IG9mIHRoYXQgZGF0YWZyYW1lLCB5b3UgaGF2ZSB0byBrbm93IGl0cyBuYW1lLCB0b28uCiAKIEZvciBleGFtcGxlLCBpZiBJIHdhbnQgdG8gY2FsbCB0aGUgdmFyaWFibGUgbXlfdmFyaWFibGUgZnJvbSBteV9kYXRhIEkgdXNlIHRoZSAkIGxpa2UgdGhpcwogCiBteV9kYXRhJG15X3ZhcmlhYmxlCiAKCgojIyBQYXJ0IEk6IExvb3BzCgpMb29wcyBhcmUgZnVudGlvbnMsIG9yIHNldHMgb2YgaW5zdHJ1Y3Rpb25zLCB3aGljaCB0ZWxsIHRoZSBjb21wdXRlciB0byByZXBlYXQgYW4gb3BlcmF0aW9uIG9yIHNldCBvZiBvcGVyYXRpb25zIHNldmVyYWwgdGltZXMuIApUaGVyZSBhcmUgdHdvIGtpbmRzIG9mIGxvb3BzIGluIFIsICpmb3IgbG9vcHMqIGFuZCAqd2hpbGUgbG9vcHMqLiBUaGVyZSBpcyBhbHNvIGEgZmFtaWx5IG9mIGZ1bmN0aW9ucywgdGhlIGFwcGx5IGZ1bmN0aW9ucyB0aGF0IGFjdCBzaW1pbGFyeSB0byBsb29wcyB3aXRoIGFkZGVkIGFkdmFudGFnZXMgLSAqYXBwbHkoKSwgbGFwcGx5KCksIHRhcHBseSgpLCBzYXBwbHkoKSwgdmFwcGx5KCksKiBhbmQgKm1hcHBseSgpKi4gU3RhcnRpbmcgd2l0aCB1bmRlcnN0YW5kaW5nIGJhc2ljIGxvb3BzIGhlbHBzIHdpdGggdW5kZXJzdGFuZGluZyBob3cgdGhlIGNvbXB1dGVyIHByb2Nlc3NlcyByZXBlYXRlZCBpbnN0cnVjdGlvbnMuIEl0IGlzIGFsc28gcG9zc2libGUgdG8gbmVzdCBsb29wcyB3aXRoaW4gbG9vcHMsIHdoaWNoIGNhbiBiZSB2ZXJ5IHBvd2VyZnVsLiBUb2RheSB3ZSBhcmUgZ29pbmcgdG8gY292ZXIgYmFzaWMgc2ltcGxlLCB1bm5lc3RlZCAqZm9yIGxvb3BzKiBhbmQgKndoaWxlIGxvb3BzKgoKIyMjIyBGb3IgbG9vcHMKCkEgdmVyeSBzaW1wbGUgbG9vcCB0ZWxscyBSIHRvIHN0YXJ0IGF0IHNvbWUgbnVtYmVyLCBwcmludCBpdCwgdGhlbiBtb3ZlIHRvIHRoZSBuZXh0IGluIHRoZSByYW5nZToKCmBgYHtyfQojaSBpcyBhbiBpbmRleCB0aGF0IFIgdXNlcyB0byB0cmFjayB3aGVyZSBpdCBpcyBpbiB0aGUgbG9vcAojaSBpbmNyZWFzZXMgYnkgMSBvbiBlYWNoIHBhc3MgdW50aWwgaXQgcmVhY2hlcyB0aGUgZW5kIG9mIHRoZSByYW5nZQojMTo1IGlzIHRoZSByYW5nZS4gVGhlIGxvb3Agc3RhcnRzIGF0IGkgPSAxIGFuZCBydW5zIHVudGlsIGkgPSA1CiNBbGwgdGhpcyBsb29wIGRvZXMgaXMgcHJpbnQgdGhlIHZhbHVlIG9mIGkKZm9yIChpIGluIDE6NSkgewogIHByaW50KGkpCn0KCmBgYAoKWW91IGNhbiBhbHNvIHVzZSBhIGxvb3AgdG8gcGVyZm9ybSB2ZWN0b3Igb3BlcmF0aW9ucy4gRm9yIGV4YW1wbGU6CgpgYGB7cn0KI2ZpcnN0LCB3ZSBuZWVkIGEgdmVjdG9yIHRvIG9wZXJhdGUgb24KCm15X3ZlY3RvciA8LSBjKDEsMiwzLDQsNSkKCiNhbmQgYSBzZWNvbmQgdmVjdG9yIHRvIGdldCB0aGUgb3V0cHV0Cm15X3ZlY3RvcjIgPC0gYygpCgpmb3IgKGkgaW4gMTo1KSB7CiAgbXlfdmVjdG9yMiA8LSBjKG15X3ZlY3RvcjIsbXlfdmVjdG9yICogaSkKfQpwcmludChteV92ZWN0b3IyKQoKYGBgCgpBbmQgd2UgY2FuIGxvb3AgdGhyb3VnaCBlbGVtZW50cyBpbiBhIGRhdGFmcmFtZToKCmBgYHtyfQojZmlyc3Qgd2UgbmVlZCBzb21lIGRhdGEKbGlicmFyeShoZXJlKSAjIGxvYWQgdGhlIGhlcmUgbGlicmFyeQojY3JlYXRlIG9qYmVjdCBnb3RkYXRhIGFuZCBoYXZlIHJlYWQuY3N2IGxvYWQgdGhlIAojI2ZpbGUgR09UX3NjcmVlbnRpbWVzLmNzdiBpbiBkYXRhIHN1YmRpcmVjdG9yeQpnb3RkYXRhIDwtIHJlYWQuY3N2KGhlcmUoImRhdGEiLCJHT1Rfc2NyZWVudGltZXMuY3N2IikpIAoKZm9yIChuYW1lIGluIGdvdGRhdGEpIHsKICAgICAgICBDaGFyYWN0ZXIgPC0gKGdvdGRhdGEkbmFtZSkKICAgICAgICBBY3RvciA8LSAoZ290ZGF0YSRwb3J0cmF5ZWRfYnlfbmFtZSkKfQpuZXdfZGYgPC0gZGF0YS5mcmFtZShBY3RvcixDaGFyYWN0ZXIpCnBsYXllZF9ieSA8LSAiIHdhcyBwbGF5ZWRfYnkgIgoKZm9yIChpIGluIDE6MTkxKSB7CiAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksbmV3X2RmJEFjdG9yW2ldKSAKICAgICAgcHJpbnQobnRoKQp9CgpgYGAKCiMjI1doaWxlIGxvb3BzCgpgYGB7cn0KI3NldCB0aGUgc3RhcnQgcG9pbnQKaSA8LSAxCgojdGVsbCBSIHRvIHJ1biB0aGUgbG9vcCBhcyBsb25nIGFzIGlzIGxlc3MgdGhhbiAyOQp3aGlsZSAoaSA8IDI5KSB7CiAgICAgICAgI3RlbGwgaXQgd2hhdCB0byBkbwogICAgICAgIG50aCA8LSBwYXN0ZTAobmV3X2RmJENoYXJhY3RlcltpXSxwbGF5ZWRfYnksCiAgICAgICAgICAgICAgICAgICAgICBuZXdfZGYkQWN0b3JbaV0pIAogICAgICBwcmludChudGgpCiAgICAgICN0ZWxsIGl0IHRvIGFkZCAxIHRvIGkgKG90aGVyd2lzZSwgaSBuZXZlciBnZXRzIGJpZ2dlciBhbmQgdGhlIGxvb3AgcnVucyBmb3JldmVyKQogICAgICBpID0gaSArIDEKfQpgYGAKCgojIyBQYXJ0IElJOiBGcmVxdWVuY3kgRGlzdHJpYnV0aW9ucyAoQ29udCkgYW5kIENvcnJlbGF0aW9ucwoK</div>
 
 
 

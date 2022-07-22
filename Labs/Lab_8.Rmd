@@ -4,6 +4,31 @@ author: 'POLS 3316, Summer 2022, University of Houston, Instructor: Tom Hanna'
 output: html_notebook
 ---
 
+Quiz and Problem Set Notes:
+
+First: getting updated copies of Labs and Lectures in R Studio Cloud, then some general notes, then the quiz part of yesterday's lab. 
+
+object - something that is created and named that R can perform operations on. Once we create it, we can ask R to perform operations on it just by using the name. Examples are vectors, dataframes, and functions. Exception: If the Environment is cleared or you start a new session. In this case, you may need to rerun the code stored in the script, notebook, or markdown file. 
+ 
+ Environment (sometimes Global Environment) - this is the place where objects you create are stored. You can see a list of the Environment contents in the right quarter of the screen in R Studio. 
+ 
+ Types of objects: vectors, scalars, matrices including dataframes, functions, models, and others
+ 
+ Loading data: the command to load a CSV file is read.csv() . I've been using it with a function called "here" in order to load data from a separate data directory. If the data is in your main project directory, you don't need here(). All you'll need is something like this:
+ 
+ my_data <- read.csv("the_actual_data_file_name.csv") 
+ 
+ Once you run that, my_data is now an object that you can call by name.
+
+ 
+ Now, if you want to pull a particular variable out of that dataframe, you have to know its name, too.
+ 
+ For example, if I want to call the variable my_variable from my_data I use the $ like this
+ 
+ my_data$my_variable
+ 
+
+
 ## Part I: Loops
 
 Loops are funtions, or sets of instructions, which tell the computer to repeat an operation or set of operations several times. 

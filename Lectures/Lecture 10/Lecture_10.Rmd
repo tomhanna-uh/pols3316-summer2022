@@ -1,0 +1,87 @@
+---
+title: 'Lecture : Hypothesis Testing and Midterm Review (POLS 3316 - Statistics for
+  Political Scientists)'
+author: "Tom Hanna"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+##Today
+
++Part 1: What is hypothesis testing? (No formulas/No R)
++Part 2: Midterm Review and Practice
+
+$$\\[4in]$$
+
+#### Part 1: Hypothesis Testing
+
++ Friday I told you we needed these things to get to hypothesis testing:
+        
+                + The *68-95-99.7 Rule as a normal distribution probability shorthand
+                + To understand samples and populations
+                + The Central Limit Theorem to tie things to a normal distribution
+                + The Law of Large Numbers to tie the sample to the population
+                + Two new, related statistics: standard error and Z-score
+                + The goal was **Hypothesis Testing**
+                
+$$\\[4in]$$
+                
+**So what is hypothesis testing?**
+
+                + We have a theory and we want to see if it's valid
+                + We formulate hypotheses (pl.) that would be true if the theory was valid
+                + We try to disprove or *falsify* them
+                + How? By statistically testing 
+                
+$$\\[4in]$$                
+##For each hypothesis we test, there are actually two: The null hypothesis and the alternative hypothesis
+
+$$\\[4in]$$
+                                
+                + The Alternative Hypothesis: This is actually the hypothesis that agrees with our theory. Why?
+                + The default assumption is that our theory is that there is no effect: The Null Hypothesis
+                + We can't prove our hypothesis, but we can get sufficient evidence to **reject the null hypothesis**
+                + How? Data and Statistics
+                
+$$\\[4in]$$
+**How do we reject or confirm the null hypothesis?**
+
+                + We conduct experiments or make observations to gather data
+
+[https://www.youtube.com/watch?v=3P8shnNEXb4&t=18s](https://www.youtube.com/watch?v=3P8shnNEXb4&t=18s)
+
+                
+ $$\\[4in]$$
+ 
+                
+                + We compare the results to what we would expect if they were due to random chance
+                + If they match what we would expect from random chance: The null hypothesis is retained, the alternative is rejected
+                + If the statistics show they aren't due to random chance: The null hypothesis is rejected, we have evidence in favor of the alternative hypothesis
+                + How do we do that? Our knowledge of probability and statistics
+                
+$$\\[4in]$$
+We use test statistics: Z-Scores, Chi-square, ANOVA, t-tests, and many others to determine the likelihood that the effect we are seeing is due to random chance. 
+
+I told you Z-scores serve dual purposes. One of them is to tie serve as a hypothesis test for large, normally distributed results. To give us probability that place us on this curve: 
+
+![68-95-99.7 rule](68-95-997.png)
+
+Now that's actually the easy one. The other tests we use apply where the normal distribution won't help us, at least without help. And that's where we will pick up after we finish with Z-scores on Wednesday. 
+
+## Part 2: Midterm Review
+
+        + What will be on the test?
+        + Concepts
+        + Formulas and worksheet
+        
+Concepts:
+
+        + Rules of probability
+        + Measures of Central Tendency
+        + Measures of Dispersion (Variance, SD, Quantiles, Range)
+        + Sets and probability
+        + Independence
+        + Basic concept of Central Limit Theorem, Law of Large Numbers, 68-95-99.7 rule
+        
+

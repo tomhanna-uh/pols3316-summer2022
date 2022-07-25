@@ -1,0 +1,65 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+#This turns off scientific notation for all but the largest numbers
+options(scipen = 999)
+
+#read in the car data
+car_data <- read.csv("car_price_prediction.csv")
+
+#View the first 6 (head) and last 6 (tail) rows of data
+head(car_data)
+tail(car_data)
+
+#We are interested in cars with moderate price ranges not supercars
+#There were several thousand observations that appeared to be prices #in thousands instead of dollar amounts (i.e. 10 instead of 10,000)
+#So, we are limiting the investigation to prices between 1000 and #175000
+
+#Don't worry about this too much - we need to remove "km" from #mileage as a first step
+car_data$Mileage <- gsub("[^0-9.-]", "", car_data$Mileage)
+
+#mileage is a character variable and we want it numeric
+car_data$Mileage <- as.numeric(car_data$Mileage)
+
+#The which() function subsets car_data to that part of car_data
+#that meets the conditions set by the relative operators 
+car_data <- car_data[which(car_data$Price >= 1000 & car_data$Price <= 175000),]
+
+#A lot of the cars show mileage zero despite being old enough to #have some mileage - ideally we'd find a way to improve the data, #but barring that we have to drop obviously flawed data
+
+car_data <- car_data[which(car_data$Mileage >= 1000 & car_data$Mileage <= 500000),]
+
+#I want to save the cleaned data
+library(here)
+write.csv(car_data,file = here("data","car_price_prediction.csv"))
+
+
+#basic histogram of price in blue
+hist(car_data$Price, col = "blue")
+
+#basic histogram of mileage in red
+hist(car_data$Mileage, col = "red")
+
+#basic histogram of year
+hist(car_data$Prod..year, col = "yellow")
+
+```
+```{r}
+
+cor(car_data$Price,car_data$Mileage)
+
+cor(car_data$Price,car_data$Airbags)
+
+cor(car_data$Price,car_data$Prod..year)
+
+cor(car_data$Price,car_data$Cylinders)
+
+model1 <- lm(Price ~ Prod..year + Airbags + Cylinders + Mileage + as.factor(Manufacturer) + as.factor(Leather.interior) + as.factor(Fuel.type), data = car_data)
+summary(model1)
+
+
+```
+

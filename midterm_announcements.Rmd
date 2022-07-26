@@ -1,0 +1,21 @@
+---
+title: "Midterm: July 26"
+output: html_notebook
+---
+
+Quick notes:
+
+## Class online Wednesday - not here!
+
+Wednesday class is one hour, online only on Microsoft Teams. There is a meeting scheduled in the class Microsoft Teams. 
+
+## Comments on your problem sets:
+
+You can find specific comments to recent problem sets in you Problem Set project in R Studio Cloud in a file called "instructor comments". (If you are using Github instead, I emailed them.) If you don't see this file, I may have made a short comment at the top of your .Rmd file or I may not have commented. These comments were mostly where explanation beyond the general explanations in the posted answers was necessary. 
+
+## Two flips of a fair coin:
+
+**S = {HH,HT,TH,TT}**
+
+## 90 minutes once test is distributed
+

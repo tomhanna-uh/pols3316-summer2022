@@ -1,0 +1,74 @@
+---
+title: "Lecture 11 July 28: Causal Inference and Hypothesis Testing"
+output: html_notebook
+---
+
+##Causal Inference and Hypothesis Testing
+
+### Review
+
++ Standard Errors - distance between sample and population data
++ Z-scores - probability that sample represents the true population data
+
+                + We actually take the Z-score to a table to translate it into a probability - similar to what we will do with Chi Square and T-tests. We'll start that tomorrow
+
+$$\\[5in]$$
+### Statistics: Cause and effect
+
++ We need to understand what statistics can tell us about causation
++ Correlation doesn't prove causation but that doesn't mean statistics can't help
++ We need to be precise about what we mean by a cause
++ We need to understand the limits of data and statistics
++ We need to understand the capabilities of data and statistics
+
+$$\\[5in]$$
+
+### What do we know about causation?
+
+1. Correlation $\notequal$ causation. 
+
+                + Correlation does imply a relationship that may involve some cause and effect somewhere.
+                + The relationship could go either direction
+                + The relationship could involve other variables
+                + Lack of correlation doesn't necessarily mean anything -- correlation is linear and causal effects aren't always linear
+
+
+2. A cause is a claim about something that didn't happen.
+
+                + If we say X caused Y, we mean: *If X didn't happen, Y would not happen, everything else being held the same.*
+                
+3. **The Fundamental Problem of Causal Inference**
+
+                + Our proposed cause, which did happen, is the factual
+                + The thing that didn't happen is called the *counterfactual*
+                + We can't actually observe the thing that didn't happen
+                + The inability to observe the counterfactual is the fundamental problem of causal inference
+                + Experiments are a potential way around this
+
+4. Causes have to involve a possible manipulation of circumstances so that the counterfactual occurred
+
+5. Statistics looks for average causal effects, not single data points or individual effects. The average effects may conflict with anecdotal evidence. This is partially because...
+                
+6. There can be multiple causes. (Causes are non-rival.)
+
+7. Causes can be necessary, sufficient, neither, or both and still be causes. 
+
+8. It's a lot easier to measure effects than to find causes.
+
+
+### What can statistics do for us?
+
++ The Null Hypothesis and counterfactuals
+
+                + We can measure the probability an effect is due to random chance (the null hypothesis)
+                + Formal hypothesis tests give us this value, the *p-value*
+                + Theory provides an *alternative hypothesis* which we believe to be true based on the theory
+                + Well designed hypotheses can help with the unobserved counterfactual
+                + When we reject the null, we can determine that "the evidence is consistent with the alternative hypothesis" and the theory
+                
+
+                
+
+
+
+

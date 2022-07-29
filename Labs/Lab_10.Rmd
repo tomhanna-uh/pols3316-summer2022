@@ -46,3 +46,39 @@ if (test_vector3 > 90) {
 
 ```
 
+## Chi square
+
+#### Checking scores
+
+Use pchisq - first argument is the score, second argument is degrees of freedom
+
+So, to get the p-score for X^2 score of 4, df of 1:
+
+```{r}
+
+pchisq(4,1)
+```
+
+## Running chisquare on data
+
+
+
+```{r}
+
+#Reading in some sample data
+#Author DataFlair
+data_frame <- read.csv("https://goo.gl/j6lRXD")  #Reading CSV
+table(data_frame$treatment, data_frame$improvement)
+
+
+
+```
+
+```{r}
+
+chisq.test(data_frame$treatment,data_frame$improvement, correct = FALSE)
+```
+
+
+
+

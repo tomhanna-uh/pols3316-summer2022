@@ -116,3 +116,7 @@ Second Example Data:
 
 Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
 Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+More on reading t-tables plus 1- and 2- tailed tables here:
+
+[https://www.statisticshowto.com/tables/t-distribution-table/](https://www.statisticshowto.com/tables/t-distribution-table/)

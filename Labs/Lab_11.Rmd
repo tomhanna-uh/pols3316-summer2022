@@ -68,6 +68,25 @@ mean_diff/(sd_diff/sqrt(n))
 
 ```
 
+To find the critical value using R
+qt(p/2, df, lower.tail=FALSE)
+
+where:
+
+p: The significance level to use (/2 since it is a two tailed test)
+df: The degrees of freedom
+lower.tail: If TRUE, the probability to the left of p in the t distribution is returned. If FALSE, the probability to the right is returned. Default is TRUE.
+
+```{r}
+
+qt(.05/2, 9, lower.tail=FALSE)
+
+```
+
+More on reading t-tables plus 1- and 2- tailed tables here:
+
+[https://www.statisticshowto.com/tables/t-distribution-table/](https://www.statisticshowto.com/tables/t-distribution-table/)
+
 Or we can use the R function
 
 ```{r}

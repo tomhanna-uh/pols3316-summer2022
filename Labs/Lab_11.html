@@ -1684,6 +1684,16 @@ sd_diff</code></pre>
 <p>Fill in the formula:</p>
 <pre class="r"><code>mean_diff/(sd_diff/sqrt(n))</code></pre>
 <pre><code>## [1] -2.27202</code></pre>
+<p>To find the critical value using R qt(p/2, df, lower.tail=FALSE)</p>
+<p>where:</p>
+<p>p: The significance level to use (/2 since it is a two tailed test)
+df: The degrees of freedom lower.tail: If TRUE, the probability to the
+left of p in the t distribution is returned. If FALSE, the probability
+to the right is returned. Default is TRUE.</p>
+<pre class="r"><code>qt(.05/2, 9, lower.tail=FALSE)</code></pre>
+<pre><code>## [1] 2.262157</code></pre>
+<p>More on reading t-tables plus 1- and 2- tailed tables here:</p>
+<p><a href="https://www.statisticshowto.com/tables/t-distribution-table/">https://www.statisticshowto.com/tables/t-distribution-table/</a></p>
 <p>Or we can use the R function</p>
 <pre class="r"><code>#Vectors go in x,y
 #this is a paired test, so paired = TRUE

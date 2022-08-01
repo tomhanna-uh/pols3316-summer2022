@@ -1,0 +1,79 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## paired sample t-test
+
+Second Example Data:
+
+
+Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+## Loading the data as vectors
+                
+```{r}
+Group1 <- c(12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group2 <- c(13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+
+```
+ 
+#combining the vectors into a data frame
+ 
+```{r}
+
+data <- data.frame(Group1,Group2)
+
+head(data)
+```
+            
+```{r}
+summary(data)
+```
+
+Work it out step by step.
+
+First, create a variable with the differences.
+          
+```{r}
+
+data$difference <- data$Group1 - data$Group2
+
+summary(data$difference)
+
+```
+         
+Get the mean and standard deviation of the differences and assign to objects:
+
+```{r}
+n <- length(data$Group1)
+
+mean_diff <- mean(data$difference)
+mean_diff
+
+sd_diff <- sd(data$difference)
+sd_diff
+```
+
+Fill in the formula:
+
+```{r}
+
+mean_diff/(sd_diff/sqrt(n))
+
+
+```
+
+Or we can use the R function
+
+```{r}
+
+#Vectors go in x,y
+#this is a paired test, so paired = TRUE
+test1 <- t.test(Group1,Group2, paired = TRUE)
+test1
+
+```
+

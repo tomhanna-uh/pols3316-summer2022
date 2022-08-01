@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr, amsfonts, amsmath, amssymb, graphicx, color, fullpage}
+\pagestyle{fancy}
+\usepackage{longtable}
+\usepackage{fourier}
+\usepackage[lf]{venturis}
+\usepackage[T1]{fontenc}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\setlength\parindent{0pt}
+\usepackage{amsfonts, amsmath, amssymb, bm} %Math fonts and symbols
+\usepackage{dcolumn, multirow} % decimal-aligned columns, multi-row cells
+\usepackage{graphicx} % graphics commands
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[margin=1in]{geometry} % sets page layout
+\usepackage{setspace}% allows toggling of double/single-spacing
+\usepackage{verbatim}% defines environment for un-evaluated code
+\usepackage{rotating}% defines commands for rotating text and floats
+\usepackage{natbib}% defines citation commands and environments.
+\usepackage{url}
+\usepackage{caption}
+\usepackage{endnotes}
+\usepackage{psfrag}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage[pdftex,
+            pdfauthor={Tom Hanna},
+            pdftitle={The Title},
+            pdfsubject={The Subject},
+            pdfkeywords={Some Keywords},
+            pdfcreator={TeXstudio}]{hyperref}
+\usepackage{outlines}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\Roman*)}
+\setlist[enumerate,2]{label=\Alph*)}
+\setlist[enumerate,3]{label=\roman*)}
+\setlist[enumerate,4]{label=\alph*)}
+
+\setlength\parindent{0pt}
+\setlength{\headsep}{0.2in}
+
+\begin{document}
+	\lhead{Paired T-Test Example}
+	\chead{}
+	\rhead{POLS3316}
+	
+	
+
+	
+	{\textcolor{white}.}
+	
+
+	
+	\section*{}
+
+{\LARGE \textbf{Formula for paired sample t-test:  $t = \frac{x_{diff}}{s_{diff}/\sqrt{n}}$}}
+
+
+\begin{table}
+\centering
+\caption{Data}
+
+\begin{tabular}{|c|c|}
+\hline
+13 & 9 \\
+\hline
+14 &11  \\
+\hline
+14 & 12 \\
+\hline
+15 & 12 \\
+\hline
+16 & 14 \\
+\hline
+17 &16  \\
+\hline
+17 & 18 \\
+\hline
+18 & 18 \\
+\hline
+19 &18  \\
+\hline
+20 & 19 \\
+\hline
+22 & 20 \\
+\hline
+23 & 20 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+	
+	
+\newpage
+
+\begin{table}
+\centering
+\caption{Work}
+
+\begin{tabular}{|c|c|c|}
+\hline
+13 &9  &  4\\
+\hline
+14 & 11 &  3\\
+\hline
+14 &12  &2  \\
+\hline
+ 15& 12 & 3 \\
+\hline
+16 & 14 &2  \\
+\hline
+17 & 16 & 1 \\
+\hline
+17 &18  & -1 \\
+\hline
+18 &18  &  0\\
+\hline
+19 &18  & 1 \\
+\hline
+20 &19  & 1 \\
+\hline
+22 &20  & 2 \\
+\hline
+23 &20  & 3 \\
+\hline
+\multicolumn{2}{|c|}{Mean of Differences:} & 1.75 \\
+\hline
+\multicolumn{2}{|c|}{Standard Deviation of Differences:} & 1.422 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+
+$t = \frac{x_{diff}}{s_{diff}/\sqrt{n}}$\\
+
+t = $\frac{1.75}{1.422/ \sqrt{12}}$
+
+t = 4.26 \\
+
+df = 12 - 1 = 11\\
+
+All we care about is whether they are different: 2-tail test.\\
+
+\newpage
+
+\section{Example 2}
+
+Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+
+
+
+
+
+
+\end{document}

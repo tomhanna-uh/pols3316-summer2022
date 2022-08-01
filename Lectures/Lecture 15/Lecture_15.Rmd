@@ -1,0 +1,47 @@
+---
+title: 'Lecture 15: August 2, 2022'
+output:
+  html_document:
+    df_print: paged
+---
+
+## Confidence Intervals
+
++ Review $X^2$ and t-test 
++ General hypothesis testing: scores and critical values
++ Confidence intervals 
+
+## $X^2$ and t-test
+
++ Note on formulas: Numbers in numerator or denominator of a fraction all get solved together as if in parentheses. PEMDAS is shorthand, but the P should really be G for "grouping symbols" and includes:  parentheses ( ), brackets [ ], braces \{ \}, and even fraction bars.
+
++ Terms
+
+                + null hypothesis
+                + alternative hypothesis
+                + critical value (cutoff point)
+                + critical value is found with degrees of freedom and desired probability or alpha
+                + probability or p - alpha level (new term) - confidence level (new term)
+                
+
++ test scores and critical values - if the test score is greater than the critical value, reject the null
+
+                + The critical value tells us the minimum value
+                + Above that value, the probability that the null hypothesis is true is equal to or less than the target
+                
+ $$\\[5in]$$      
+ 
+ ## Test scores
+ 
+ 
+ $$\\[5in]$$      
+ 
+ ## Confidence intervals
+ 
+ 
+                
+                
+
+
+
+

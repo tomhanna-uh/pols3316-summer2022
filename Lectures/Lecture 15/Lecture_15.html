@@ -1657,12 +1657,86 @@ bars.</p></li>
 <pre><code>          + null hypothesis
           + alternative hypothesis
           + critical value (cutoff point)
-          + alpha level (new term) - probabilyt or p</code></pre></li>
+          + critical value is found with degrees of freedom and desired probability or alpha
+          + probability or p - alpha level (new term) - confidence level (new term)</code></pre></li>
 <li><p>test scores and critical values - if the test score is greater
 than the critical value, reject the null</p>
 <pre><code>          + The critical value tells us the minimum value
           + Above that value, the probability that the null hypothesis is true is equal to or less than the target</code></pre></li>
 </ul>
+<p><span class="math display">\[\\[5in]\]</span></p>
+<p>## Test scores</p>
+<p>Monday Quiz Answers</p>
+<p><span class="math display">\[\\[5in]\]</span></p>
+<p>## Confidence intervals</p>
+<p>### What is a confidence interval?</p>
+<ul>
+<li>It’s the range where we could expect to find the true measurement
+based on the probability level we specify if we had the full population
+data instead of just the sample.</li>
+<li>If we say the 95% confidence interval of the sample mean is from 45
+to 55, it means we are 95% certain that the true population mean lies
+somewhere in that range.</li>
+<li>The confidence intervals are based on the thing we are measured, the
+probability level, and the distribution.</li>
+<li>If we know the population parameters (especially standard deviation)
+we can create simple CI using 68-95-99 rule or accurate CI using
+z-scores</li>
+<li>For small samples or uncertain population standard deviation from a
+“normalish” distribution we use t-scores to adjust for these
+uncertainties</li>
+</ul>
+<p><span class="math display">\[\\[5in]\]</span></p>
+</div>
+<div id="using-t-scores-to-find-confidence-intervals" class="section level2">
+<h2>Using t-scores to find confidence intervals</h2>
+<ul>
+<li><p>For small samples or uncertain population standard deviation from
+a “normalish” distribution we use t-scores to adjust for these
+uncertainties</p>
+<pre><code>          + If we wanted to get a 95% confidence interval with 68-95-99, we would look for a value 2 standard deviations either side of the statistic we want to find a CI for 
+          + With t-test scores we divide the standard deviation by the square root of sample size and multiply times a t-table critical value instead.</code></pre></li>
+<li><p><span class="math inline">\(CI_\mu\)</span> = <span class="math inline">\(\bar{x} \pm t \frac{s}{\sqrt{n}}\)</span></p></li>
+<li><p><span class="math inline">\(CI_\mu\)</span> Confidence interval
+of the population mean</p></li>
+<li><p><span class="math inline">\(\bar{x}\)</span> Sample mean</p></li>
+<li><p>s = sample standard deviation</p></li>
+<li><p>n = sample size</p></li>
+</ul>
+<p><span class="math display">\[\\[5in]\]</span></p>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples:</h2>
+<p><a href="https://www.statisticshowto.com/probability-and-statistics/confidence-interval/#WhatisCI" class="uri">https://www.statisticshowto.com/probability-and-statistics/confidence-interval/#WhatisCI</a></p>
+<p><a href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/confidence-level/" class="uri">https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/confidence-level/</a></p>
+<p><a href="https://www.statisticshowto.com/95-percent-confidence-interval/" class="uri">https://www.statisticshowto.com/95-percent-confidence-interval/</a></p>
+<p><span class="math display">\[\\[5in]\]</span></p>
+</div>
+<div id="is-this-just-about-means" class="section level2">
+<h2>Is this just about means?</h2>
+<p>NO!</p>
+<p>The biggest use I see of confidence intervals is confidence intervals
+for <strong>regression coefficients</strong></p>
+<pre><code>            $y = \alpha + \beta X + \epsilon$
+            </code></pre>
+<p>If we find that the <span class="math inline">\(\beta\)</span> in the
+equation defining the relationship between our explanatory (x) and
+dependent (y) variables is 0.9, the confidence interval can tell us that
+it’s actually 95% likely that the true relationship is between 0.88 and
+0.92.</p>
+<p>Even better, we can graph it!</p>
+</div>
+<div id="what-about-the-normal-distribution" class="section level2">
+<h2>What about the normal distribution?</h2>
+<p>I oversimplified with the reference to the 68-95-99 rule. (That rule
+usually is)</p>
+<p>For normal distributions, the actual formula is:</p>
+<p><span class="math inline">\(CI_\mu = \bar{x} \pm z
+\frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><span class="math inline">\(CI_\mu\)</span> Confidence interval of
+the population mean <span class="math inline">\(\bar{x}\)</span> Sample
+mean <span class="math inline">\(sigma\)</span> population standard
+deviation <span class="math inline">\(n\)</span> is the sample size</p>
 </div>
 
 

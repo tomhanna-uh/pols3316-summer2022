@@ -33,15 +33,82 @@ output:
  
  ## Test scores
  
+ Monday Quiz Answers
+ 
  
  $$\\[5in]$$      
  
  ## Confidence intervals
  
+ ### What is a confidence interval?
  
++ It's the range where we could expect to find the true measurement based on the probability level we specify if we had the full population data instead of just the sample.
++ If we say the 95% confidence interval of the sample mean is from 45 to 55, it means we are 95% certain that the true population mean lies somewhere in that range. 
++ The confidence intervals are based on the thing we are measured, the probability level, and the distribution. 
++ If we know the population parameters (especially standard deviation) we can create simple CI using 68-95-99 rule or accurate CI using z-scores
++ For small samples or uncertain population standard deviation from a "normalish" distribution we use t-scores to adjust for these uncertainties 
+
+              
+ $$\\[5in]$$     
+ 
+## Using t-scores to find confidence intervals
+
+ 
++ For small samples or uncertain population standard deviation from a "normalish" distribution we use t-scores to adjust for these uncertainties 
+ 
+                + If we wanted to get a 95% confidence interval with 68-95-99, we would look for a value 2 standard deviations either side of the statistic we want to find a CI for 
+                + With t-test scores we divide the standard deviation by the square root of sample size and multiply times a t-table critical value instead.
                 
                 
++ $CI_\mu$ = $\bar{x} \pm t \frac{s}{\sqrt{n}}$
+
++ $CI_\mu$ Confidence interval of the population mean
++ $\bar{x}$ Sample mean
++ s = sample standard deviation
++ n = sample size
 
 
+ $$\\[5in]$$        
+ 
+ ## What about the normal distribution?
 
+I oversimplified with the reference to the 68-95-99 rule. (That rule usually is)
+
+For normal distributions, the actual formula is:
+
+$CI_\mu = \bar{x} \pm z \frac{\sigma}{\sqrt{n}}$
+
+$CI_\mu$ Confidence interval of the population mean
+$\bar{x}$ Sample mean
+$sigma$ population standard deviation
+$n$ is the sample size
+
+
+ $$\\[5in]$$    
+ 
+
+
+ 
+## Examples:
+ 
+ https://www.statisticshowto.com/probability-and-statistics/confidence-interval/#WhatisCI
+ 
+ https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/confidence-level/
+ 
+ https://www.statisticshowto.com/95-percent-confidence-interval/
+
+
+$$\\[5in]$$                    
+                
+## Is this just about means?
+
+NO!
+
+The biggest use I see of confidence intervals is confidence intervals for **regression coefficients**
+
+                $y = \alpha + \beta X + \epsilon$
+                
+If we find that the $\beta$ in the equation defining the relationship between our explanatory (x) and dependent (y) variables is 0.9, the confidence interval can tell us that it's actually 95% likely that the true relationship is between 0.88 and 0.92. 
+
+Even better, we can graph it!
 

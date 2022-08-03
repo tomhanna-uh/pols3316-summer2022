@@ -109,6 +109,13 @@ model2 <- lm(Assault ~ UrbanPop, data = my_data)
 summary(model2)
 
 ```
+```{r}
+library(stargazer)
+stargazer(model2, type = "text")
+```
+
+
+
 
 ## Confidence intervals
 

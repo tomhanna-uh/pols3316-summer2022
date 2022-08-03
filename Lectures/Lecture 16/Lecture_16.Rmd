@@ -1,6 +1,8 @@
 ---
-title: "Lecture 16: Introduction to Ordinary Least Squares Regression"
-output: html_notebook
+title: 'Lecture 16: Introduction to Ordinary Least Squares Regression'
+output:
+  html_document:
+    df_print: paged
 ---
 
 # Linear Regression - Ordinary Least Squares Regression
@@ -177,4 +179,47 @@ These are all fixable in many cases, some fairly simply.
 
 <p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
 
-Lin
+### Ordinary Least Squares Regression
+
++ This is another case of squared differences:
+        
+        + We did squared differences from the mean to get variance 
+        + We used squared differences in the $X^2$ test
+        
++ The differences in this case are the distance between the actual data points and the predicted location of Y based on X. 
+
++ OLS is the method that minimizes the sum of the squared distances - the method of *least squares*
+
++ There are formulas to find it by hand:
+
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+$$\\[5in]$$  
+
+
+![Regression formula](regression-formula.png)
+
+m is the formula to find the intercept
+b is the formula to find the slope
+
+$$\\[5in]$$  
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+There is a "simpler" way to find a regression line that uses the correlation coefficient. But if you had to find the correlation coefficient by hand, you'd have to use this formula:
+
+![correlation coefficient formula](correlation-coefficient.png)
+
+$$\\[5in]$$  
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+I'm not asking you do any of that. 
+
+It is worth looking at the formulas all together to see some of the relationship:
+
+![Regression formula](regression-formula.png)
+
+![correlation coefficient formula](correlation-coefficient.png)
+

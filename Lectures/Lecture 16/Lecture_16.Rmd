@@ -177,3 +177,4 @@ These are all fixable in many cases, some fairly simply.
 
 <p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
 
+Lin

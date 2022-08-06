@@ -1,0 +1,21 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+
+movies_data <- read.csv("movies.csv")
+
+head(movies_data)
+
+
+#This  is just to remove the commas and any other non-numeric stuff from the Number.of.Theaters variable
+movies_data$Number.of.Theaters <- gsub("[^0-9.-]", "", movies_data$Number.of.Theaters)
+
+movies_data$Number.of.Theaters <- as.numeric()
+
+```
+
+
+

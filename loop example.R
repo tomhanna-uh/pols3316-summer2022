@@ -7,8 +7,7 @@ for (i in 1:10) {
 }
 print(blue2)
 
-===
-        
+
 vector1 <- c(1,2,3,4,5)
 
 for (i in 1:10) {

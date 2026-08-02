@@ -3,9 +3,13 @@ Lab materials, lecture examples, and other materials for my students in Statisti
 
 Assignments will be posted as separate projects
 
+## Disclaimer
+
 *This was my first course as instructor of record and my first attempt to write course materials using R Markdown. I highly recommend not using it as-is and even for reference my Spring 2026 course has better quality in material and presentation.*
 
 This may be used an OER resource at your own risk and subject to the terms of the Creative Commons license and licenses associated with the R packages used. 
+
+## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
